@@ -1,0 +1,6 @@
+C:\MonHoc\PTPMUDTM\BookingHotel_App\MyLibrary\bin\Debug\MyLibrary.dll
+C:\MonHoc\PTPMUDTM\BookingHotel_App\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\MonHoc\PTPMUDTM\BookingHotel_App\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
+C:\MonHoc\PTPMUDTM\BookingHotel_App\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+C:\MonHoc\PTPMUDTM\BookingHotel_App\MyLibrary\obj\Debug\MyLibrary.dll
+C:\MonHoc\PTPMUDTM\BookingHotel_App\MyLibrary\obj\Debug\MyLibrary.pdb
