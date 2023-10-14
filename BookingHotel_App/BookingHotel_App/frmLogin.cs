@@ -38,5 +38,13 @@ namespace BookingHotel_App
             }
                 
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain frm = new frmMain();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }

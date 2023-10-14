@@ -163,6 +163,26 @@ namespace BookingHotel_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_information_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-information-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_list_view_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-list-view-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_log_out_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-log-out-64 (1)", resourceCulture);
@@ -196,6 +216,16 @@ namespace BookingHotel_App.Properties {
         internal static System.Drawing.Bitmap icons8_supplies_50__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-supplies-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_warehouse_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-warehouse-64 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

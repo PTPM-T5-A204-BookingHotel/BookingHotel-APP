@@ -14,8 +14,8 @@ namespace DesignControl
         {
             this.KeyPress += TextForNumber_KeyPress;
             this.BackColor = Color.FromArgb(46, 51, 73);
-            this.ForeColor = Color.Gray;
-            this.BorderStyle = BorderStyle.None;
+            this.ForeColor = Color.White;
+            this.BorderStyle = BorderStyle.Fixed3D;
             this.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
         }
 
