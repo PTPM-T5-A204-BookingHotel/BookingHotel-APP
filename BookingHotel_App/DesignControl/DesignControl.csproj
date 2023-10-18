@@ -79,66 +79,12 @@
     <Compile Include="TextForNumber.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UC_DanhSachHD.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DanhSachHD.Designer.cs">
-      <DependentUpon>UC_DanhSachHD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_DanhSachKH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DanhSachKH.Designer.cs">
-      <DependentUpon>UC_DanhSachKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_DanhSachTK.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DanhSachTK.Designer.cs">
-      <DependentUpon>UC_DanhSachTK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_DichVu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DichVu.Designer.cs">
-      <DependentUpon>UC_DichVu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_DanhSachNV.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DanhSachNV.Designer.cs">
-      <DependentUpon>UC_DanhSachNV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_VatTu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_VatTu.Designer.cs">
-      <DependentUpon>UC_VatTu.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_DanhSachHD.resx">
-      <DependentUpon>UC_DanhSachHD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_DanhSachKH.resx">
-      <DependentUpon>UC_DanhSachKH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_DanhSachTK.resx">
-      <DependentUpon>UC_DanhSachTK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_DichVu.resx">
-      <DependentUpon>UC_DichVu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_DanhSachNV.resx">
-      <DependentUpon>UC_DanhSachNV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_VatTu.resx">
-      <DependentUpon>UC_VatTu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

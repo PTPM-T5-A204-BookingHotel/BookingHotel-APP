@@ -133,6 +133,26 @@ namespace BookingHotel_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_error_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-error-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_error_cloud_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-error-cloud-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_eye_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eye-50", resourceCulture);
@@ -156,6 +176,16 @@ namespace BookingHotel_App.Properties {
         internal static System.Drawing.Bitmap icons8_eye_50__2_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-eye-50 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_info_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-info-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +233,29 @@ namespace BookingHotel_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_remove_50__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-remove-50 (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_service_bell_50__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-service-bell-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_success_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-success-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

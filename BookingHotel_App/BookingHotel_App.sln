@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingHotel_App", "Booking
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignControl", "DesignControl\DesignControl.csproj", "{B358405B-892A-47D0-9A4B-802F2B9265C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "MyLibrary\MyLibrary.csproj", "{0B7C2550-899F-44C4-A1C1-8F8A0F8DA638}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_DAL", "BLL_DAL\BLL_DAL.csproj", "{4597F059-D7D8-4360-9D72-BBC584529B6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{B358405B-892A-47D0-9A4B-802F2B9265C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B358405B-892A-47D0-9A4B-802F2B9265C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B358405B-892A-47D0-9A4B-802F2B9265C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B7C2550-899F-44C4-A1C1-8F8A0F8DA638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B7C2550-899F-44C4-A1C1-8F8A0F8DA638}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B7C2550-899F-44C4-A1C1-8F8A0F8DA638}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B7C2550-899F-44C4-A1C1-8F8A0F8DA638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4597F059-D7D8-4360-9D72-BBC584529B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4597F059-D7D8-4360-9D72-BBC584529B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4597F059-D7D8-4360-9D72-BBC584529B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4597F059-D7D8-4360-9D72-BBC584529B6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -223,15 +223,9 @@ C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\bin\Debug\ja\
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.csproj.AssemblyReference.cache
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.Properties.Resources.resources
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.UC_DanhSachNV.resources
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.csproj.GenerateResource.cache
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.dll.licenses
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.csproj.CoreCompileInputs.cache
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.csproj.CopyComplete
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.dll
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.pdb
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.UC_DichVu.resources
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.UC_VatTu.resources
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.UC_DanhSachTK.resources
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.UC_DanhSachHD.resources
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\DesignControl\obj\Debug\DesignControl.UC_DanhSachKH.resources

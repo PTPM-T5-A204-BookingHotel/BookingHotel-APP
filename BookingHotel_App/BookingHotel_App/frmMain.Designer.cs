@@ -68,7 +68,7 @@
             this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainContainer.Location = new System.Drawing.Point(211, 31);
             this.MainContainer.Name = "MainContainer";
-            this.MainContainer.Size = new System.Drawing.Size(733, 504);
+            this.MainContainer.Size = new System.Drawing.Size(788, 504);
             this.MainContainer.TabIndex = 0;
             // 
             // accordionControl1
@@ -213,7 +213,7 @@
             this.fluentDesignFormControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemConditionalType1});
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(944, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(999, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem1);
@@ -289,7 +289,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 535);
+            this.ClientSize = new System.Drawing.Size(999, 535);
             this.ControlContainer = this.MainContainer;
             this.Controls.Add(this.MainContainer);
             this.Controls.Add(this.accordionControl1);

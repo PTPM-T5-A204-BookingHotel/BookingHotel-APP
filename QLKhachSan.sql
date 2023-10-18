@@ -12,7 +12,7 @@ set dateformat dmy
 create table ChucVu 
 (
 	MaCV			int  identity,
-	TenCV			nvarchar(20) unique not null check(TenCV<>''),
+	TenCV			nvarchar(30) unique not null check(TenCV<>''),
 	constraint pk_MaCV_ChucVu primary key(MaCV)
 )
 
@@ -46,7 +46,7 @@ insert into NhanVien(HoTenNV,MaCV,GioiTinhNV,CCCDNV,SoDienThoaiNV,NgaySinhNV,Dia
 create table KhachHang 
 (
 	MaKH		int identity,
-	CCCDKH		varchar(12)		not null check (CCCDKH<>''),
+	CCCDKH		varchar(12)		not null check (CCCDKH<>'') unique,
 	HoTenKH		nvarchar(30)	not null check (HoTenKH<>''),
 	GioiTinhKH	nvarchar(5)		not null check (GioiTinhKH = N'Nam' or GioiTinhKH = N'Nữ'),
 	DiaChiKH	nvarchar(max)	not null check (DiaChiKH<>''),
@@ -66,12 +66,13 @@ create table KhachHang
 
 create table VatTu 
 (
-	MaVT		int identity,
+	MaVT		varchar(30),
 	TenVT		nvarchar(max) not null check(TenVT<>''),
 	ThuongHieu	nvarchar(100),
 	DonViTinh	nvarchar(10),
 	SoLuong		int	default 0,
 	DonGia		int default 0,
+	AnhVT		image,
 	constraint pk_MaVT_VatTu primary key (MaVT)
 )
 
@@ -109,7 +110,7 @@ insert into Phong(TenPH,MaLP,Tang) values
 
 create table DichVu 
 (
-	MaDV	int identity,
+	MaDV	varchar(30),
 	TenDV	nvarchar(max) not null check(TenDV<>''),
 	GiaDV	int	default 0,
 	MotaDV	nvarchar(max),
@@ -117,13 +118,13 @@ create table DichVu
 )
 
 insert into DichVu values
-(N'Chăm sóc thú cưng',		250000, N'Gồm: Tắm rửa, Cắt tỉa (lông, móng), Trông giữ thú cưng. Lưu ý: Áp dụng cho 1 thú cưng và trông giữ/1 ngày'),
-(N'Vệ sinh xe (xe 4 bánh)',	200000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
-(N'Vệ sinh xe (xe 2 bánh)',	100000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
-(N'Giặt ủi quần áo',		100000,	N'Lưu ý: Áp dụng cho 1kg quần áo/1 lượt'),
-(N'Massage toàn thân',		250000,	N'Lưu ý: Áp dụng cho 1 người/2 giờ'),
-(N'Massage chân',			150000,	N'Lưu ý: Áp dụng cho 1 người/1 giờ'),
-(N'Đặt suất ăn Buffet',		150000,	N'Lưu ý: Áp dụng cho 1 người/1 lượt (Thời gian 6:00 - 9:00 sáng)')
+('DV1',N'Chăm sóc thú cưng',		250000, N'Gồm: Tắm rửa, Cắt tỉa (lông, móng), Trông giữ thú cưng. Lưu ý: Áp dụng cho 1 thú cưng và trông giữ/1 ngày'),
+('DV2',N'Vệ sinh xe (xe 4 bánh)',	200000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
+('DV3',N'Vệ sinh xe (xe 2 bánh)',	100000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
+('DV4',N'Giặt ủi quần áo',		100000,	N'Lưu ý: Áp dụng cho 1kg quần áo/1 lượt'),
+('DV5',N'Massage toàn thân',		250000,	N'Lưu ý: Áp dụng cho 1 người/2 giờ'),
+('DV6',N'Massage chân',			150000,	N'Lưu ý: Áp dụng cho 1 người/1 giờ'),
+('DV7',N'Đặt suất ăn Buffet',		150000,	N'Lưu ý: Áp dụng cho 1 người/1 lượt (Thời gian 6:00 - 9:00 sáng)')
 
 create table PhieuPhat
 (
@@ -141,7 +142,7 @@ create table PhieuPhat
 
 create table HoaDon 
 (
-	MaHD			int identity,
+	MaHD			varchar(10),
 	MaKH			int	not null,
 	MaPH			int	not null,
 	TGNhanPhong		datetime not null,
@@ -159,8 +160,8 @@ create table HoaDon
 
 create table HoaDon_DichVu
 (
-	MaHD		int,
-	MaDV		int,
+	MaHD		varchar(10),
+	MaDV		varchar(30),
 	SoLuongDV	int,
 	ThanhTienDV int,
 	constraint pk_MaHD_MaDV_HoaDon_DichVu primary key (MaHD,MaDV),
@@ -170,7 +171,7 @@ create table HoaDon_DichVu
 
 create table NhaCC
 (
-	MaNCC		int identity,
+	MaNCC		varchar(30),
 	TenNCC		nvarchar(max) not null check(TenNCC<>''),
 	DiaChiNCC	nvarchar(100) not null check(DiaChiNCC<>''),
 	SDTNCC		varchar(10)	not null check(SDTNCC<>''),
@@ -180,11 +181,11 @@ create table NhaCC
 
 create table NhapKho 
 (
-	MaNK			int identity,
+	MaNK			varchar(10),
 	MaNV			int,
-	MaNCC			int,
-	MaVT			int,
-	ThoiGianNhap	datetime not null,
+	MaNCC			varchar(30),
+	MaVT			varchar(30),
+	ThoiGianNK		datetime not null,
 	SoLuong			int	default 0 not null,
 	DonGiaNhap		int	default 0 not null,
 	constraint pk_MaNK_NhapKho primary key (MaNK),   
