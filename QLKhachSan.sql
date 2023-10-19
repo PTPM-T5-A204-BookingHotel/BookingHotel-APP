@@ -76,6 +76,7 @@ create table VatTu
 	constraint pk_MaVT_VatTu primary key (MaVT)
 )
 
+
 create table LoaiPhong
 (
 	MaLP	int identity,
