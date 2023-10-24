@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BLL_DAL
 {
-    public  class Basis
+    public class Basis
     {
         public void UpLoadImage(PictureBox pictureBox)
         {
@@ -26,14 +25,7 @@ namespace BLL_DAL
             }
 
         }
-        public byte[] ConvertImgToByte(Image img)
-        {
-            using (var ms = new MemoryStream())
-            {
-                img.Save(ms, img.RawFormat);
-                return ms.ToArray();
-            }
-        }
+
         public void clearTextBoxs(Control.ControlCollection controls)
         {
             foreach (Control control in controls)
@@ -85,6 +77,5 @@ namespace BLL_DAL
             return true;
 
         }
-
     }
 }

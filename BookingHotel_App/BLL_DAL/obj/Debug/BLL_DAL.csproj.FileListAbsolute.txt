@@ -1,7 +1,7 @@
+C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.dll.config
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.dll
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.pdb
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.csproj.AssemblyReference.cache
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.dll
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.pdb
-C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.dll.config

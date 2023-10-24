@@ -46,7 +46,7 @@ namespace BookingHotel_App
         }
         public void LoadData()
         {
-            dgv_VatTu.DataSource = vt_blldal.getVTs();
+            vt_blldal.getVTs(dgv_VatTu);
             tssLbl_TongCong.Text = dgv_VatTu.RowCount.ToString();
         }
         private void UC_VatTu_Load(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace BookingHotel_App
             Load_cboTimKiem();
             LoadData();
         }
-        public bool isThongTinVT(string mavt, string tenvt, string giavt,string soluong)
+        public bool isThongTinVT(string mavt, string tenvt, string giavt,string soluong,string anh)
         {
             if (mavt.Equals(""))
             {
@@ -85,6 +85,11 @@ namespace BookingHotel_App
             }
             else
                 ep.Clear();
+            if (anh == null)
+            {
+                this.Message("Chưa có ảnh", MyMessageBox.enmType.Error);
+                return false;
+            }
             return true;
         }
         private void tsBtn_Reset_Click(object sender, EventArgs e)
@@ -103,12 +108,19 @@ namespace BookingHotel_App
             string dvt = txt_DVT.Text.Trim();
             string soluong = txt_SL.Text.Trim();
             string gia = txt_GiaVT.Text.Trim();
-            byte[] anh = ba.ConvertImgToByte(pic_Image.Image);
-            if (isThongTinVT(mavt, tenvt, gia, soluong) && vt_blldal.isMaVT(mavt)==0)
+            string anh = pic_Image.ImageLocation;
+            if (isThongTinVT(mavt, tenvt, gia, soluong,anh))
             {
-                vt_blldal.insert(mavt, tenvt, dvt, thghieu, int.Parse(soluong), int.Parse(gia), anh);
-                this.Message("Success", MyMessageBox.enmType.Success);
-                LoadData();
+                if(vt_blldal.isMaVT(mavt) == 0)
+                {
+                    vt_blldal.insert(mavt, tenvt, dvt, thghieu, int.Parse(soluong), int.Parse(gia), anh);
+                    this.Message("Success", MyMessageBox.enmType.Success);
+                    LoadData();
+                }else
+                {
+                    this.Message("Vật tư đã có", MyMessageBox.enmType.Error);
+                }
+                
             }
 
         }
@@ -121,8 +133,8 @@ namespace BookingHotel_App
             string dvt = txt_DVT.Text.Trim();
             string soluong = txt_SL.Text.Trim();
             string gia = txt_GiaVT.Text.Trim();
-            byte[] anh = ba.ConvertImgToByte(pic_Image.Image);
-            if (isThongTinVT(mavt, tenvt, gia, soluong))
+            string anh = pic_Image.ImageLocation.ToString();
+            if (isThongTinVT(mavt, tenvt, gia, soluong,anh))
             {
                 vt_blldal.update(mavt, tenvt, dvt, thghieu, int.Parse(soluong), int.Parse(gia), anh);
                 this.Message("Success", MyMessageBox.enmType.Success);
@@ -221,14 +233,12 @@ namespace BookingHotel_App
             DataGridViewRow row = new DataGridViewRow();
             row = dgv_VatTu.Rows[e.RowIndex];
             txt_Ma.Text = row.Cells[0].Value.ToString();
-            var data = (byte[])(row.Cells[1].Value);
-            var stream = new MemoryStream(data);
-            pic_Image.Image = Image.FromStream(stream);
-            txt_TenVT.Text = row.Cells[2].Value.ToString();
-            txt_GiaVT.Text = row.Cells[3].Value.ToString();
-            txt_SL.Text = row.Cells[4].Value.ToString();
-            txt_DVT.Text = row.Cells[5].Value.ToString();
-            txt_ThgHieu.Text = row.Cells[6].Value.ToString();
+            txt_TenVT.Text = row.Cells[1].Value.ToString();
+            txt_GiaVT.Text = row.Cells[2].Value.ToString();
+            txt_SL.Text = row.Cells[3].Value.ToString();
+            txt_DVT.Text = row.Cells[4].Value.ToString();
+            txt_ThgHieu.Text = row.Cells[5].Value.ToString();
+            pic_Image.ImageLocation = vt_blldal.getAnh(txt_Ma.Text);
         }
 
         private void btn_UpImage_Click(object sender, EventArgs e)

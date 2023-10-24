@@ -1,17 +1,15 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace BLL_DAL
 {
     public class DichVu_BLL_DAL
     {
         public DichVu_BLL_DAL() { }
-        QLKHACHSANDataContext qlks = new QLKHACHSANDataContext();
+        QLKhachSanDataContext qlks = new QLKhachSanDataContext();
 
         public List<DichVu> getDVs()
         {
@@ -20,10 +18,10 @@ namespace BLL_DAL
         }
         public int isMaDV(string madv)
         {
-            var kq = qlks.DichVus.Where(o=>o.MaDV.Equals(madv)).Count();
+            var kq = qlks.DichVus.Where(o => o.MaDV.Equals(madv)).Count();
             return kq;
         }
-        public void insert(string madv,string tendv,int giadv,string mota)
+        public void insert(string madv, string tendv, int giadv, string mota)
         {
             DichVu dv = new DichVu();
             dv.MaDV = madv;
@@ -36,7 +34,7 @@ namespace BLL_DAL
         public void delete(string madv)
         {
             DichVu dv = qlks.DichVus.Where(o => o.MaDV.Equals(madv)).FirstOrDefault();
-            if (dv!=null)
+            if (dv != null)
             {
                 qlks.DichVus.DeleteOnSubmit(dv);
                 qlks.SubmitChanges();
@@ -44,7 +42,7 @@ namespace BLL_DAL
         }
         public void update(string madv, string tendv, int giadv, string mota)
         {
-            DichVu dv = qlks.DichVus.Where(o=>o.MaDV.Equals(madv)).FirstOrDefault();
+            DichVu dv = qlks.DichVus.Where(o => o.MaDV.Equals(madv)).FirstOrDefault();
             if (dv != null)
             {
                 dv.TenDV = tendv;
@@ -73,7 +71,7 @@ namespace BLL_DAL
         public List<DichVu> sort(int sortType)
         {
             var kq = from dv in qlks.DichVus orderby dv.TenDV ascending select dv;
-            switch(sortType) 
+            switch (sortType)
             {
                 case 0: kq = from dv in qlks.DichVus orderby dv.TenDV ascending select dv; break;
                 case 1: kq = from dv in qlks.DichVus orderby dv.GiaDV ascending, dv.TenDV descending select dv; break;
@@ -81,7 +79,7 @@ namespace BLL_DAL
             }
             return kq.ToList();
         }
-        public List<DichVu> search_KhoangGia(int giabd,int giakt)
+        public List<DichVu> search_KhoangGia(int giabd, int giakt)
         {
             var kq = from dv in qlks.DichVus where dv.GiaDV >= giabd && dv.GiaDV <= giakt select dv;
             return kq.ToList();

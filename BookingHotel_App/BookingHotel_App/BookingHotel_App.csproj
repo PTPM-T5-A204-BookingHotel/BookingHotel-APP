@@ -246,7 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL_DAL\BLL_DAL.csproj">
-      <Project>{4597F059-D7D8-4360-9D72-BBC584529B6C}</Project>
+      <Project>{930f7edf-c0af-4b4b-911c-637802639b0c}</Project>
       <Name>BLL_DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DesignControl\DesignControl.csproj">

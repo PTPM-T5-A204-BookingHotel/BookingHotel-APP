@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKhachSan" Class="QLKHACHSANDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKhachSan" Class="QLKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-MEV5PNJ\SQLEXPRESS;Initial Catalog=QLKhachSan;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLKhachSanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChucVu" Member="ChucVus">
     <Type Name="ChucVu">
@@ -34,16 +34,6 @@
       <Association Name="Phong_HoaDon" Member="Phong" ThisKey="MaPH" OtherKey="MaPH" Type="Phong" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.HoaDon_DichVu" Member="HoaDon_DichVus">
-    <Type Name="HoaDon_DichVu">
-      <Column Name="MaHD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaDV" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SoLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThanhTienDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DichVu_HoaDon_DichVu" Member="DichVu" ThisKey="MaDV" OtherKey="MaDV" Type="DichVu" IsForeignKey="true" />
-      <Association Name="HoaDon_HoaDon_DichVu" Member="HoaDon" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDon" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
       <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -52,11 +42,21 @@
       <Column Name="GioiTinhKH" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="DiaChiKH" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="SDTKH" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="AnhKH" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AnhKH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="EmailKH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="NgaySinhKH" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon" />
       <Association Name="KhachHang_PhieuPhat" Member="PhieuPhats" ThisKey="MaKH" OtherKey="MaKH" Type="PhieuPhat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon_DichVu" Member="HoaDon_DichVus">
+    <Type Name="HoaDon_DichVu">
+      <Column Name="MaHD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDV" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTienDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DichVu_HoaDon_DichVu" Member="DichVu" ThisKey="MaDV" OtherKey="MaDV" Type="DichVu" IsForeignKey="true" />
+      <Association Name="HoaDon_HoaDon_DichVu" Member="HoaDon" ThisKey="MaHD" OtherKey="MaHD" Type="HoaDon" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
@@ -93,7 +93,7 @@
       <Column Name="SoDienThoaiNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinhNV" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="DiaChiNV" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="AnhNV" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AnhNV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="TGNhanViec" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="TGThoiViec" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="EmailNV" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
@@ -155,7 +155,7 @@
       <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="MaQuyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AnhTK" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AnhTK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="TaiKhoan_TaiKhoan_ManHinh" Member="TaiKhoan_ManHinhs" ThisKey="TenTK" OtherKey="TenTK" Type="TaiKhoan_ManHinh" />
       <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
       <Association Name="Quyen_TaiKhoan" Member="Quyen" ThisKey="MaQuyen" OtherKey="MaQuyen" Type="Quyen" IsForeignKey="true" />
@@ -177,7 +177,7 @@
       <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AnhVT" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AnhVT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="VatTu_NhapKho" Member="NhapKhos" ThisKey="MaVT" OtherKey="MaVT" Type="NhapKho" />
     </Type>
   </Table>

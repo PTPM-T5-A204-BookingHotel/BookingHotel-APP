@@ -34,13 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachKH));
             this.dgv_KhachHang = new System.Windows.Forms.DataGridView();
-            this.AnhNV = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CCCDKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +53,12 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
+            this.CCCDKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDTKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -87,7 +86,6 @@
             this.dgv_KhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_KhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_KhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AnhNV,
             this.CCCDKH,
             this.HoTenKH,
             this.GioiTinhKH,
@@ -120,65 +118,6 @@
             this.dgv_KhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_KhachHang.Size = new System.Drawing.Size(742, 417);
             this.dgv_KhachHang.TabIndex = 11;
-            // 
-            // AnhNV
-            // 
-            this.AnhNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.AnhNV.DataPropertyName = "AnhNV";
-            this.AnhNV.HeaderText = "Hình ành";
-            this.AnhNV.Name = "AnhNV";
-            this.AnhNV.ReadOnly = true;
-            this.AnhNV.Width = 64;
-            // 
-            // CCCDKH
-            // 
-            this.CCCDKH.DataPropertyName = "CCCDKH";
-            this.CCCDKH.HeaderText = "CCCD";
-            this.CCCDKH.Name = "CCCDKH";
-            this.CCCDKH.ReadOnly = true;
-            // 
-            // HoTenKH
-            // 
-            this.HoTenKH.DataPropertyName = "HoTenKH";
-            this.HoTenKH.HeaderText = "Họ tên";
-            this.HoTenKH.Name = "HoTenKH";
-            this.HoTenKH.ReadOnly = true;
-            // 
-            // GioiTinhKH
-            // 
-            this.GioiTinhKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.GioiTinhKH.DataPropertyName = "GioiTinhKH";
-            this.GioiTinhKH.HeaderText = "Giới tính";
-            this.GioiTinhKH.Name = "GioiTinhKH";
-            this.GioiTinhKH.ReadOnly = true;
-            this.GioiTinhKH.Width = 58;
-            // 
-            // SDTKH
-            // 
-            this.SDTKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SDTKH.DataPropertyName = "SDTKH";
-            this.SDTKH.HeaderText = "Số điện thoại";
-            this.SDTKH.Name = "SDTKH";
-            this.SDTKH.ReadOnly = true;
-            this.SDTKH.Width = 107;
-            // 
-            // NgaySinhKH
-            // 
-            this.NgaySinhKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.NgaySinhKH.DataPropertyName = "NgaySinhKH";
-            this.NgaySinhKH.HeaderText = "Ngày sinh";
-            this.NgaySinhKH.Name = "NgaySinhKH";
-            this.NgaySinhKH.ReadOnly = true;
-            this.NgaySinhKH.Width = 88;
-            // 
-            // DiaChiKH
-            // 
-            this.DiaChiKH.DataPropertyName = "DiaChiKH";
-            this.DiaChiKH.HeaderText = "Địa chỉ";
-            this.DiaChiKH.Name = "DiaChiKH";
-            this.DiaChiKH.ReadOnly = true;
-            this.DiaChiKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DiaChiKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel1
             // 
@@ -376,6 +315,56 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             // 
+            // CCCDKH
+            // 
+            this.CCCDKH.DataPropertyName = "CCCDKH";
+            this.CCCDKH.HeaderText = "CCCD";
+            this.CCCDKH.Name = "CCCDKH";
+            this.CCCDKH.ReadOnly = true;
+            // 
+            // HoTenKH
+            // 
+            this.HoTenKH.DataPropertyName = "HoTenKH";
+            this.HoTenKH.HeaderText = "Họ tên";
+            this.HoTenKH.Name = "HoTenKH";
+            this.HoTenKH.ReadOnly = true;
+            // 
+            // GioiTinhKH
+            // 
+            this.GioiTinhKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.GioiTinhKH.DataPropertyName = "GioiTinhKH";
+            this.GioiTinhKH.HeaderText = "Giới tính";
+            this.GioiTinhKH.Name = "GioiTinhKH";
+            this.GioiTinhKH.ReadOnly = true;
+            this.GioiTinhKH.Width = 86;
+            // 
+            // SDTKH
+            // 
+            this.SDTKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.SDTKH.DataPropertyName = "SDTKH";
+            this.SDTKH.HeaderText = "Số điện thoại";
+            this.SDTKH.Name = "SDTKH";
+            this.SDTKH.ReadOnly = true;
+            this.SDTKH.Width = 107;
+            // 
+            // NgaySinhKH
+            // 
+            this.NgaySinhKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.NgaySinhKH.DataPropertyName = "NgaySinhKH";
+            this.NgaySinhKH.HeaderText = "Ngày sinh";
+            this.NgaySinhKH.Name = "NgaySinhKH";
+            this.NgaySinhKH.ReadOnly = true;
+            this.NgaySinhKH.Width = 88;
+            // 
+            // DiaChiKH
+            // 
+            this.DiaChiKH.DataPropertyName = "DiaChiKH";
+            this.DiaChiKH.HeaderText = "Địa chỉ";
+            this.DiaChiKH.Name = "DiaChiKH";
+            this.DiaChiKH.ReadOnly = true;
+            this.DiaChiKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiaChiKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // UC_DanhSachKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,13 +391,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_KhachHang;
-        private System.Windows.Forms.DataGridViewImageColumn AnhNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CCCDKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinhKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDTKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinhKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiKH;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.Label label2;
@@ -428,5 +410,11 @@
         private System.Windows.Forms.ToolStripButton tsBtn_TimKiem;
         private System.Windows.Forms.ToolStripButton tsBtn_InExcel;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCCDKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinhKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDTKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinhKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiKH;
     }
 }

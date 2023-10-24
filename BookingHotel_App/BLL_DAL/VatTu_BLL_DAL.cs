@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL_DAL
 {
     public class VatTu_BLL_DAL
     {
         public VatTu_BLL_DAL() { }
-        QLKHACHSANDataContext qlks = new QLKHACHSANDataContext();
+        QLKhachSanDataContext qlks = new QLKhachSanDataContext();
 
-        public List<VatTu> getVTs()
+        public void getVTs(DataGridView dgv)
         {
-            var VTs = from VT in qlks.VatTus select VT;
-            return VTs.ToList();
+            var VTs = from VT in qlks.VatTus select new { VT.MaVT, VT.TenVT, VT.DonGia, VT.SoLuong, VT.DonViTinh, VT.ThuongHieu };
+            dgv.DataSource = VTs;
         }
         public int isMaVT(string maVT)
         {
             var kq = qlks.VatTus.Where(o => o.MaVT.Equals(maVT)).Count();
             return kq;
         }
-        public void insert(string maVT, string tenVT, string dvt,string thuonghieu,int soluong, int dongia, byte[] Anh)
+        public void insert(string maVT, string tenVT, string dvt, string thuonghieu, int soluong, int dongia, string Anh)
         {
             VatTu VT = new VatTu();
             VT.MaVT = maVT;
@@ -44,7 +44,7 @@ namespace BLL_DAL
                 qlks.SubmitChanges();
             }
         }
-        public void update(string maVT, string tenVT, string dvt, string thuonghieu, int soluong, int dongia, byte[] Anh)
+        public void update(string maVT, string tenVT, string dvt, string thuonghieu, int soluong, int dongia, string Anh)
         {
             VatTu VT = qlks.VatTus.Where(o => o.MaVT.Equals(maVT)).FirstOrDefault();
             if (VT != null)
@@ -58,7 +58,12 @@ namespace BLL_DAL
                 qlks.SubmitChanges();
             }
         }
-        public List<VatTu> search(int searchType,string value)
+        public string getAnh(string mavt)
+        {
+            var kq = from vt in qlks.VatTus where vt.MaVT.Equals(mavt) select vt.AnhVT;
+            return kq.FirstOrDefault();
+        }
+        public List<VatTu> search(int searchType, string value)
         {
             var kq = from VT in qlks.VatTus where VT.TenVT.Contains(value) select VT;
             switch (searchType)
@@ -83,7 +88,7 @@ namespace BLL_DAL
         public List<VatTu> sort(int sortType)
         {
             var kq = from VT in qlks.VatTus orderby VT.TenVT ascending select VT;
-            switch(sortType)
+            switch (sortType)
             {
                 case 0: kq = from VT in qlks.VatTus orderby VT.TenVT ascending select VT; break;
                 case 1: kq = from VT in qlks.VatTus orderby VT.DonGia ascending, VT.SoLuong descending select VT; break;
@@ -93,8 +98,8 @@ namespace BLL_DAL
         }
         public List<VatTu> search_KhoangGia(int giabd, int giakt)
         {
-            var kq = from VT in qlks.VatTus where VT.DonGia >= giabd && VT.DonGia<=giakt select VT;
-            
+            var kq = from VT in qlks.VatTus where VT.DonGia >= giabd && VT.DonGia <= giakt select VT;
+
             return kq.ToList();
         }
     }

@@ -86,11 +86,18 @@ namespace BookingHotel_App
             string tendv = txt_TenDV.Text.Trim();
             string giadv = txt_GiaDV.Text.Trim();
             string mota = rtxt_MoTa.Text.Trim();
-            if (isThongTinDV(madv, tendv, giadv) && dv_blldal.isMaDV(madv)==0)
+            if (isThongTinDV(madv, tendv, giadv))
             {
-                dv_blldal.insert(madv, tendv, int.Parse(giadv),mota);
-                this.Message("Success", MyMessageBox.enmType.Success);
-                LoadData();
+                if(dv_blldal.isMaDV(madv) == 0)
+                {
+                    dv_blldal.insert(madv, tendv, int.Parse(giadv), mota);
+                    this.Message("Success", MyMessageBox.enmType.Success);
+                    LoadData();
+                }else
+                {
+                    this.Message("Dịch vụ đã có", MyMessageBox.enmType.Error);
+                }    
+                
             }
         }
 

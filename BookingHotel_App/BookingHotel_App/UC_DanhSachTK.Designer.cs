@@ -34,11 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachTK));
             this.dgv_TaiKhoan = new System.Windows.Forms.DataGridView();
-            this.AnhTK = new System.Windows.Forms.DataGridViewImageColumn();
-            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbo_Quyen = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +51,10 @@
             this.tsBtn_SapXep = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
+            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -83,7 +82,6 @@
             this.dgv_TaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AnhTK,
             this.TenTK,
             this.HoTenNV,
             this.MatKhau,
@@ -114,47 +112,6 @@
             this.dgv_TaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_TaiKhoan.Size = new System.Drawing.Size(787, 420);
             this.dgv_TaiKhoan.TabIndex = 11;
-            // 
-            // AnhTK
-            // 
-            this.AnhTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.AnhTK.DataPropertyName = "AnhTK";
-            this.AnhTK.HeaderText = "Hình ành";
-            this.AnhTK.Name = "AnhTK";
-            this.AnhTK.ReadOnly = true;
-            this.AnhTK.Width = 64;
-            // 
-            // TenTK
-            // 
-            this.TenTK.DataPropertyName = "TenTK";
-            this.TenTK.HeaderText = "Tên tài khoản";
-            this.TenTK.Name = "TenTK";
-            this.TenTK.ReadOnly = true;
-            // 
-            // HoTenNV
-            // 
-            this.HoTenNV.DataPropertyName = "HoTenNV";
-            this.HoTenNV.HeaderText = "Nhân viên";
-            this.HoTenNV.Name = "HoTenNV";
-            this.HoTenNV.ReadOnly = true;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.ReadOnly = true;
-            this.MatKhau.Width = 84;
-            // 
-            // TenQuyen
-            // 
-            this.TenQuyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TenQuyen.DataPropertyName = "TenQuyen";
-            this.TenQuyen.HeaderText = "Quyền";
-            this.TenQuyen.Name = "TenQuyen";
-            this.TenQuyen.ReadOnly = true;
-            this.TenQuyen.Width = 72;
             // 
             // panel1
             // 
@@ -325,6 +282,38 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             // 
+            // TenTK
+            // 
+            this.TenTK.DataPropertyName = "TenTK";
+            this.TenTK.HeaderText = "Tên tài khoản";
+            this.TenTK.Name = "TenTK";
+            this.TenTK.ReadOnly = true;
+            // 
+            // HoTenNV
+            // 
+            this.HoTenNV.DataPropertyName = "HoTenNV";
+            this.HoTenNV.HeaderText = "Nhân viên";
+            this.HoTenNV.Name = "HoTenNV";
+            this.HoTenNV.ReadOnly = true;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            this.MatKhau.Width = 91;
+            // 
+            // TenQuyen
+            // 
+            this.TenQuyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TenQuyen.DataPropertyName = "TenQuyen";
+            this.TenQuyen.HeaderText = "Quyền";
+            this.TenQuyen.Name = "TenQuyen";
+            this.TenQuyen.ReadOnly = true;
+            this.TenQuyen.Width = 72;
+            // 
             // UC_DanhSachTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,11 +340,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_TaiKhoan;
-        private System.Windows.Forms.DataGridViewImageColumn AnhTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenQuyen;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbo_Quyen;
         private System.Windows.Forms.Label label3;
@@ -373,5 +357,9 @@
         private System.Windows.Forms.ToolStripButton tsBtn_SapXep;
         private System.Windows.Forms.ToolStripButton tsBtn_TimKiem;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenQuyen;
     }
 }

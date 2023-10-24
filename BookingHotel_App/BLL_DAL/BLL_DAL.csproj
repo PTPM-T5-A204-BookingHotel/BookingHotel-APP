@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4597F059-D7D8-4360-9D72-BBC584529B6C}</ProjectGuid>
+    <ProjectGuid>{930F7EDF-C0AF-4B4B-911C-637802639B0C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL_DAL</RootNamespace>
@@ -34,7 +34,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,10 +51,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="QLKHACHSAN.designer.cs">
+    <Compile Include="QLKhachSan.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLKHACHSAN.dbml</DependentUpon>
+      <DependentUpon>QLKhachSan.dbml</DependentUpon>
     </Compile>
     <Compile Include="VatTu_BLL_DAL.cs" />
   </ItemGroup>
@@ -65,13 +64,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="QLKHACHSAN.dbml">
+    <None Include="QLKhachSan.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLKHACHSAN.designer.cs</LastGenOutput>
+      <LastGenOutput>QLKhachSan.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QLKHACHSAN.dbml.layout">
-      <DependentUpon>QLKHACHSAN.dbml</DependentUpon>
+    <None Include="QLKhachSan.dbml.layout">
+      <DependentUpon>QLKhachSan.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

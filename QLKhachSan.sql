@@ -28,7 +28,7 @@ create table NhanVien
 	SoDienThoaiNV   varchar(10)		not null check (SoDienThoaiNV <> ''),
 	NgaySinhNV      date			not null check (YEAR(GETDATE()) - YEAR(NgaySinhNV) >= 18),
 	DiaChiNV		nvarchar(max)	not null check (DiaChiNV <> ''),
-	AnhNV			image,
+	AnhNV			nvarchar(max),
 	TGNhanViec		date not null,
 	TGThoiViec		date,
 	EmailNV			varchar(100),
@@ -51,7 +51,7 @@ create table KhachHang
 	GioiTinhKH	nvarchar(5)		not null check (GioiTinhKH = N'Nam' or GioiTinhKH = N'Nữ'),
 	DiaChiKH	nvarchar(max)	not null check (DiaChiKH<>''),
 	SDTKH		varchar(10)		not null check (SDTKH<>''),
-	AnhKH		image,
+	AnhKH		nvarchar(max),
 	EmailKH		varchar(100),
 	NgaySinhKH	date			not null,
 	constraint pk_MaKH_KhachHang primary key (MaKH)
@@ -72,10 +72,11 @@ create table VatTu
 	DonViTinh	nvarchar(10),
 	SoLuong		int	default 0,
 	DonGia		int default 0,
-	AnhVT		image,
+	AnhVT		nvarchar(max),
 	constraint pk_MaVT_VatTu primary key (MaVT)
 )
 
+select * from VatTu
 
 create table LoaiPhong
 (
@@ -208,7 +209,7 @@ create table TaiKhoan
 	MaNV	int,
 	MatKhau varchar(30) not null,
 	MaQuyen int,
-	AnhTK	image,
+	AnhTK	nvarchar(max),
 	constraint pk_TenTK_TaiKhoan primary key (TenTK),
 	constraint fk_MaNV_TaiKhoan foreign key (MaNV) references NhanVien(MaNV),
 	constraint fk_MaQuyen_TaiKhoan foreign key (MaQuyen) references Quyen(MaQuyen)

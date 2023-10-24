@@ -70,7 +70,6 @@
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
             this.MaVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnhVT = new System.Windows.Forms.DataGridViewImageColumn();
             this.TenVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +104,6 @@
             this.dgv_VatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_VatTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaVT,
-            this.AnhVT,
             this.TenVT,
             this.DonGia,
             this.SoLuong,
@@ -520,16 +518,6 @@
             this.MaVT.ReadOnly = true;
             this.MaVT.Width = 52;
             // 
-            // AnhVT
-            // 
-            this.AnhVT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.AnhVT.DataPropertyName = "AnhVT";
-            this.AnhVT.HeaderText = "Ảnh vật tư";
-            this.AnhVT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.AnhVT.Name = "AnhVT";
-            this.AnhVT.ReadOnly = true;
-            this.AnhVT.Width = 75;
-            // 
             // TenVT
             // 
             this.TenVT.DataPropertyName = "TenVT";
@@ -633,7 +621,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVT;
-        private System.Windows.Forms.DataGridViewImageColumn AnhVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
