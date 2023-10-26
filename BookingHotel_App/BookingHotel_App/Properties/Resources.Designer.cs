@@ -263,6 +263,16 @@ namespace BookingHotel_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_supplier_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-supplier-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_supplies_50__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-supplies-50 (1)", resourceCulture);

@@ -29,19 +29,18 @@ create table NhanVien
 	NgaySinhNV      date			not null check (YEAR(GETDATE()) - YEAR(NgaySinhNV) >= 18),
 	DiaChiNV		nvarchar(max)	not null check (DiaChiNV <> ''),
 	AnhNV			nvarchar(max),
-	TGNhanViec		date not null,
-	TGThoiViec		date,
 	EmailNV			varchar(100),
 	constraint pk_MaNV_NhanVien primary key (MaNV),
 	constraint fk_MaCV_NhanVien foreign key (MaCV) references ChucVu(MaCV),
 )
 
-insert into NhanVien(HoTenNV,MaCV,GioiTinhNV,CCCDNV,SoDienThoaiNV,NgaySinhNV,DiaChiNV,TGNhanViec) values 
-(N'Trần Đức Nhật Nam',	1,	N'Nam',	'01234567896',	'0987654321', '27/07/2002', N'TPHCM',	'20/10/2022'),
-(N'Nguyễn Thị Thương',	2,	N'Nữ',	'01357913579',	'0213355779', '12/12/2000',	N'TPHCM',	'10/10/2021'),
-(N'Phan Gia Huy',		3,	N'Nam',	'02468246800',	'0224466880', '11/09/2001',	N'TPHCM',	'20/02/2022'),
-(N'Huỳnh Thế Bảo',		4,	N'Nam',	'09998887777',	'0111222333', '01/01/1999', N'TPHCM',	'19/02/2022'),
-(N'Nguyễn Thanh Tâm',	4,	N'Nữ',	'02224446667',	'0999777555', '24/06/2003',	N'TPHCM',	'30/12/2021')
+insert into NhanVien(HoTenNV,MaCV,GioiTinhNV,CCCDNV,SoDienThoaiNV,NgaySinhNV,DiaChiNV) values 
+(N'Trần Đức Nhật Nam',	1,	N'Nam',	'012345678963',	'0987654321', '27/07/2002', N'TPHCM'),
+(N'Nguyễn Thị Thương',	2,	N'Nữ',	'013579135792',	'0213355779', '12/12/2000',	N'TPHCM'),
+(N'Phan Gia Huy',		3,	N'Nam',	'024682468001',	'0224466880', '11/09/2001',	N'TPHCM'),
+(N'Huỳnh Thế Bảo',		4,	N'Nam',	'099988877774',	'0111222333', '01/01/1999', N'TPHCM'),
+(N'Nguyễn Thanh Tâm',	4,	N'Nữ',	'022244466676',	'0999777555', '24/06/2003',	N'TPHCM')
+
 
 create table KhachHang 
 (
@@ -72,11 +71,10 @@ create table VatTu
 	DonViTinh	nvarchar(10),
 	SoLuong		int	default 0,
 	DonGia		int default 0,
+	GiaNhap		int default 0,
 	AnhVT		nvarchar(max),
 	constraint pk_MaVT_VatTu primary key (MaVT)
 )
-
-select * from VatTu
 
 create table LoaiPhong
 (
@@ -99,6 +97,7 @@ create table Phong
 	MaLP	int not null,
 	Tang	int not null,
 	TinhTrangPH	nvarchar(50) default N'Trống' check (TinhTrangPH = N'Trống' or TinhTrangPH = N'Đã đặt' or TinhTrangPH = N'Đang sửa/dọn' or TinhTrangPH = N'Đang thuê'),
+	TGNhanPhong datetime,
 	constraint pk_MaPH_Phong primary key (MaPH),
 	constraint fk_MaLP_Phong foreign key (MaLP) references LoaiPhong(MaLP)
 )
@@ -128,19 +127,6 @@ insert into DichVu values
 ('DV6',N'Massage chân',			150000,	N'Lưu ý: Áp dụng cho 1 người/1 giờ'),
 ('DV7',N'Đặt suất ăn Buffet',		150000,	N'Lưu ý: Áp dụng cho 1 người/1 lượt (Thời gian 6:00 - 9:00 sáng)')
 
-create table PhieuPhat
-(
-	MaPhieuPhat int identity,
-	MaPH		int,
-	MaKH		int,
-	TieuDe		nvarchar(max) not null check(TieuDe<>''),
-	NoiDung		nvarchar(max) not null check(NoiDung<>''),
-	TienPhat	int default 0,
-	TGLapPhieu	datetime not null,
-	constraint pk_MaPhieuPhat_PhieuPhat primary key (MaPhieuPhat),
-	constraint fk_MaKH_PhieuPhat foreign key (MaKH) references KhachHang(MaKH),
-	constraint fk_MaPH_PhieuPhat foreign key (MaPH) references Phong(MaPH)
-)
 
 create table HoaDon 
 (
@@ -151,13 +137,11 @@ create table HoaDon
 	TGTraPhong		datetime not null,
 	SoNgayLuuTru	int default 0,
 	TongTien		int	default 0,
-	MaPhieuPhat		int,
 	GiamGia			int default 0,
 	ThanhTienHD		int	default 0,
 	constraint pk_MaHD_HoaDon primary key (MaHD),
 	constraint fk_MaKH_HoaDon foreign key (MaKH) references KhachHang(MaKH),
 	constraint fk_MaPH_HoaDon foreign key (MaPH) references Phong(MaPH),
-	constraint fk_MaPhieuPhat_HoaDon foreign key (MaPhieuPhat) references PhieuPhat(MaPhieuPhat),
 )
 
 create table HoaDon_DichVu
@@ -171,12 +155,24 @@ create table HoaDon_DichVu
 	constraint fk_MaDV_HoaDon_DichVu foreign key (MaDV) references DichVu(MaDV)
 )
 
+create table HoaDon_VatTu
+(
+	MaHD		varchar(10),
+	MaVT		varchar(30),
+	SoLuongVT	int,
+	ThanhTienVT int,
+	constraint pk_MaHD_MaVT_HoaDon_VatTu primary key (MaHD,MaVT),
+	constraint fk_MaHD_HoaDon_VatTu foreign key (MaHD) references HoaDon(MaHD),
+	constraint fk_MaVT_HoaDon_VatTu foreign key (MaVT) references VatTu(MaVT)
+)
+
 create table NhaCC
 (
 	MaNCC		varchar(30),
 	TenNCC		nvarchar(max) not null check(TenNCC<>''),
 	DiaChiNCC	nvarchar(100) not null check(DiaChiNCC<>''),
 	SDTNCC		varchar(10)	not null check(SDTNCC<>''),
+	GioiTinhNCC	nvarchar(5)		not null check (GioiTinhNCC = N'Nam' or GioiTinhNCC = N'Nữ'),
 	constraint pk_MaNCC_NhaCC primary key(MaNCC)
 )
 
@@ -188,8 +184,7 @@ create table NhapKho
 	MaNCC			varchar(30),
 	MaVT			varchar(30),
 	ThoiGianNK		datetime not null,
-	SoLuong			int	default 0 not null,
-	DonGiaNhap		int	default 0 not null,
+	SoLuong			int	default 0,
 	constraint pk_MaNK_NhapKho primary key (MaNK),   
 	constraint fk_MaNV_NhapKho foreign key (MaNV) references NhanVien(MaNV),
 	constraint fk_MaNCC_NhapKho foreign key (MaNCC) references NhaCC(MaNCC),

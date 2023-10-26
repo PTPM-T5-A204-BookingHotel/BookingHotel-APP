@@ -40,6 +40,7 @@
             this.ace_VatTu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_KhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_Kho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace_NhaCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_TaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_ThongTinTK = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_DanhSachTK = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -98,6 +99,7 @@
             this.ace_VatTu,
             this.ace_KhachHang,
             this.ace_Kho,
+            this.ace_NhaCC,
             this.ace_TaiKhoan});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
@@ -156,6 +158,14 @@
             this.ace_Kho.Name = "ace_Kho";
             this.ace_Kho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_Kho.Text = "Kho";
+            // 
+            // ace_NhaCC
+            // 
+            this.ace_NhaCC.ImageOptions.Image = global::BookingHotel_App.Properties.Resources.icons8_supplier_64__1_;
+            this.ace_NhaCC.Name = "ace_NhaCC";
+            this.ace_NhaCC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ace_NhaCC.Text = "Nhà cung cấp";
+            this.ace_NhaCC.Click += new System.EventHandler(this.ace_NhaCC_Click);
             // 
             // ace_TaiKhoan
             // 
@@ -334,5 +344,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_TaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_ThongTinTK;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_DanhSachTK;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_NhaCC;
     }
 }

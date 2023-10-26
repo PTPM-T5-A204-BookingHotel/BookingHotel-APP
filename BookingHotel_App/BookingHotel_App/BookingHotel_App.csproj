@@ -167,6 +167,12 @@
     <Compile Include="UC_DichVu.Designer.cs">
       <DependentUpon>UC_DichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_NhaCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhaCC.Designer.cs">
+      <DependentUpon>UC_NhaCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_VatTu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DichVu.resx">
       <DependentUpon>UC_DichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhaCC.resx">
+      <DependentUpon>UC_NhaCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_VatTu.resx">
       <DependentUpon>UC_VatTu.cs</DependentUpon>
@@ -322,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="haarcascade_frontalface_alt_tree.xml" />
+    <None Include="Images\Forms\icons8-supplier-64 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -32,9 +32,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsBtn_Them = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.txt_ChucVu = new DesignControl.TextForNumber();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_ChucVu = new System.Windows.Forms.ComboBox();
+            this.txt_ChucVu = new DesignControl.TextForLetter();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             this.tsBtn_Them.Name = "tsBtn_Them";
             this.tsBtn_Them.Size = new System.Drawing.Size(69, 24);
             this.tsBtn_Them.Text = "Thêm";
+            this.tsBtn_Them.Click += new System.EventHandler(this.tsBtn_Them_Click);
             // 
             // tsBtn_Xoa
             // 
@@ -67,16 +68,7 @@
             this.tsBtn_Xoa.Name = "tsBtn_Xoa";
             this.tsBtn_Xoa.Size = new System.Drawing.Size(56, 24);
             this.tsBtn_Xoa.Text = "Xóa";
-            // 
-            // txt_ChucVu
-            // 
-            this.txt_ChucVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_ChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ChucVu.ForeColor = System.Drawing.Color.White;
-            this.txt_ChucVu.Location = new System.Drawing.Point(12, 39);
-            this.txt_ChucVu.Name = "txt_ChucVu";
-            this.txt_ChucVu.Size = new System.Drawing.Size(287, 22);
-            this.txt_ChucVu.TabIndex = 26;
+            this.tsBtn_Xoa.Click += new System.EventHandler(this.tsBtn_Xoa_Click);
             // 
             // label1
             // 
@@ -96,10 +88,20 @@
             this.cbo_ChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_ChucVu.ForeColor = System.Drawing.Color.White;
             this.cbo_ChucVu.FormattingEnabled = true;
-            this.cbo_ChucVu.Location = new System.Drawing.Point(96, 88);
+            this.cbo_ChucVu.Location = new System.Drawing.Point(61, 88);
             this.cbo_ChucVu.Name = "cbo_ChucVu";
-            this.cbo_ChucVu.Size = new System.Drawing.Size(203, 24);
+            this.cbo_ChucVu.Size = new System.Drawing.Size(238, 24);
             this.cbo_ChucVu.TabIndex = 30;
+            // 
+            // txt_ChucVu
+            // 
+            this.txt_ChucVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_ChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ChucVu.ForeColor = System.Drawing.Color.White;
+            this.txt_ChucVu.Location = new System.Drawing.Point(12, 42);
+            this.txt_ChucVu.Name = "txt_ChucVu";
+            this.txt_ChucVu.Size = new System.Drawing.Size(287, 22);
+            this.txt_ChucVu.TabIndex = 31;
             // 
             // frm_ChucVu
             // 
@@ -108,14 +110,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 169);
-            this.Controls.Add(this.cbo_ChucVu);
             this.Controls.Add(this.txt_ChucVu);
+            this.Controls.Add(this.cbo_ChucVu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_ChucVu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chức vụ";
+            this.Load += new System.EventHandler(this.frm_ChucVu_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -128,8 +131,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsBtn_Them;
         private System.Windows.Forms.ToolStripButton tsBtn_Xoa;
-        private DesignControl.TextForNumber txt_ChucVu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo_ChucVu;
+        private DesignControl.TextForLetter txt_ChucVu;
     }
 }

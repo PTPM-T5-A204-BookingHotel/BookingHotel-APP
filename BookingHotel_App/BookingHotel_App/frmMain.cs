@@ -24,6 +24,7 @@ namespace BookingHotel_App
         UC_VatTu ucvt;
         UC_DanhSachTK ucDSTK;
         UC_DanhSachHD ucDSHD;
+        UC_NhaCC ucncc;
         private void ace_DangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -107,6 +108,19 @@ namespace BookingHotel_App
             }
             else
                 ucDSHD.BringToFront();
+        }
+
+        private void ace_NhaCC_Click(object sender, EventArgs e)
+        {
+            if (ucncc == null)
+            {
+                ucncc = new UC_NhaCC();
+                ucncc.Dock = DockStyle.Fill;
+                MainContainer.Controls.Add(ucncc);
+                ucncc.BringToFront();
+            }
+            else
+                ucncc.BringToFront();
         }
     }
 }

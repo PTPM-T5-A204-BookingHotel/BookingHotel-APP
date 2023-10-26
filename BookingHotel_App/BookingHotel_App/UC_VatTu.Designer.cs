@@ -51,7 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_GiaBD = new DesignControl.TextForNumber();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_GiaVT = new DesignControl.TextForNumber();
+            this.txt_GiaBan = new DesignControl.TextForNumber();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_TenVT = new DesignControl.TextForLetter();
@@ -69,9 +69,12 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
+            this.txt_GiaNhap = new DesignControl.TextForNumber();
+            this.label10 = new System.Windows.Forms.Label();
             this.MaVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThuongHieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,6 +109,7 @@
             this.MaVT,
             this.TenVT,
             this.DonGia,
+            this.GiaNhap,
             this.SoLuong,
             this.DonViTinh,
             this.ThuongHieu});
@@ -141,6 +145,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_GiaNhap);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.cbo_LoaiSapXep);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.pic_Image);
@@ -156,7 +162,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txt_GiaBD);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txt_GiaVT);
+            this.panel1.Controls.Add(this.txt_GiaBan);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_TenVT);
@@ -329,15 +335,15 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Giá bắt đầu";
             // 
-            // txt_GiaVT
+            // txt_GiaBan
             // 
-            this.txt_GiaVT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_GiaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GiaVT.ForeColor = System.Drawing.Color.White;
-            this.txt_GiaVT.Location = new System.Drawing.Point(437, 203);
-            this.txt_GiaVT.Name = "txt_GiaVT";
-            this.txt_GiaVT.Size = new System.Drawing.Size(162, 22);
-            this.txt_GiaVT.TabIndex = 12;
+            this.txt_GiaBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_GiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GiaBan.ForeColor = System.Drawing.Color.White;
+            this.txt_GiaBan.Location = new System.Drawing.Point(437, 203);
+            this.txt_GiaBan.Name = "txt_GiaBan";
+            this.txt_GiaBan.Size = new System.Drawing.Size(162, 22);
+            this.txt_GiaBan.TabIndex = 12;
             // 
             // label4
             // 
@@ -346,9 +352,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(434, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 16);
+            this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Giá";
+            this.label4.Text = "Giá bán";
             // 
             // label3
             // 
@@ -509,6 +515,27 @@
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
+            // txt_GiaNhap
+            // 
+            this.txt_GiaNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_GiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GiaNhap.ForeColor = System.Drawing.Color.White;
+            this.txt_GiaNhap.Location = new System.Drawing.Point(605, 203);
+            this.txt_GiaNhap.Name = "txt_GiaNhap";
+            this.txt_GiaNhap.Size = new System.Drawing.Size(162, 22);
+            this.txt_GiaNhap.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(602, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 16);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Giá nhập";
+            // 
             // MaVT
             // 
             this.MaVT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -528,9 +555,16 @@
             // DonGia
             // 
             this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Giá";
+            this.DonGia.HeaderText = "Giá bán";
             this.DonGia.Name = "DonGia";
             this.DonGia.ReadOnly = true;
+            // 
+            // GiaNhap
+            // 
+            this.GiaNhap.DataPropertyName = "GiaNhap";
+            this.GiaNhap.HeaderText = "Giá nhập";
+            this.GiaNhap.Name = "GiaNhap";
+            this.GiaNhap.ReadOnly = true;
             // 
             // SoLuong
             // 
@@ -596,7 +630,7 @@
         private System.Windows.Forms.Label label6;
         private DesignControl.TextForNumber txt_GiaBD;
         private System.Windows.Forms.Label label5;
-        private DesignControl.TextForNumber txt_GiaVT;
+        private DesignControl.TextForNumber txt_GiaBan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private DesignControl.TextForLetter txt_TenVT;
@@ -620,9 +654,12 @@
         private System.Windows.Forms.ComboBox cbo_LoaiSapXep;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
+        private DesignControl.TextForNumber txt_GiaNhap;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThuongHieu;

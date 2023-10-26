@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachNV));
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,6 +59,7 @@
             this.GioiTinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoDienThoaiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.panel1.SuspendLayout();
@@ -72,6 +74,8 @@
             this.dgv_NhanVien.AllowUserToResizeColumns = false;
             this.dgv_NhanVien.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             this.dgv_NhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NhanVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -79,8 +83,8 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_NhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -91,13 +95,14 @@
             this.GioiTinhNV,
             this.SoDienThoaiNV,
             this.NgaySinhNV,
+            this.Email,
             this.DiaChiNV});
             this.dgv_NhanVien.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_NhanVien.DefaultCellStyle = dataGridViewCellStyle3;
@@ -110,11 +115,13 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_NhanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_NhanVien.RowHeadersVisible = false;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.dgv_NhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NhanVien.Size = new System.Drawing.Size(747, 378);
             this.dgv_NhanVien.TabIndex = 11;
@@ -290,6 +297,7 @@
             this.tsBtn_SapXep.Name = "tsBtn_SapXep";
             this.tsBtn_SapXep.Size = new System.Drawing.Size(83, 24);
             this.tsBtn_SapXep.Text = "Sắp xếp";
+            this.tsBtn_SapXep.Click += new System.EventHandler(this.tsBtn_SapXep_Click);
             // 
             // tsBtn_TimKiem
             // 
@@ -298,6 +306,7 @@
             this.tsBtn_TimKiem.Name = "tsBtn_TimKiem";
             this.tsBtn_TimKiem.Size = new System.Drawing.Size(94, 24);
             this.tsBtn_TimKiem.Text = "Tìm kiếm";
+            this.tsBtn_TimKiem.Click += new System.EventHandler(this.tsBtn_TimKiem_Click);
             // 
             // tsBtn_InExcel
             // 
@@ -314,6 +323,7 @@
             this.tsBtn_Reset.Name = "tsBtn_Reset";
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
+            this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
             // CCCDNV
             // 
@@ -356,6 +366,13 @@
             this.NgaySinhNV.ReadOnly = true;
             this.NgaySinhNV.Width = 88;
             // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "EmailNV";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
             // DiaChiNV
             // 
             this.DiaChiNV.DataPropertyName = "DiaChiNV";
@@ -376,6 +393,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "UC_DanhSachNV";
             this.Size = new System.Drawing.Size(747, 511);
+            this.Load += new System.EventHandler(this.UC_DanhSachNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -415,6 +433,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinhNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoaiNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinhNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiNV;
     }
 }

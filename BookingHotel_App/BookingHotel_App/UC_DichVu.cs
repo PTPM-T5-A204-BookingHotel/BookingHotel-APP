@@ -107,24 +107,39 @@ namespace BookingHotel_App
             string tendv = txt_TenDV.Text.Trim();
             string giadv = txt_GiaDV.Text.Trim();
             string mota = rtxt_MoTa.Text.Trim();
-            if (isThongTinDV(madv, tendv, giadv))
+            if (dgv_DichVu.RowCount < 1)
             {
-                dv_blldal.update(madv, tendv, int.Parse(giadv), mota);
-                this.Message("Success", MyMessageBox.enmType.Success);
-                LoadData();
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
             }
+            else
+            {
+                if (isThongTinDV(madv, tendv, giadv))
+                {
+                    dv_blldal.update(madv, tendv, int.Parse(giadv), mota);
+                    this.Message("Success", MyMessageBox.enmType.Success);
+                    LoadData();
+                }
+            }
+            
         }
 
         private void tsBtn_Xoa_Click(object sender, EventArgs e)
         {
             string madv = txt_Ma.Text.Trim();
-            if (madv.Equals(""))
-                this.Message("Mã không để trống", MyMessageBox.enmType.Error);
+            if (dgv_DichVu.RowCount < 1)
+            {
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
             else
             {
-                dv_blldal.delete(madv);
-                this.Message("Success", MyMessageBox.enmType.Success);
-                LoadData();
+                if (madv.Equals(""))
+                    this.Message("Mã không để trống", MyMessageBox.enmType.Error);
+                else
+                {
+                    dv_blldal.delete(madv);
+                    this.Message("Success", MyMessageBox.enmType.Success);
+                    LoadData();
+                }
             }
         }
 
@@ -156,46 +171,53 @@ namespace BookingHotel_App
         {
             string tendv = txt_TenDV.Text.Trim();
             int index = cbo_LoaiTK.SelectedIndex;
-            switch (index)
+            if (dgv_DichVu.RowCount < 1)
             {
-                case 0:
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
+            else
+            {
+                switch (index)
                 {
-                       if (tendv.Equals(""))
-                       {
-                            this.Message("Chưa nhập tên dịch vụ", MyMessageBox.enmType.Error);
-                       }
-                       else
-                       {
-                            dgv_DichVu.DataSource = dv_blldal.search(tendv);
-                       }
-                       break;
-                 }
-                 case 1: 
-                 {
-                        dgv_DichVu.DataSource = dv_blldal.MaxGiaDV();
-                        break; 
-                 }
-                case 2:
-                    {
-                        dgv_DichVu.DataSource = dv_blldal.MinGiaDV();
-                        break;
-                    }
-                default:
-                    {
-                        
-                        if(txt_GiaBD.Text.Trim().Equals("") || txt_GiaKT.Text.Trim().Equals(""))
+                    case 0:
                         {
-                            this.Message("Giá bắt đầu/giá kết thúc không để trống", MyMessageBox.enmType.Error);
+                            if (tendv.Equals(""))
+                            {
+                                this.Message("Chưa nhập tên dịch vụ", MyMessageBox.enmType.Error);
+                            }
+                            else
+                            {
+                                dgv_DichVu.DataSource = dv_blldal.search(tendv);
+                            }
+                            break;
                         }
-                        else
+                    case 1:
                         {
-                            int giabd = int.Parse(txt_GiaBD.Text.Trim());
-                            int giakt = int.Parse(txt_GiaKT.Text.Trim());
-                            dgv_DichVu.DataSource = dv_blldal.search_KhoangGia(giabd, giakt);
+                            dgv_DichVu.DataSource = dv_blldal.MaxGiaDV();
+                            break;
                         }
-                        
-                        break;
-                    }
+                    case 2:
+                        {
+                            dgv_DichVu.DataSource = dv_blldal.MinGiaDV();
+                            break;
+                        }
+                    default:
+                        {
+
+                            if (txt_GiaBD.Text.Trim().Equals("") || txt_GiaKT.Text.Trim().Equals(""))
+                            {
+                                this.Message("Giá bắt đầu/giá kết thúc không để trống", MyMessageBox.enmType.Error);
+                            }
+                            else
+                            {
+                                int giabd = int.Parse(txt_GiaBD.Text.Trim());
+                                int giakt = int.Parse(txt_GiaKT.Text.Trim());
+                                dgv_DichVu.DataSource = dv_blldal.search_KhoangGia(giabd, giakt);
+                            }
+
+                            break;
+                        }
+                }
             }
             
         }

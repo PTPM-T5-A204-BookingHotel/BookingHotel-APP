@@ -18,6 +18,7 @@ namespace BookingHotel_App
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmLogin());
             Application.Run(new frmMain());
+            //Application.Run(new frm_ChucVu());
         }
     }
 }
