@@ -173,6 +173,12 @@
     <Compile Include="UC_NhaCC.Designer.cs">
       <DependentUpon>UC_NhaCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TaiKhoan.Designer.cs">
+      <DependentUpon>UC_TaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_VatTu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhaCC.resx">
       <DependentUpon>UC_NhaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TaiKhoan.resx">
+      <DependentUpon>UC_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_VatTu.resx">
       <DependentUpon>UC_VatTu.cs</DependentUpon>

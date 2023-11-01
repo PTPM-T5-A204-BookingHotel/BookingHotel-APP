@@ -35,6 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachNV));
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
+            this.CCCDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDienThoaiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,13 +61,6 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
-            this.CCCDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDienThoaiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinhNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -80,6 +80,7 @@
             this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NhanVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.dgv_NhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_NhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +126,63 @@
             this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NhanVien.Size = new System.Drawing.Size(747, 378);
             this.dgv_NhanVien.TabIndex = 11;
+            // 
+            // CCCDNV
+            // 
+            this.CCCDNV.DataPropertyName = "CCCDNV";
+            this.CCCDNV.HeaderText = "CCCD";
+            this.CCCDNV.Name = "CCCDNV";
+            this.CCCDNV.ReadOnly = true;
+            // 
+            // HoTenNV
+            // 
+            this.HoTenNV.DataPropertyName = "HoTenNV";
+            this.HoTenNV.HeaderText = "Họ tên";
+            this.HoTenNV.Name = "HoTenNV";
+            this.HoTenNV.ReadOnly = true;
+            // 
+            // GioiTinhNV
+            // 
+            this.GioiTinhNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.GioiTinhNV.DataPropertyName = "GioiTinhNV";
+            this.GioiTinhNV.HeaderText = "Giới tính";
+            this.GioiTinhNV.Name = "GioiTinhNV";
+            this.GioiTinhNV.ReadOnly = true;
+            this.GioiTinhNV.Width = 58;
+            // 
+            // SoDienThoaiNV
+            // 
+            this.SoDienThoaiNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.SoDienThoaiNV.DataPropertyName = "SoDienThoaiNV";
+            this.SoDienThoaiNV.HeaderText = "Số điện thoại";
+            this.SoDienThoaiNV.Name = "SoDienThoaiNV";
+            this.SoDienThoaiNV.ReadOnly = true;
+            this.SoDienThoaiNV.Width = 107;
+            // 
+            // NgaySinhNV
+            // 
+            this.NgaySinhNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.NgaySinhNV.DataPropertyName = "NgaySinhNV";
+            this.NgaySinhNV.HeaderText = "Ngày sinh";
+            this.NgaySinhNV.Name = "NgaySinhNV";
+            this.NgaySinhNV.ReadOnly = true;
+            this.NgaySinhNV.Width = 88;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "EmailNV";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // DiaChiNV
+            // 
+            this.DiaChiNV.DataPropertyName = "DiaChiNV";
+            this.DiaChiNV.HeaderText = "Địa chỉ";
+            this.DiaChiNV.Name = "DiaChiNV";
+            this.DiaChiNV.ReadOnly = true;
+            this.DiaChiNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiaChiNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel1
             // 
@@ -324,63 +382,6 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
-            // 
-            // CCCDNV
-            // 
-            this.CCCDNV.DataPropertyName = "CCCDNV";
-            this.CCCDNV.HeaderText = "CCCD";
-            this.CCCDNV.Name = "CCCDNV";
-            this.CCCDNV.ReadOnly = true;
-            // 
-            // HoTenNV
-            // 
-            this.HoTenNV.DataPropertyName = "HoTenNV";
-            this.HoTenNV.HeaderText = "Họ tên";
-            this.HoTenNV.Name = "HoTenNV";
-            this.HoTenNV.ReadOnly = true;
-            // 
-            // GioiTinhNV
-            // 
-            this.GioiTinhNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.GioiTinhNV.DataPropertyName = "GioiTinhNV";
-            this.GioiTinhNV.HeaderText = "Giới tính";
-            this.GioiTinhNV.Name = "GioiTinhNV";
-            this.GioiTinhNV.ReadOnly = true;
-            this.GioiTinhNV.Width = 86;
-            // 
-            // SoDienThoaiNV
-            // 
-            this.SoDienThoaiNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SoDienThoaiNV.DataPropertyName = "SoDienThoaiNV";
-            this.SoDienThoaiNV.HeaderText = "Số điện thoại";
-            this.SoDienThoaiNV.Name = "SoDienThoaiNV";
-            this.SoDienThoaiNV.ReadOnly = true;
-            this.SoDienThoaiNV.Width = 107;
-            // 
-            // NgaySinhNV
-            // 
-            this.NgaySinhNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.NgaySinhNV.DataPropertyName = "NgaySinhNV";
-            this.NgaySinhNV.HeaderText = "Ngày sinh";
-            this.NgaySinhNV.Name = "NgaySinhNV";
-            this.NgaySinhNV.ReadOnly = true;
-            this.NgaySinhNV.Width = 88;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "EmailNV";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // DiaChiNV
-            // 
-            this.DiaChiNV.DataPropertyName = "DiaChiNV";
-            this.DiaChiNV.HeaderText = "Địa chỉ";
-            this.DiaChiNV.Name = "DiaChiNV";
-            this.DiaChiNV.ReadOnly = true;
-            this.DiaChiNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DiaChiNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // UC_DanhSachNV
             // 

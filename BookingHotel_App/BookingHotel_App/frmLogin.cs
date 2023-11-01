@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using BLL_DAL;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,8 +18,12 @@ namespace BookingHotel_App
         {
             InitializeComponent();
         }
-        bool isShowPass = false;
-
+        TaiKhoan_BLL_DAL tkblldal = new TaiKhoan_BLL_DAL();
+        public void Message(string message, MyMessageBox.enmType type)
+        {
+            MyMessageBox frm = new MyMessageBox();
+            frm.showMess(message, type);
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
@@ -26,25 +31,34 @@ namespace BookingHotel_App
 
         private void btn_ShowPass_Click(object sender, EventArgs e)
         {
-            if (isShowPass == true)
+            if (txt_Password.UseSystemPasswordChar == true)
             {
                 txt_Password.UseSystemPasswordChar = false;
-                isShowPass = false;
             }
             else
             {
                 txt_Password.UseSystemPasswordChar = true;
-                isShowPass = true;
             }
-                
+
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMain frm = new frmMain();
-            frm.ShowDialog();
-            this.Close();
+            string tentk = txt_Account.Text.Trim();
+            string mk = txt_Password.Text.Trim();
+            if (tkblldal.isTK(tentk, mk) == 1)
+            {
+                this.Hide();
+                frmMain frm = new frmMain();
+                frm.LoadData(tentk);
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Message("Account is invalid", MyMessageBox.enmType.Error);
+            }
+            
         }
     }
 }

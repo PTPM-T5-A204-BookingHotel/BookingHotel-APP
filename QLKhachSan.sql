@@ -65,7 +65,7 @@ create table KhachHang
 
 create table VatTu 
 (
-	MaVT		varchar(30),
+	MaVT		varchar(50),
 	TenVT		nvarchar(max) not null check(TenVT<>''),
 	ThuongHieu	nvarchar(100),
 	DonViTinh	nvarchar(10),
@@ -75,6 +75,13 @@ create table VatTu
 	AnhVT		nvarchar(max),
 	constraint pk_MaVT_VatTu primary key (MaVT)
 )
+
+insert into VatTu(MaVT,TenVT,DonViTinh,SoLuong,DonGia,GiaNhap) values
+('VT001',N'Nước có ga Coca','Lon',112,20000,5000),
+('VT002',N'Nước có ga Pepsi','Lon',112,20000,5000),
+('VT003',N'Nước có ga Fanta','Lon',112,20000,5000),
+('VT004',N'Nước có ga 7 Up','Lon',112,20000,5000),
+('VT005',N'Bia SaiGon','Lon',112,30000,10000)
 
 create table LoaiPhong
 (
@@ -97,7 +104,6 @@ create table Phong
 	MaLP	int not null,
 	Tang	int not null,
 	TinhTrangPH	nvarchar(50) default N'Trống' check (TinhTrangPH = N'Trống' or TinhTrangPH = N'Đã đặt' or TinhTrangPH = N'Đang sửa/dọn' or TinhTrangPH = N'Đang thuê'),
-	TGNhanPhong datetime,
 	constraint pk_MaPH_Phong primary key (MaPH),
 	constraint fk_MaLP_Phong foreign key (MaLP) references LoaiPhong(MaLP)
 )
@@ -111,7 +117,7 @@ insert into Phong(TenPH,MaLP,Tang) values
 
 create table DichVu 
 (
-	MaDV	varchar(30),
+	MaDV	varchar(50),
 	TenDV	nvarchar(max) not null check(TenDV<>''),
 	GiaDV	int	default 0,
 	MotaDV	nvarchar(max),
@@ -119,13 +125,13 @@ create table DichVu
 )
 
 insert into DichVu values
-('DV1',N'Chăm sóc thú cưng',		250000, N'Gồm: Tắm rửa, Cắt tỉa (lông, móng), Trông giữ thú cưng. Lưu ý: Áp dụng cho 1 thú cưng và trông giữ/1 ngày'),
-('DV2',N'Vệ sinh xe (xe 4 bánh)',	200000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
-('DV3',N'Vệ sinh xe (xe 2 bánh)',	100000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
-('DV4',N'Giặt ủi quần áo',		100000,	N'Lưu ý: Áp dụng cho 1kg quần áo/1 lượt'),
-('DV5',N'Massage toàn thân',		250000,	N'Lưu ý: Áp dụng cho 1 người/2 giờ'),
-('DV6',N'Massage chân',			150000,	N'Lưu ý: Áp dụng cho 1 người/1 giờ'),
-('DV7',N'Đặt suất ăn Buffet',		150000,	N'Lưu ý: Áp dụng cho 1 người/1 lượt (Thời gian 6:00 - 9:00 sáng)')
+('DV001',N'Chăm sóc thú cưng',		250000, N'Gồm: Tắm rửa, Cắt tỉa (lông, móng), Trông giữ thú cưng. Lưu ý: Áp dụng cho 1 thú cưng và trông giữ/1 ngày'),
+('DV002',N'Vệ sinh xe (xe 4 bánh)',	200000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
+('DV003',N'Vệ sinh xe (xe 2 bánh)',	100000,	N'Lưu ý: Áp dụng cho 1 chiếc xe/1 lượt'),
+('DV004',N'Giặt ủi quần áo',		100000,	N'Lưu ý: Áp dụng cho 1kg quần áo/1 lượt'),
+('DV005',N'Massage toàn thân',		250000,	N'Lưu ý: Áp dụng cho 1 người/2 giờ'),
+('DV006',N'Massage chân',			150000,	N'Lưu ý: Áp dụng cho 1 người/1 giờ'),
+('DV007',N'Đặt suất ăn Buffet',		150000,	N'Lưu ý: Áp dụng cho 1 người/1 lượt (Thời gian 6:00 - 9:00 sáng)')
 
 
 create table HoaDon 
@@ -133,21 +139,24 @@ create table HoaDon
 	MaHD			varchar(10),
 	MaKH			int	not null,
 	MaPH			int	not null,
+	MaNV			int not null,
 	TGNhanPhong		datetime not null,
 	TGTraPhong		datetime not null,
 	SoNgayLuuTru	int default 0,
 	TongTien		int	default 0,
 	GiamGia			int default 0,
 	ThanhTienHD		int	default 0,
+	TinhTrangHD		nvarchar(max) default N'Chưa thanh toán' check(TinhTrangHD = N'Chưa thanh toán' or TinhTrangHD = N'Đã thanh toán'),
 	constraint pk_MaHD_HoaDon primary key (MaHD),
 	constraint fk_MaKH_HoaDon foreign key (MaKH) references KhachHang(MaKH),
 	constraint fk_MaPH_HoaDon foreign key (MaPH) references Phong(MaPH),
+	constraint fk_MaNV_HoaDon foreign key (MaNV) references NhanVien(MaNV)
 )
 
 create table HoaDon_DichVu
 (
 	MaHD		varchar(10),
-	MaDV		varchar(30),
+	MaDV		varchar(50),
 	SoLuongDV	int,
 	ThanhTienDV int,
 	constraint pk_MaHD_MaDV_HoaDon_DichVu primary key (MaHD,MaDV),
@@ -158,7 +167,7 @@ create table HoaDon_DichVu
 create table HoaDon_VatTu
 (
 	MaHD		varchar(10),
-	MaVT		varchar(30),
+	MaVT		varchar(50),
 	SoLuongVT	int,
 	ThanhTienVT int,
 	constraint pk_MaHD_MaVT_HoaDon_VatTu primary key (MaHD,MaVT),
@@ -168,21 +177,23 @@ create table HoaDon_VatTu
 
 create table NhaCC
 (
-	MaNCC		varchar(30),
+	MaNCC		varchar(50),
 	TenNCC		nvarchar(max) not null check(TenNCC<>''),
 	DiaChiNCC	nvarchar(100) not null check(DiaChiNCC<>''),
 	SDTNCC		varchar(10)	not null check(SDTNCC<>''),
-	GioiTinhNCC	nvarchar(5)		not null check (GioiTinhNCC = N'Nam' or GioiTinhNCC = N'Nữ'),
 	constraint pk_MaNCC_NhaCC primary key(MaNCC)
 )
 
+insert into NhaCC values
+('NCC001',N'Cty Cocacola','TP.HCM','0972727211'),
+('NCC002',N'Cty Pepsi','TP.HCM','0982828288')
 
 create table NhapKho 
 (
 	MaNK			varchar(10),
 	MaNV			int,
-	MaNCC			varchar(30),
-	MaVT			varchar(30),
+	MaNCC			varchar(50),
+	MaVT			varchar(50),
 	ThoiGianNK		datetime not null,
 	SoLuong			int	default 0,
 	constraint pk_MaNK_NhapKho primary key (MaNK),   
@@ -191,37 +202,46 @@ create table NhapKho
 	constraint fk_MaVT_NhapKho foreign key (MaVT) references VatTu(MaVT)
 )
 
+
 create table Quyen
 (
-	MaQuyen int identity,
+	MaQuyen varchar(50),
 	TenQuyen nvarchar(max) not null check(TenQuyen<>''),
 	constraint pk_MaQuyen_Quyen primary key(MaQuyen)
 )
+
+insert into Quyen(MaQuyen,TenQuyen) values
+('Admin',N'Admin'),
+('User',N'User')
 
 create table TaiKhoan 
 (
 	TenTK	varchar(50),
 	MaNV	int,
 	MatKhau varchar(30) not null,
-	MaQuyen int,
+	MaQuyen varchar(50),
 	AnhTK	nvarchar(max),
 	constraint pk_TenTK_TaiKhoan primary key (TenTK),
 	constraint fk_MaNV_TaiKhoan foreign key (MaNV) references NhanVien(MaNV),
 	constraint fk_MaQuyen_TaiKhoan foreign key (MaQuyen) references Quyen(MaQuyen)
 )
 
-create table ManHinh
+insert into TaiKhoan(TenTK,MaNV,MatKhau,MaQuyen) values
+('Admin',1,'123','Admin'),
+('User',2,'123','User')
+
+
+
+create table DatPhong
 (
-	MaMH varchar(50),
-	TenMH nvarchar(max) not null check(TenMH<>''),
-	constraint pk_MaMH_ManHinh primary key (MaMH)
+	MaDP int identity,
+	Hoten nvarchar(max),
+	Email varchar(100),
+	SDT varchar(10),
+	SoLuongTGoLai int,
+	SoLuongNg int,
+	ThoiGianNhanPhong date,
+	HinhAnh nvarchar(max),
+	constraint pk_MaDP_DatPhong primary key(MaDP)
 )
 
-create table TaiKhoan_ManHinh
-(
-	MaMH varchar(50),
-	TenTK varchar(50),
-	constraint pk_MaMH_TenTK_TaiKhoan_ManHinh primary key(MaMH,TenTK),
-	constraint fk_MaMH_TaiKhoan_ManHinh foreign key(MaMH) references ManHinh(MaMH),
-	constraint fk_TenTK_TaiKhoan_ManHinh foreign key(TenTK) references TaiKhoan(TenTK)
-)

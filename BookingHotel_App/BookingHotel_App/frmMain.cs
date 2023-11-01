@@ -25,6 +25,11 @@ namespace BookingHotel_App
         UC_DanhSachTK ucDSTK;
         UC_DanhSachHD ucDSHD;
         UC_NhaCC ucncc;
+        UC_TaiKhoan uctk;
+        public void LoadData(string tentk)
+        {
+            barStaticItem_TenTK.Caption = tentk;
+        }
         private void ace_DangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -121,6 +126,20 @@ namespace BookingHotel_App
             }
             else
                 ucncc.BringToFront();
+        }
+
+        private void ace_ThongTinTK_Click(object sender, EventArgs e)
+        {
+            if (ucncc == null)
+            {
+                uctk = new UC_TaiKhoan();
+                uctk.Dock = DockStyle.Fill;
+                uctk.Loaddata(barStaticItem_TenTK.Caption);
+                MainContainer.Controls.Add(uctk);
+                uctk.BringToFront();
+            }
+            else
+                uctk.BringToFront();
         }
     }
 }

@@ -54,6 +54,11 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemConditionalType1 = new DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItem_TenTK = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem_TenTK = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -183,6 +188,7 @@
             this.ace_ThongTinTK.Name = "ace_ThongTinTK";
             this.ace_ThongTinTK.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_ThongTinTK.Text = "Thông tin";
+            this.ace_ThongTinTK.Click += new System.EventHandler(this.ace_ThongTinTK_Click);
             // 
             // ace_DanhSachTK
             // 
@@ -216,7 +222,12 @@
             this.barButtonItem1,
             this.barStaticItem2,
             this.barEditItem1,
-            this.barEditItem2});
+            this.barEditItem2,
+            this.barButtonItem2,
+            this.barHeaderItem1,
+            this.barHeaderItem_TenTK,
+            this.barStaticItem,
+            this.barStaticItem_TenTK});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
@@ -227,6 +238,8 @@
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem_TenTK);
             // 
             // barStaticItem1
             // 
@@ -279,6 +292,37 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemConditionalType1.Name = "repositoryItemConditionalType1";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 6;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "Tài khoản:";
+            this.barHeaderItem1.Id = 7;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barHeaderItem_TenTK
+            // 
+            this.barHeaderItem_TenTK.Caption = "barHeaderItem2";
+            this.barHeaderItem_TenTK.Id = 8;
+            this.barHeaderItem_TenTK.Name = "barHeaderItem_TenTK";
+            // 
+            // barStaticItem
+            // 
+            this.barStaticItem.Caption = "Tài khoản :";
+            this.barStaticItem.Id = 9;
+            this.barStaticItem.Name = "barStaticItem";
+            // 
+            // barStaticItem_TenTK
+            // 
+            this.barStaticItem_TenTK.Caption = "barStaticItem3";
+            this.barStaticItem_TenTK.Id = 10;
+            this.barStaticItem_TenTK.Name = "barStaticItem_TenTK";
+            // 
             // fluentFormDefaultManager1
             // 
             this.fluentFormDefaultManager1.Form = this;
@@ -287,8 +331,13 @@
             this.barButtonItem1,
             this.barStaticItem2,
             this.barEditItem1,
-            this.barEditItem2});
-            this.fluentFormDefaultManager1.MaxItemId = 6;
+            this.barEditItem2,
+            this.barButtonItem2,
+            this.barHeaderItem1,
+            this.barHeaderItem_TenTK,
+            this.barStaticItem,
+            this.barStaticItem_TenTK});
+            this.fluentFormDefaultManager1.MaxItemId = 11;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemConditionalType1});
@@ -345,5 +394,10 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_ThongTinTK;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_DanhSachTK;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_NhaCC;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem_TenTK;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem_TenTK;
     }
 }
