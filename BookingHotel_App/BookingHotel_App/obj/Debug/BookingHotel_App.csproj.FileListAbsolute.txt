@@ -244,3 +244,5 @@ C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\bin\Debug\
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\bin\Debug\BLL_DAL.dll.config
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_NhaCC.resources
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_TaiKhoan.resources
+C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_DanhSachPhong.resources
+C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_Phong.resources

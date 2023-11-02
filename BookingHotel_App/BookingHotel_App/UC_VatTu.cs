@@ -142,7 +142,7 @@ namespace BookingHotel_App
             string soluong = txt_SL.Text.Trim();
             string giaban = txt_GiaBan.Text.Trim();
             string gianhap = txt_GiaNhap.Text.Trim();
-            string anh = pic_Image.ImageLocation.ToString();
+            string anh = pic_Image.ImageLocation;
             if (dgv_VatTu.RowCount < 1)
             {
                 this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
@@ -267,7 +267,7 @@ namespace BookingHotel_App
             txt_GiaBan.Text = row.Cells[2].Value.ToString();
             txt_GiaNhap.Text = row.Cells[3].Value.ToString();
             txt_SL.Text = row.Cells[4].Value.ToString();
-            txt_DVT.Text = row.Cells[5].Value.ToString();
+            txt_DVT.Text = row.Cells["DonViTinh"].Value.ToString();
             txt_ThgHieu.Text = row.Cells[6].Value.ToString();
             pic_Image.ImageLocation = vt_blldal.getAnh(txt_Ma.Text);
         }

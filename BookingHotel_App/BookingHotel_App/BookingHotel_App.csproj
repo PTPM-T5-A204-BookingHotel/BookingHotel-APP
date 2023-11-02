@@ -155,6 +155,12 @@
     <Compile Include="UC_DanhSachNV.Designer.cs">
       <DependentUpon>UC_DanhSachNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_DanhSachPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_DanhSachPhong.Designer.cs">
+      <DependentUpon>UC_DanhSachPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_DanhSachTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     </Compile>
     <Compile Include="UC_NhaCC.Designer.cs">
       <DependentUpon>UC_NhaCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Phong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Phong.Designer.cs">
+      <DependentUpon>UC_Phong.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_TaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -232,6 +244,9 @@
     <EmbeddedResource Include="UC_DanhSachNV.resx">
       <DependentUpon>UC_DanhSachNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_DanhSachPhong.resx">
+      <DependentUpon>UC_DanhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_DanhSachTK.resx">
       <DependentUpon>UC_DanhSachTK.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhaCC.resx">
       <DependentUpon>UC_NhaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Phong.resx">
+      <DependentUpon>UC_Phong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TaiKhoan.resx">
       <DependentUpon>UC_TaiKhoan.cs</DependentUpon>

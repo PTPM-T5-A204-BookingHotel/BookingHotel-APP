@@ -116,6 +116,7 @@
             this.ace_Phong.Name = "ace_Phong";
             this.ace_Phong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_Phong.Text = "Phòng";
+            this.ace_Phong.Click += new System.EventHandler(this.ace_Phong_Click);
             // 
             // ace_DichVu
             // 

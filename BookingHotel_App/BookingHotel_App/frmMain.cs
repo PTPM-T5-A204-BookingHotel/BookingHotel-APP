@@ -26,6 +26,7 @@ namespace BookingHotel_App
         UC_DanhSachHD ucDSHD;
         UC_NhaCC ucncc;
         UC_TaiKhoan uctk;
+        UC_DanhSachPhong ucDSP;
         public void LoadData(string tentk)
         {
             barStaticItem_TenTK.Caption = tentk;
@@ -140,6 +141,19 @@ namespace BookingHotel_App
             }
             else
                 uctk.BringToFront();
+        }
+
+        private void ace_Phong_Click(object sender, EventArgs e)
+        {
+            if (ucDSP == null)
+            {
+                ucDSP = new UC_DanhSachPhong();
+                ucDSP.Dock = DockStyle.Fill;
+                MainContainer.Controls.Add(ucDSP);
+                ucDSP.BringToFront();
+            }
+            else
+                ucDSP.BringToFront();
         }
     }
 }
