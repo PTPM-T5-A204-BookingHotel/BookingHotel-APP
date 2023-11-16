@@ -105,6 +105,12 @@
     <Compile Include="frm_ChupAnh.Designer.cs">
       <DependentUpon>frm_ChupAnh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_QLLoaiPh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QLLoaiPh.Designer.cs">
+      <DependentUpon>frm_QLLoaiPh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_SuaKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     </Compile>
     <Compile Include="frm_ThemNV.Designer.cs">
       <DependentUpon>frm_ThemNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TuyChinhPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TuyChinhPhong.Designer.cs">
+      <DependentUpon>frm_TuyChinhPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="MyMessageBox.cs">
       <SubType>Form</SubType>
@@ -209,6 +221,9 @@
     <EmbeddedResource Include="frm_ChupAnh.resx">
       <DependentUpon>frm_ChupAnh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_QLLoaiPh.resx">
+      <DependentUpon>frm_QLLoaiPh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_SuaKH.resx">
       <DependentUpon>frm_SuaKH.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ThemNV.resx">
       <DependentUpon>frm_ThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TuyChinhPhong.resx">
+      <DependentUpon>frm_TuyChinhPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyMessageBox.resx">
       <DependentUpon>MyMessageBox.cs</DependentUpon>

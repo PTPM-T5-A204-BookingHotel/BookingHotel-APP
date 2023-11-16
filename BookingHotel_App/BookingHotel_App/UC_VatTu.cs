@@ -160,22 +160,30 @@ namespace BookingHotel_App
 
         private void tsBtn_Xoa_Click(object sender, EventArgs e)
         {
-            string mavt = txt_Ma.Text.Trim();
-            if (dgv_VatTu.RowCount < 1)
+            try
             {
-                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
-            }
-            else
-            {
-                if (mavt.Equals(""))
-                    this.Message("Mã không để trống", MyMessageBox.enmType.Error);
+                string mavt = txt_Ma.Text.Trim();
+                if (dgv_VatTu.RowCount < 1)
+                {
+                    this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+                }
                 else
                 {
-                    vt_blldal.delete(mavt);
-                    this.Message("Success", MyMessageBox.enmType.Success);
-                    LoadData();
+                    if (mavt.Equals(""))
+                        this.Message("Mã không để trống", MyMessageBox.enmType.Error);
+                    else
+                    {
+                        vt_blldal.delete(mavt);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
+                    }
                 }
             }
+            catch
+            {
+                this.Message("Vật tư này đang được sử dụng", MyMessageBox.enmType.Error);
+            }
+            
         }
 
         private void tsBtn_SapXep_Click(object sender, EventArgs e)
@@ -261,15 +269,18 @@ namespace BookingHotel_App
         private void dgv_VatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            row = dgv_VatTu.Rows[e.RowIndex];
-            txt_Ma.Text = row.Cells[0].Value.ToString();
-            txt_TenVT.Text = row.Cells[1].Value.ToString();
-            txt_GiaBan.Text = row.Cells[2].Value.ToString();
-            txt_GiaNhap.Text = row.Cells[3].Value.ToString();
-            txt_SL.Text = row.Cells[4].Value.ToString();
-            txt_DVT.Text = row.Cells["DonViTinh"].Value.ToString();
-            txt_ThgHieu.Text = row.Cells[6].Value.ToString();
-            pic_Image.ImageLocation = vt_blldal.getAnh(txt_Ma.Text);
+            if (e.RowIndex > 0)
+            {
+                row = dgv_VatTu.Rows[e.RowIndex];
+                txt_Ma.Text = row.Cells[0].Value.ToString();
+                txt_TenVT.Text = row.Cells[1].Value.ToString();
+                txt_GiaBan.Text = row.Cells[2].Value.ToString();
+                txt_GiaNhap.Text = row.Cells[3].Value.ToString();
+                txt_SL.Text = row.Cells[4].Value.ToString();
+                txt_DVT.Text = row.Cells["DonViTinh"].Value.ToString();
+                txt_ThgHieu.Text = row.Cells[6].Value.ToString();
+                pic_Image.ImageLocation = vt_blldal.getAnh(txt_Ma.Text);
+            }
         }
 
         private void btn_UpImage_Click(object sender, EventArgs e)

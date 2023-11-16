@@ -125,32 +125,44 @@ namespace BookingHotel_App
 
         private void tsBtn_Xoa_Click(object sender, EventArgs e)
         {
-            string madv = txt_Ma.Text.Trim();
-            if (dgv_DichVu.RowCount < 1)
+            try
             {
-                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
-            }
-            else
-            {
-                if (madv.Equals(""))
-                    this.Message("Mã không để trống", MyMessageBox.enmType.Error);
+
+
+                string madv = txt_Ma.Text.Trim();
+                if (dgv_DichVu.RowCount < 1)
+                {
+                    this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+                }
                 else
                 {
-                    dv_blldal.delete(madv);
-                    this.Message("Success", MyMessageBox.enmType.Success);
-                    LoadData();
+                    if (madv.Equals(""))
+                        this.Message("Mã không để trống", MyMessageBox.enmType.Error);
+                    else
+                    {
+                        dv_blldal.delete(madv);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
+                    }
                 }
+            }
+            catch
+            {
+                this.Message("Dịch vụ này đang được sử dụng", MyMessageBox.enmType.Error);
             }
         }
 
         private void dgv_DichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            row = dgv_DichVu.Rows[e.RowIndex];
-            txt_Ma.Text = row.Cells[0].Value.ToString();
-            txt_TenDV.Text = row.Cells[1].Value.ToString();
-            txt_GiaDV.Text = row.Cells[2].Value.ToString();
-            rtxt_MoTa.Text = row.Cells[3].Value.ToString();
+            if (e.RowIndex > 0)
+            {
+                row = dgv_DichVu.Rows[e.RowIndex];
+                txt_Ma.Text = row.Cells[0].Value.ToString();
+                txt_TenDV.Text = row.Cells[1].Value.ToString();
+                txt_GiaDV.Text = row.Cells[2].Value.ToString();
+                rtxt_MoTa.Text = row.Cells[3].Value.ToString();
+            }
         }
 
         private void tsBtn_SapXep_Click(object sender, EventArgs e)

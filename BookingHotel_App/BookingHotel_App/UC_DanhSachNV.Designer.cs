@@ -347,6 +347,7 @@
             this.tsBtn_Xoa.Name = "tsBtn_Xoa";
             this.tsBtn_Xoa.Size = new System.Drawing.Size(56, 24);
             this.tsBtn_Xoa.Text = "Xóa";
+            this.tsBtn_Xoa.Click += new System.EventHandler(this.tsBtn_Xoa_Click);
             // 
             // tsBtn_SapXep
             // 

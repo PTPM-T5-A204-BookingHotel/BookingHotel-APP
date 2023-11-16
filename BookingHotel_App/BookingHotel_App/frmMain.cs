@@ -155,5 +155,18 @@ namespace BookingHotel_App
             else
                 ucDSP.BringToFront();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if (ucDSP == null)
+            {
+                ucDSP = new UC_DanhSachPhong();
+                ucDSP.Dock = DockStyle.Fill;
+                MainContainer.Controls.Add(ucDSP);
+                ucDSP.BringToFront();
+            }
+            else
+                ucDSP.BringToFront();
+        }
     }
 }

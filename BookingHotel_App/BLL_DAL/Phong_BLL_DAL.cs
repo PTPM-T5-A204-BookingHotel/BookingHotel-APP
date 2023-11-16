@@ -12,26 +12,42 @@ namespace BLL_DAL
     {
         public Phong_BLL_DAL() { }
         QLKhachSanDataContext qlks = new QLKhachSanDataContext();
-        public List<Phong> GetPhongs()
+        public int isTenPhong(string tenph)
         {
-            var kq = from ph in qlks.Phongs select ph;
+            var kq = qlks.Phongs.Where(o => o.TenPH.Equals(tenph)).Count();
+            return kq;
+        }
+        public int getMaPh(string tenph)
+        {
+            var kq = from ph in qlks.Phongs where ph.TenPH.Equals(tenph) select ph.MaPH;
+            return kq.FirstOrDefault();
+        }
+        public List<Phong> GetPhongs(int tang)
+        {
+            var kq = from ph in qlks.Phongs where ph.Tang.Equals(tang) select ph;
             return kq.ToList();
         }
-        public void insert(string tenph,string tinhtrangph,int malp,int tang)
+        public void GetPhongs(DataGridView dgv)
+        {
+            var kq = from ph in qlks.Phongs select new {ph.MaPH,ph.TenPH,ph.MaLP,ph.TinhTrangPH,ph.Tang};
+            dgv.DataSource = kq;
+        }
+        public void insert(string tenph,int malp,int tang)
         {
             Phong ph = new Phong();
             ph.TenPH = tenph;
-            ph.TinhTrangPH = tinhtrangph;
             ph.MaLP=malp;
             ph.Tang=tang;
+            ph.TinhTrangPH = "Trống";
+            qlks.Phongs.InsertOnSubmit(ph);
+            qlks.SubmitChanges();
         }
-        public void update(int maph, string tenph, string tinhtrangph, int malp, int tang)
+        public void update(int maph, string tenph, int malp, int tang)
         {
             Phong ph = qlks.Phongs.Where(o=>o.MaPH.Equals(maph)).FirstOrDefault();
             if (ph != null)
             {
                 ph.TenPH = tenph;
-                ph.TinhTrangPH = tinhtrangph;
                 ph.MaLP=malp;
                 ph.Tang=tang;
                 qlks.SubmitChanges();
@@ -46,27 +62,27 @@ namespace BLL_DAL
                 qlks.SubmitChanges();
             }
         }
-        public List<Phong> search(int searchType,string value,DataGridView dgv)
+        public List<int> getTang()
         {
-            var kq = from ph in qlks.Phongs where ph.MaLP.Equals(value) select ph;
+            var kq = (from ph in qlks.Phongs select ph.Tang).Distinct();
+            return kq.ToList();
+        }
+        public void search(int searchType,string value,DataGridView dgv)
+        {
+            var kq = from ph in qlks.Phongs where ph.MaLP.Equals(value) select new { ph.MaPH, ph.TenPH, ph.MaLP, ph.TinhTrangPH, ph.Tang };
             switch (searchType) 
             {
-                case 0: kq = from ph in qlks.Phongs where ph.MaLP.Equals(value) select ph; break;
-                case 1: kq = from ph in qlks.Phongs where ph.TinhTrangPH.Equals(value) select ph; break;
-                case 2: kq = from ph in qlks.Phongs where ph.Tang.Equals(value) select ph; break;
+                case 0: kq = from ph in qlks.Phongs where ph.MaLP.Equals(value) select new { ph.MaPH, ph.TenPH, ph.MaLP, ph.TinhTrangPH, ph.Tang }; break;
+                case 1: kq = from ph in qlks.Phongs where ph.TenPH.Contains(value) select new { ph.MaPH, ph.TenPH, ph.MaLP, ph.TinhTrangPH, ph.Tang }; break;
+                case 2: kq = from ph in qlks.Phongs where ph.Tang.Equals(value) select new { ph.MaPH, ph.TenPH, ph.MaLP, ph.TinhTrangPH, ph.Tang }; break;
             }
-            return kq.ToList();
+            dgv.DataSource = kq;
 
         }
-        public List<Phong> sort(int sortType)
+        public void sort(DataGridView dgv)
         {
-            var kq = from ph in qlks.Phongs orderby ph.Tang ascending select ph;
-            switch(sortType)
-            {
-                case 0: kq = from ph in qlks.Phongs orderby ph.Tang ascending select ph; break;
-                case 1: kq = from ph in qlks.Phongs orderby ph.Tang descending select ph; break;
-            }
-            return kq.ToList();
+            var kq = from ph in qlks.Phongs orderby ph.Tang ascending, ph.TenPH ascending select new { ph.MaPH, ph.TenPH, ph.MaLP, ph.TinhTrangPH, ph.Tang };
+            dgv.DataSource = kq;
         }
     }
 }

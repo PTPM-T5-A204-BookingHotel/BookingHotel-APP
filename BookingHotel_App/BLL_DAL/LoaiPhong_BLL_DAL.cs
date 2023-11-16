@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL_DAL
 {
@@ -15,30 +16,77 @@ namespace BLL_DAL
             var kq = from lp in qlks.LoaiPhongs select lp;
             return kq.ToList();
         }
-        public void insert(string tenlp,int gia)
+        public void getLoaiPhs(DataGridView dgv)
+        {
+            var kq = from lp in qlks.LoaiPhongs select new {lp.MaLP,lp.TenLP,lp.GiaPH};
+            dgv.DataSource = kq;
+        }
+        public int isTenLP(string tenlp)
+        {
+            var kq = qlks.LoaiPhongs.Where(o=>o.TenLP.Equals(tenlp)).Count();
+            return kq;
+        }
+        public string getAnh(string ma)
+        {
+            try
+            {
+                var kq = from lp in qlks.LoaiPhongs where lp.MaLP.Equals(ma) select lp.HinhLP;
+                return kq.FirstOrDefault();
+            }
+            catch
+            {
+                return "";
+            }
+            
+        }
+        public string getTenlp(int mlp)
+        {
+            var kq = from lp in qlks.LoaiPhongs where lp.MaLP.Equals(mlp) select lp.TenLP;
+            return kq.FirstOrDefault();
+        }
+        public void insert(string tenlp,int gia,string hinh)
         {
             LoaiPhong lp = new LoaiPhong();
             lp.TenLP = tenlp;
             lp.GiaPH = gia;
+            lp.HinhLP = hinh;
+            qlks.LoaiPhongs.InsertOnSubmit(lp);
+            qlks.SubmitChanges();
         }
-        public void update(int malp, string tenlp, int gia)
+        public void update(int malp, string tenlp, int gia,string hinh)
         {
-            LoaiPhong ph = qlks.LoaiPhongs.Where(o=>o.MaLP.Equals(malp)).FirstOrDefault();
-            if(ph != null)
+            LoaiPhong lp = qlks.LoaiPhongs.Where(o=>o.MaLP.Equals(malp)).FirstOrDefault();
+            if(lp != null)
             {
-                ph.TenLP = tenlp;
-                ph.GiaPH = gia;
+                lp.TenLP = tenlp;
+                lp.GiaPH = gia;
+                lp.HinhLP = hinh;
                 qlks.SubmitChanges();
             }
         }
         public void delete(int malp)
         {
-            LoaiPhong ph = qlks.LoaiPhongs.Where(o => o.MaLP.Equals(malp)).FirstOrDefault();
-            if (ph != null)
+            LoaiPhong lp = qlks.LoaiPhongs.Where(o => o.MaLP.Equals(malp)).FirstOrDefault();
+            if (lp != null)
             {
-                qlks.LoaiPhongs.DeleteOnSubmit(ph);
+                qlks.LoaiPhongs.DeleteOnSubmit(lp);
                 qlks.SubmitChanges();
             }
+        }
+        public void sort(DataGridView dgv)
+        {
+            var kq = from lp in qlks.LoaiPhongs orderby lp.GiaPH ascending select new { lp.MaLP, lp.TenLP, lp.GiaPH };
+            dgv.DataSource = kq;
+        }
+        public void search(int searchType, string value, DataGridView dgv)
+        {
+            var kq = from lp in qlks.LoaiPhongs where lp.TenLP.Contains(value) select new { lp.MaLP, lp.TenLP, lp.GiaPH };
+            switch(searchType)
+            {
+                case 0: kq = from lp in qlks.LoaiPhongs where lp.TenLP.Contains(value) select new { lp.MaLP, lp.TenLP, lp.GiaPH }; break;
+                case 1: kq = from lp in qlks.LoaiPhongs where lp.GiaPH.Equals(value) select new { lp.MaLP, lp.TenLP, lp.GiaPH }; break;
+            }
+            dgv.DataSource = kq;
         }
     }
 }

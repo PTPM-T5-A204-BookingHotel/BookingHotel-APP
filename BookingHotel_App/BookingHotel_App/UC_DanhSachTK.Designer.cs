@@ -586,10 +586,10 @@
             // 
             this.MaQuyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.MaQuyen.DataPropertyName = "MaQuyen";
-            this.MaQuyen.HeaderText = "Quyền";
+            this.MaQuyen.HeaderText = "Mã quyền";
             this.MaQuyen.Name = "MaQuyen";
             this.MaQuyen.ReadOnly = true;
-            this.MaQuyen.Width = 72;
+            this.MaQuyen.Width = 94;
             // 
             // UC_DanhSachTK
             // 

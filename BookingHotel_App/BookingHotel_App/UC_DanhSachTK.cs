@@ -184,26 +184,39 @@ namespace BookingHotel_App
 
         private void tsBtn_SapXep_Click(object sender, EventArgs e)
         {
-            tkblldal.sort(dgv_TaiKhoan);
+            if (dgv_TaiKhoan.RowCount < 1)
+            {
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
+            else
+            {
+                tkblldal.sort(dgv_TaiKhoan);
+            }
         }
 
         private void tsBtn_TimKiem_Click(object sender, EventArgs e)
         {
-            string tk = "";
-            if(cbo_LoaiTK.SelectedIndex == 1)
+            if (dgv_TaiKhoan.RowCount < 1)
             {
-                tk = txt_TimKiem.Text.Trim();
-                if (tk.Equals(""))
-                {
-                    this.Message("Chưa nhập tìm kiếm", MyMessageBox.enmType.Error);
-                }
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
             }
             else
             {
-                tk = cbo_Quyen.SelectedValue.ToString();
+                string tk = "";
+                if (cbo_LoaiTK.SelectedIndex == 1)
+                {
+                    tk = txt_TimKiem.Text.Trim();
+                    if (tk.Equals(""))
+                    {
+                        this.Message("Chưa nhập tìm kiếm", MyMessageBox.enmType.Error);
+                    }
+                }
+                else
+                {
+                    tk = cbo_Quyen.SelectedValue.ToString();
+                }
+                tkblldal.search(cbo_LoaiTK.SelectedIndex, tk, dgv_TaiKhoan);
             }
-            tkblldal.search(cbo_LoaiTK.SelectedIndex, tk, dgv_TaiKhoan);
-
             
         }
 
@@ -217,11 +230,15 @@ namespace BookingHotel_App
         private void dgv_TaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            row = dgv_TaiKhoan.Rows[e.RowIndex];
-            txt_TenTK.Text = row.Cells[0].Value.ToString();
-            txt_MatKhau.Text = row.Cells["MatKhau"].Value.ToString();
-            cbo_Quyen.SelectedValue = row.Cells[3].Value.ToString();
-            pic_Image.ImageLocation = tkblldal.getAnh(txt_TenTK.Text);
+            if (e.RowIndex > 0)
+            {
+
+                row = dgv_TaiKhoan.Rows[e.RowIndex];
+                txt_TenTK.Text = row.Cells[0].Value.ToString();
+                txt_MatKhau.Text = row.Cells["MatKhau"].Value.ToString();
+                cbo_Quyen.SelectedValue = row.Cells[3].Value.ToString();
+                pic_Image.ImageLocation = tkblldal.getAnh(txt_TenTK.Text);
+            }
         }
     }
 }

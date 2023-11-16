@@ -120,37 +120,53 @@ namespace BookingHotel_App
 
         private void tsBtn_Sua_Click(object sender, EventArgs e)
         {
-            string ma = txt_MaNCC.Text.Trim();
-            string ten = txt_TenNCC.Text.Trim();
-            string sdt = txt_SDT.Text.Trim();
-            string dc = txt_DiaChi.Text.Trim();
-            if (isThongTinNCC(ma, ten, sdt, dc))
+            if (dgv_NhaCC.RowCount < 1)
             {
-                nccblldal.update(ma, ten, dc, sdt);
-                this.Message("Success", MyMessageBox.enmType.Success);
-                LoadData();
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
+            else
+            {
+                string ma = txt_MaNCC.Text.Trim();
+                string ten = txt_TenNCC.Text.Trim();
+                string sdt = txt_SDT.Text.Trim();
+                string dc = txt_DiaChi.Text.Trim();
+                if (isThongTinNCC(ma, ten, sdt, dc))
+                {
+                    nccblldal.update(ma, ten, dc, sdt);
+                    this.Message("Success", MyMessageBox.enmType.Success);
+                    LoadData();
+                }
             }
         }
 
         private void tsBtn_Xoa_Click(object sender, EventArgs e)
         {
-            string ma = txt_MaNCC.Text.Trim();
-            if (dgv_NhaCC.RowCount > 0)
+            try
             {
-                if (ma.Equals(""))
+
+
+                string ma = txt_MaNCC.Text.Trim();
+                if (dgv_NhaCC.RowCount > 0)
                 {
-                    this.Message("Chưa chọn nhà cung cấp", MyMessageBox.enmType.Error);
+                    if (ma.Equals(""))
+                    {
+                        this.Message("Chưa chọn nhà cung cấp", MyMessageBox.enmType.Error);
+                    }
+                    else
+                    {
+                        nccblldal.delete(ma);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
+                    }
                 }
                 else
                 {
-                    nccblldal.delete(ma);
-                    this.Message("Success", MyMessageBox.enmType.Success);
-                    LoadData();
+                    this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
                 }
             }
-            else
+            catch
             {
-                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+                this.Message("Nhà cung cấp này đang được sử dụng", MyMessageBox.enmType.Error);
             }
             
         }
@@ -198,11 +214,14 @@ namespace BookingHotel_App
         private void dgv_NhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            row = dgv_NhaCC.Rows[e.RowIndex];
-            txt_MaNCC.Text = row.Cells[0].Value.ToString();
-            txt_TenNCC.Text = row.Cells[1].Value.ToString();
-            txt_SDT.Text = row.Cells["SDTNCC"].Value.ToString();
-            txt_DiaChi.Text = row.Cells["DiaChiNCC"].Value.ToString();
+            if (e.RowIndex > 0)
+            {
+                row = dgv_NhaCC.Rows[e.RowIndex];
+                txt_MaNCC.Text = row.Cells[0].Value.ToString();
+                txt_TenNCC.Text = row.Cells[1].Value.ToString();
+                txt_SDT.Text = row.Cells["SDTNCC"].Value.ToString();
+                txt_DiaChi.Text = row.Cells["DiaChiNCC"].Value.ToString();
+            }
         }
     }
 }

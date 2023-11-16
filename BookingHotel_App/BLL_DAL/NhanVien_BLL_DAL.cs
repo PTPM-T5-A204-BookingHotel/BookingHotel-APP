@@ -41,7 +41,7 @@ namespace BLL_DAL
             qlks.NhanViens.InsertOnSubmit(NV);
             qlks.SubmitChanges();
         }
-        public void delete(string maNV)
+        public void delete(int maNV)
         {
             NhanVien NV = qlks.NhanViens.Where(o => o.MaNV.Equals(maNV)).FirstOrDefault();
             if (NV != null)

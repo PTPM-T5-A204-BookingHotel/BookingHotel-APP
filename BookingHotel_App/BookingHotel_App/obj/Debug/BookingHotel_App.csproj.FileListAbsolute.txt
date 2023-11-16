@@ -246,3 +246,5 @@ C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_TaiKhoan.resources
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_DanhSachPhong.resources
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.UC_Phong.resources
+C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.frm_TuyChinhPhong.resources
+C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.frm_QLLoaiPh.resources

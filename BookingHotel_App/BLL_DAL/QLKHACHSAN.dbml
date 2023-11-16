@@ -75,6 +75,7 @@
       <Column Name="MaLP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLP" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="GiaPH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HinhLP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="MaLP" OtherKey="MaLP" Type="Phong" />
     </Type>
   </Table>

@@ -30,18 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Phong));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_Tang = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Tang = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_TinhTrangPH = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_LoaiPH = new System.Windows.Forms.Label();
+            this.btn_HuyDatPhong = new DesignControl.ButtonHover();
+            this.btn_DatPhong = new DesignControl.ButtonHover();
             this.lbl_Phong = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_DatPhong = new DesignControl.ButtonHover();
-            this.btn_HuyDatPhong = new DesignControl.ButtonHover();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_LoaiPH = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,18 +57,6 @@
             this.panel1.Size = new System.Drawing.Size(292, 24);
             this.panel1.TabIndex = 1;
             // 
-            // lbl_Tang
-            // 
-            this.lbl_Tang.AutoSize = true;
-            this.lbl_Tang.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl_Tang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tang.ForeColor = System.Drawing.Color.White;
-            this.lbl_Tang.Location = new System.Drawing.Point(235, 0);
-            this.lbl_Tang.Name = "lbl_Tang";
-            this.lbl_Tang.Size = new System.Drawing.Size(57, 20);
-            this.lbl_Tang.TabIndex = 0;
-            this.lbl_Tang.Text = "label1";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,6 +68,18 @@
             this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tầng:";
+            // 
+            // lbl_Tang
+            // 
+            this.lbl_Tang.AutoSize = true;
+            this.lbl_Tang.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_Tang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tang.ForeColor = System.Drawing.Color.White;
+            this.lbl_Tang.Location = new System.Drawing.Point(235, 0);
+            this.lbl_Tang.Name = "lbl_Tang";
+            this.lbl_Tang.Size = new System.Drawing.Size(57, 20);
+            this.lbl_Tang.TabIndex = 0;
+            this.lbl_Tang.Text = "label1";
             // 
             // panel2
             // 
@@ -119,7 +118,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.lbl_LoaiPH);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btn_HuyDatPhong);
             this.panel3.Controls.Add(this.btn_DatPhong);
             this.panel3.Controls.Add(this.lbl_Phong);
@@ -128,6 +126,51 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(292, 130);
             this.panel3.TabIndex = 3;
+            // 
+            // lbl_LoaiPH
+            // 
+            this.lbl_LoaiPH.AutoSize = true;
+            this.lbl_LoaiPH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_LoaiPH.ForeColor = System.Drawing.Color.White;
+            this.lbl_LoaiPH.Location = new System.Drawing.Point(20, 43);
+            this.lbl_LoaiPH.Name = "lbl_LoaiPH";
+            this.lbl_LoaiPH.Size = new System.Drawing.Size(88, 16);
+            this.lbl_LoaiPH.TabIndex = 28;
+            this.lbl_LoaiPH.Text = "Loại phòng:";
+            // 
+            // btn_HuyDatPhong
+            // 
+            this.btn_HuyDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btn_HuyDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_HuyDatPhong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_HuyDatPhong.FlatAppearance.BorderSize = 2;
+            this.btn_HuyDatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btn_HuyDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_HuyDatPhong.ForeColor = System.Drawing.Color.Lime;
+            this.btn_HuyDatPhong.Location = new System.Drawing.Point(158, 73);
+            this.btn_HuyDatPhong.Name = "btn_HuyDatPhong";
+            this.btn_HuyDatPhong.Size = new System.Drawing.Size(120, 32);
+            this.btn_HuyDatPhong.TabIndex = 26;
+            this.btn_HuyDatPhong.Text = "Hủy đặt";
+            this.btn_HuyDatPhong.UseVisualStyleBackColor = false;
+            // 
+            // btn_DatPhong
+            // 
+            this.btn_DatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btn_DatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DatPhong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_DatPhong.FlatAppearance.BorderSize = 2;
+            this.btn_DatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btn_DatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_DatPhong.ForeColor = System.Drawing.Color.Lime;
+            this.btn_DatPhong.Location = new System.Drawing.Point(23, 73);
+            this.btn_DatPhong.Name = "btn_DatPhong";
+            this.btn_DatPhong.Size = new System.Drawing.Size(120, 32);
+            this.btn_DatPhong.TabIndex = 25;
+            this.btn_DatPhong.Text = "Đặt phòng";
+            this.btn_DatPhong.UseVisualStyleBackColor = false;
             // 
             // lbl_Phong
             // 
@@ -151,62 +194,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_DatPhong
-            // 
-            this.btn_DatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btn_DatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DatPhong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_DatPhong.FlatAppearance.BorderSize = 2;
-            this.btn_DatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btn_DatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_DatPhong.ForeColor = System.Drawing.Color.Lime;
-            this.btn_DatPhong.Location = new System.Drawing.Point(23, 73);
-            this.btn_DatPhong.Name = "btn_DatPhong";
-            this.btn_DatPhong.Size = new System.Drawing.Size(120, 32);
-            this.btn_DatPhong.TabIndex = 25;
-            this.btn_DatPhong.Text = "Đặt phòng";
-            this.btn_DatPhong.UseVisualStyleBackColor = false;
-            // 
-            // btn_HuyDatPhong
-            // 
-            this.btn_HuyDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btn_HuyDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_HuyDatPhong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_HuyDatPhong.FlatAppearance.BorderSize = 2;
-            this.btn_HuyDatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btn_HuyDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_HuyDatPhong.ForeColor = System.Drawing.Color.Lime;
-            this.btn_HuyDatPhong.Location = new System.Drawing.Point(158, 73);
-            this.btn_HuyDatPhong.Name = "btn_HuyDatPhong";
-            this.btn_HuyDatPhong.Size = new System.Drawing.Size(120, 32);
-            this.btn_HuyDatPhong.TabIndex = 26;
-            this.btn_HuyDatPhong.Text = "Hủy đặt";
-            this.btn_HuyDatPhong.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(57, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Loại phòng:";
-            // 
-            // lbl_LoaiPH
-            // 
-            this.lbl_LoaiPH.AutoSize = true;
-            this.lbl_LoaiPH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoaiPH.ForeColor = System.Drawing.Color.White;
-            this.lbl_LoaiPH.Location = new System.Drawing.Point(141, 45);
-            this.lbl_LoaiPH.Name = "lbl_LoaiPH";
-            this.lbl_LoaiPH.Size = new System.Drawing.Size(88, 16);
-            this.lbl_LoaiPH.TabIndex = 28;
-            this.lbl_LoaiPH.Text = "Loại phòng:";
-            // 
             // UC_Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +205,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "UC_Phong";
             this.Size = new System.Drawing.Size(435, 180);
+            this.Load += new System.EventHandler(this.UC_Phong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -243,6 +231,5 @@
         private DesignControl.ButtonHover btn_HuyDatPhong;
         private DesignControl.ButtonHover btn_DatPhong;
         private System.Windows.Forms.Label lbl_LoaiPH;
-        private System.Windows.Forms.Label label3;
     }
 }

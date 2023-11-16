@@ -1,52 +1,49 @@
 ﻿namespace BookingHotel_App
 {
-    partial class UC_NhaCC
-    {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class frm_QLLoaiPh
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Component Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_NhaCC));
-            this.dgv_NhaCC = new System.Windows.Forms.DataGridView();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_QLLoaiPh));
+            this.dgv_LoaiPH = new System.Windows.Forms.DataGridView();
+            this.MaLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_Search = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_MaNCC = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_SDT = new DesignControl.TextForNumber();
+            this.pic_Image = new System.Windows.Forms.PictureBox();
+            this.btn_UpImage = new System.Windows.Forms.Button();
+            this.txt_TenLP = new System.Windows.Forms.TextBox();
+            this.txt_GiaLP = new DesignControl.TextForNumber();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_LoaiTK = new System.Windows.Forms.ComboBox();
             this.lbl_LoaiTK = new System.Windows.Forms.Label();
@@ -61,203 +58,168 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
-            this.txt_DiaChi = new System.Windows.Forms.TextBox();
-            this.txt_TenNCC = new DesignControl.TextForLetter();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiPH)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgv_NhaCC
+            // dgv_LoaiPH
             // 
-            this.dgv_NhaCC.AllowUserToAddRows = false;
-            this.dgv_NhaCC.AllowUserToDeleteRows = false;
-            this.dgv_NhaCC.AllowUserToResizeColumns = false;
-            this.dgv_NhaCC.AllowUserToResizeRows = false;
+            this.dgv_LoaiPH.AllowUserToAddRows = false;
+            this.dgv_LoaiPH.AllowUserToDeleteRows = false;
+            this.dgv_LoaiPH.AllowUserToResizeColumns = false;
+            this.dgv_LoaiPH.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.dgv_NhaCC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_NhaCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_NhaCC.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dgv_NhaCC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_LoaiPH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_LoaiPH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_LoaiPH.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.dgv_LoaiPH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_NhaCC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_NhaCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhaCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNCC,
-            this.TenNCC,
-            this.SDTNCC,
-            this.DiaChiNCC});
-            this.dgv_NhaCC.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgv_LoaiPH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_LoaiPH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_LoaiPH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLP,
+            this.TenLP,
+            this.GiaPH});
+            this.dgv_LoaiPH.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_NhaCC.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_NhaCC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_NhaCC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dgv_NhaCC.Location = new System.Drawing.Point(0, 206);
-            this.dgv_NhaCC.Name = "dgv_NhaCC";
-            this.dgv_NhaCC.ReadOnly = true;
+            this.dgv_LoaiPH.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_LoaiPH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_LoaiPH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.dgv_LoaiPH.Location = new System.Drawing.Point(0, 188);
+            this.dgv_LoaiPH.Name = "dgv_LoaiPH";
+            this.dgv_LoaiPH.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_NhaCC.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_NhaCC.RowHeadersVisible = false;
+            this.dgv_LoaiPH.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_LoaiPH.RowHeadersVisible = false;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.dgv_NhaCC.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_NhaCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_NhaCC.Size = new System.Drawing.Size(796, 319);
-            this.dgv_NhaCC.TabIndex = 19;
-            this.dgv_NhaCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhaCC_CellClick);
+            this.dgv_LoaiPH.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_LoaiPH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_LoaiPH.Size = new System.Drawing.Size(776, 241);
+            this.dgv_LoaiPH.TabIndex = 19;
+            this.dgv_LoaiPH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiPH_CellClick);
             // 
-            // MaNCC
+            // MaLP
             // 
-            this.MaNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã";
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.ReadOnly = true;
-            this.MaNCC.Width = 52;
+            this.MaLP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaLP.DataPropertyName = "MaLP";
+            this.MaLP.HeaderText = "Mã";
+            this.MaLP.Name = "MaLP";
+            this.MaLP.ReadOnly = true;
+            this.MaLP.Width = 46;
             // 
-            // TenNCC
+            // TenLP
             // 
-            this.TenNCC.DataPropertyName = "TenNCC";
-            this.TenNCC.HeaderText = "Tên";
-            this.TenNCC.Name = "TenNCC";
-            this.TenNCC.ReadOnly = true;
+            this.TenLP.DataPropertyName = "TenLP";
+            this.TenLP.HeaderText = "Tên";
+            this.TenLP.Name = "TenLP";
+            this.TenLP.ReadOnly = true;
             // 
-            // SDTNCC
+            // GiaPH
             // 
-            this.SDTNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SDTNCC.DataPropertyName = "SDTNCC";
-            this.SDTNCC.HeaderText = "Số điện thoại";
-            this.SDTNCC.Name = "SDTNCC";
-            this.SDTNCC.ReadOnly = true;
-            this.SDTNCC.Width = 107;
-            // 
-            // DiaChiNCC
-            // 
-            this.DiaChiNCC.DataPropertyName = "DiaChiNCC";
-            this.DiaChiNCC.HeaderText = "Địa chỉ";
-            this.DiaChiNCC.Name = "DiaChiNCC";
-            this.DiaChiNCC.ReadOnly = true;
+            this.GiaPH.DataPropertyName = "GiaPH";
+            this.GiaPH.HeaderText = "Giá";
+            this.GiaPH.Name = "GiaPH";
+            this.GiaPH.ReadOnly = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txt_Search);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txt_DiaChi);
-            this.panel1.Controls.Add(this.txt_MaNCC);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_SDT);
+            this.panel1.Controls.Add(this.pic_Image);
+            this.panel1.Controls.Add(this.btn_UpImage);
+            this.panel1.Controls.Add(this.txt_TenLP);
+            this.panel1.Controls.Add(this.txt_GiaLP);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txt_TenNCC);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbo_LoaiTK);
             this.panel1.Controls.Add(this.lbl_LoaiTK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 179);
+            this.panel1.Size = new System.Drawing.Size(776, 161);
             this.panel1.TabIndex = 18;
             // 
-            // txt_Search
+            // pic_Image
             // 
-            this.txt_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Search.ForeColor = System.Drawing.Color.White;
-            this.txt_Search.Location = new System.Drawing.Point(236, 122);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(282, 22);
-            this.txt_Search.TabIndex = 21;
+            this.pic_Image.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pic_Image.ErrorImage")));
+            this.pic_Image.Image = ((System.Drawing.Image)(resources.GetObject("pic_Image.Image")));
+            this.pic_Image.Location = new System.Drawing.Point(24, 45);
+            this.pic_Image.Name = "pic_Image";
+            this.pic_Image.Size = new System.Drawing.Size(70, 78);
+            this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Image.TabIndex = 20;
+            this.pic_Image.TabStop = false;
             // 
-            // label5
+            // btn_UpImage
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(233, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Tìm kiếm";
+            this.btn_UpImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_UpImage.FlatAppearance.BorderSize = 2;
+            this.btn_UpImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_UpImage.Location = new System.Drawing.Point(12, 31);
+            this.btn_UpImage.Name = "btn_UpImage";
+            this.btn_UpImage.Size = new System.Drawing.Size(96, 109);
+            this.btn_UpImage.TabIndex = 19;
+            this.btn_UpImage.UseVisualStyleBackColor = true;
+            this.btn_UpImage.Click += new System.EventHandler(this.btn_UpImage_Click);
             // 
-            // txt_MaNCC
+            // txt_TenLP
             // 
-            this.txt_MaNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_MaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaNCC.ForeColor = System.Drawing.Color.White;
-            this.txt_MaNCC.Location = new System.Drawing.Point(18, 30);
-            this.txt_MaNCC.Name = "txt_MaNCC";
-            this.txt_MaNCC.Size = new System.Drawing.Size(177, 22);
-            this.txt_MaNCC.TabIndex = 18;
+            this.txt_TenLP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_TenLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenLP.ForeColor = System.Drawing.Color.White;
+            this.txt_TenLP.Location = new System.Drawing.Point(128, 55);
+            this.txt_TenLP.Name = "txt_TenLP";
+            this.txt_TenLP.Size = new System.Drawing.Size(177, 22);
+            this.txt_TenLP.TabIndex = 18;
             // 
-            // label2
+            // txt_GiaLP
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(15, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Mã";
-            // 
-            // txt_SDT
-            // 
-            this.txt_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_SDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SDT.ForeColor = System.Drawing.Color.White;
-            this.txt_SDT.Location = new System.Drawing.Point(18, 122);
-            this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(177, 22);
-            this.txt_SDT.TabIndex = 12;
+            this.txt_GiaLP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_GiaLP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GiaLP.ForeColor = System.Drawing.Color.White;
+            this.txt_GiaLP.Location = new System.Drawing.Point(128, 101);
+            this.txt_GiaLP.Name = "txt_GiaLP";
+            this.txt_GiaLP.Size = new System.Drawing.Size(177, 22);
+            this.txt_GiaLP.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(15, 103);
+            this.label4.Location = new System.Drawing.Point(125, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 16);
+            this.label4.Size = new System.Drawing.Size(31, 16);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Số điện thoại";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(233, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Địa chỉ";
+            this.label4.Text = "Giá";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 57);
+            this.label1.Location = new System.Drawing.Point(125, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 6;
@@ -269,7 +231,7 @@
             this.cbo_LoaiTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_LoaiTK.ForeColor = System.Drawing.Color.White;
             this.cbo_LoaiTK.FormattingEnabled = true;
-            this.cbo_LoaiTK.Location = new System.Drawing.Point(337, 74);
+            this.cbo_LoaiTK.Location = new System.Drawing.Point(440, 55);
             this.cbo_LoaiTK.Name = "cbo_LoaiTK";
             this.cbo_LoaiTK.Size = new System.Drawing.Size(181, 24);
             this.cbo_LoaiTK.TabIndex = 1;
@@ -279,7 +241,7 @@
             this.lbl_LoaiTK.AutoSize = true;
             this.lbl_LoaiTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LoaiTK.ForeColor = System.Drawing.Color.White;
-            this.lbl_LoaiTK.Location = new System.Drawing.Point(233, 77);
+            this.lbl_LoaiTK.Location = new System.Drawing.Point(336, 58);
             this.lbl_LoaiTK.Name = "lbl_LoaiTK";
             this.lbl_LoaiTK.Size = new System.Drawing.Size(98, 16);
             this.lbl_LoaiTK.TabIndex = 0;
@@ -292,9 +254,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tssLbl_TongCong});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 525);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 429);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(796, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(776, 22);
             this.statusStrip1.TabIndex = 17;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -324,7 +286,7 @@
             this.tsBtn_Reset});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(796, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(776, 27);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -390,41 +352,26 @@
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
-            // txt_DiaChi
+            // frm_QLLoaiPh
             // 
-            this.txt_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
-            this.txt_DiaChi.Location = new System.Drawing.Point(236, 32);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(282, 22);
-            this.txt_DiaChi.TabIndex = 19;
-            // 
-            // txt_TenNCC
-            // 
-            this.txt_TenNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_TenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenNCC.ForeColor = System.Drawing.Color.White;
-            this.txt_TenNCC.Location = new System.Drawing.Point(18, 76);
-            this.txt_TenNCC.Name = "txt_TenNCC";
-            this.txt_TenNCC.Size = new System.Drawing.Size(177, 22);
-            this.txt_TenNCC.TabIndex = 7;
-            // 
-            // UC_NhaCC
-            // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.Controls.Add(this.dgv_NhaCC);
+            this.ClientSize = new System.Drawing.Size(776, 451);
+            this.Controls.Add(this.dgv_LoaiPH);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "UC_NhaCC";
-            this.Size = new System.Drawing.Size(796, 547);
-            this.Load += new System.EventHandler(this.UC_NhaCC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCC)).EndInit();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frm_QLLoaiPh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý loại phòng";
+            this.Load += new System.EventHandler(this.frm_QLLoaiPh_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiPH)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -432,17 +379,14 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
+		}
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv_NhaCC;
+        private System.Windows.Forms.DataGridView dgv_LoaiPH;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txt_MaNCC;
-        private System.Windows.Forms.Label label2;
-        private DesignControl.TextForNumber txt_SDT;
+        private DesignControl.TextForNumber txt_GiaLP;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo_LoaiTK;
         private System.Windows.Forms.Label lbl_LoaiTK;
@@ -457,13 +401,11 @@
         private System.Windows.Forms.ToolStripButton tsBtn_TimKiem;
         private System.Windows.Forms.ToolStripButton tsBtn_InExcel;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
-        private System.Windows.Forms.TextBox txt_Search;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDTNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChiNCC;
-        private System.Windows.Forms.TextBox txt_DiaChi;
-        private DesignControl.TextForLetter txt_TenNCC;
+        private System.Windows.Forms.TextBox txt_TenLP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaPH;
+        private System.Windows.Forms.PictureBox pic_Image;
+        private System.Windows.Forms.Button btn_UpImage;
     }
 }

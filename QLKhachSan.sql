@@ -16,7 +16,8 @@ create table ChucVu
 	constraint pk_MaCV_ChucVu primary key(MaCV)
 )
 
-insert into ChucVu values (N'Quản lý'), (N'Lễ tân'), (N'Lao công'), (N'Phục vụ'), (N'Bảo vệ'), (N'Đầu bếp')
+insert into ChucVu values 
+(N'Quản lý'), (N'Lễ tân'), (N'Lao công'), (N'Phục vụ'), (N'Bảo vệ'), (N'Đầu bếp')
 
 create table NhanVien 
 (
@@ -88,14 +89,17 @@ create table LoaiPhong
 	MaLP	int identity,
 	TenLP	nvarchar(max) not null check(TenLP<>''),
 	GiaPH	int default 0,
+	HinhLP	nvarchar(max),
 	constraint pk_MaLP_LoaiPhong primary key (MaLP)
 )
 
-insert into LoaiPhong values
+insert into LoaiPhong(TenLP,GiaPH) values
 (N'Phòng Standard (STD)',	400000),
 (N'Phòng Superior (SUP)',	800000),
 (N'Phòng Deluxe (DLX)',		1500000),
-(N'Phòng Superior (SUP)',	3000000)
+(N'Phòng Suite (Ký hiệu SUT)',	3000000)
+
+--select * from LoaiPhong
 
 create table Phong 
 (
@@ -103,7 +107,7 @@ create table Phong
 	TenPH	nvarchar(50) unique not null check(TenPH<>''),
 	MaLP	int not null,
 	Tang	int not null,
-	TinhTrangPH	nvarchar(50) default N'Trống' check (TinhTrangPH = N'Trống' or TinhTrangPH = N'Đã đặt' or TinhTrangPH = N'Đang sửa/dọn' or TinhTrangPH = N'Đang thuê'),
+	TinhTrangPH	nvarchar(50) default N'Trống' check (TinhTrangPH = N'Trống' or TinhTrangPH = N'Đang sửa/dọn dẹp' or TinhTrangPH = N'Đang thuê'),
 	constraint pk_MaPH_Phong primary key (MaPH),
 	constraint fk_MaLP_Phong foreign key (MaLP) references LoaiPhong(MaLP)
 )
@@ -114,6 +118,8 @@ insert into Phong(TenPH,MaLP,Tang) values
 (N'301', 2, 3), (N'302', 2, 3), (N'303', 1, 3), (N'304', 2, 3), (N'305', 1, 3), (N'306', 2, 3), (N'307', 1, 3), (N'308', 2, 3), (N'309', 1, 3), (N'310', 1, 3),
 (N'401', 3, 4), (N'402', 2, 4), (N'403', 2, 4), (N'404', 3, 4), (N'405', 2, 4), (N'406', 2, 4), (N'407', 2, 4), (N'408', 3, 4), (N'409', 2, 4), (N'410', 2, 4),
 (N'501', 4, 5), (N'502', 3, 5), (N'503', 3, 5), (N'504', 3, 5), (N'505', 4, 5), (N'506', 3, 5), (N'507', 3, 5), (N'508', 2, 5), (N'509', 3, 5), (N'510', 4, 5)
+
+--select * from Phong
 
 create table DichVu 
 (
@@ -212,7 +218,8 @@ create table Quyen
 
 insert into Quyen(MaQuyen,TenQuyen) values
 ('Admin',N'Admin'),
-('User',N'User')
+('User',N'User'),
+('Owner',N'Owner')
 
 create table TaiKhoan 
 (
@@ -230,7 +237,8 @@ insert into TaiKhoan(TenTK,MaNV,MatKhau,MaQuyen) values
 ('Admin',1,'123','Admin'),
 ('User',2,'123','User')
 
-
+insert into TaiKhoan(TenTK,MatKhau,MaQuyen) values
+('Owner','123','Owner')
 
 create table DatPhong
 (

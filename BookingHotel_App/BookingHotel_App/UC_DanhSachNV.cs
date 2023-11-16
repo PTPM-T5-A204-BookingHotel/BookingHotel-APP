@@ -77,21 +77,28 @@ namespace BookingHotel_App
         }
         private void tsBtn_TimKiem_Click(object sender, EventArgs e)
         {
-            string search = txt_TimKiem.Text.Trim();
-            if (cbo_LoaiTK.SelectedIndex == 2)
+            if (dgv_NhanVien.RowCount < 1)
             {
-                if (rdo_Nam.Checked)
-                    search = "Nam";
-                if (rdo_Nu.Checked)
-                    search = "Nữ";
-            }
-            if (search.Equals(""))
-            {
-                this.Message("Chưa nhập tìm kiếm",MyMessageBox.enmType.Error); return;
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
             }
             else
             {
-                nvblldal.search(cbo_LoaiTK.SelectedIndex, search, dgv_NhanVien);
+                string search = txt_TimKiem.Text.Trim();
+                if (cbo_LoaiTK.SelectedIndex == 2)
+                {
+                    if (rdo_Nam.Checked)
+                        search = "Nam";
+                    if (rdo_Nu.Checked)
+                        search = "Nữ";
+                }
+                if (search.Equals(""))
+                {
+                    this.Message("Chưa nhập tìm kiếm", MyMessageBox.enmType.Error); return;
+                }
+                else
+                {
+                    nvblldal.search(cbo_LoaiTK.SelectedIndex, search, dgv_NhanVien);
+                }
             }
             
         }
@@ -109,7 +116,43 @@ namespace BookingHotel_App
 
         private void tsBtn_SapXep_Click(object sender, EventArgs e)
         {
-            nvblldal.sort(dgv_NhanVien);
+            if (dgv_NhanVien.RowCount < 1)
+            {
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
+            else
+            {
+                nvblldal.sort(dgv_NhanVien);
+            }
+        }
+
+        private void tsBtn_Xoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgv_NhanVien.RowCount < 1)
+                {
+                    this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+                }
+                else
+                {
+                    int index = dgv_NhanVien.CurrentRow.Index;
+                    if (index < 0)
+                    {
+                        this.Message("Chưa chọn nhân viên", MyMessageBox.enmType.Error);
+                    }
+                    else
+                    {
+                        string cccd = dgv_NhanVien.Rows[index].Cells[0].Value.ToString();
+                        int manv = nvblldal.getMaNV(cccd);
+                        nvblldal.delete(manv);
+                    }
+                }
+            }
+            catch
+            {
+                this.Message("Nhân viên này đang được sử dụng", MyMessageBox.enmType.Error);
+            }
         }
     }
 }

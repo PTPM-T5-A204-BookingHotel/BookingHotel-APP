@@ -1700,6 +1700,8 @@ namespace BLL_DAL
 		
 		private System.Nullable<int> _GiaPH;
 		
+		private string _HinhLP;
+		
 		private EntitySet<Phong> _Phongs;
 		
     #region Extensibility Method Definitions
@@ -1712,6 +1714,8 @@ namespace BLL_DAL
     partial void OnTenLPChanged();
     partial void OnGiaPHChanging(System.Nullable<int> value);
     partial void OnGiaPHChanged();
+    partial void OnHinhLPChanging(string value);
+    partial void OnHinhLPChanged();
     #endregion
 		
 		public LoaiPhong()
@@ -1776,6 +1780,26 @@ namespace BLL_DAL
 					this._GiaPH = value;
 					this.SendPropertyChanged("GiaPH");
 					this.OnGiaPHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhLP", DbType="NVarChar(MAX)")]
+		public string HinhLP
+		{
+			get
+			{
+				return this._HinhLP;
+			}
+			set
+			{
+				if ((this._HinhLP != value))
+				{
+					this.OnHinhLPChanging(value);
+					this.SendPropertyChanging();
+					this._HinhLP = value;
+					this.SendPropertyChanged("HinhLP");
+					this.OnHinhLPChanged();
 				}
 			}
 		}
