@@ -190,7 +190,7 @@ namespace BookingHotel_App
         private void dgv_LoaiPH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 row = dgv_LoaiPH.Rows[e.RowIndex];
                 txt_TenLP.Text = row.Cells["TenLP"].Value.ToString();

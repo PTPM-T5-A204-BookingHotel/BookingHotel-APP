@@ -79,7 +79,7 @@ namespace BLL_DAL
             {
                 case 0: kq = from NV in qlks.NhanViens where NV.CCCDNV.Contains(value) select new { NV.CCCDNV, NV.HoTenNV, NV.GioiTinhNV, NV.SoDienThoaiNV, NV.NgaySinhNV, NV.DiaChiNV, NV.EmailNV }; break;
                 case 1: kq = from NV in qlks.NhanViens where NV.HoTenNV.Contains(value) select new { NV.CCCDNV, NV.HoTenNV, NV.GioiTinhNV, NV.SoDienThoaiNV, NV.NgaySinhNV, NV.DiaChiNV, NV.EmailNV }; break;
-                case 2: kq = from NV in qlks.NhanViens where NV.GioiTinhNV.Contains(value) select new { NV.CCCDNV, NV.HoTenNV, NV.GioiTinhNV, NV.SoDienThoaiNV, NV.NgaySinhNV, NV.DiaChiNV, NV.EmailNV }; break;
+                case 2: kq = from NV in qlks.NhanViens where NV.GioiTinhNV.Equals(value) select new { NV.CCCDNV, NV.HoTenNV, NV.GioiTinhNV, NV.SoDienThoaiNV, NV.NgaySinhNV, NV.DiaChiNV, NV.EmailNV }; break;
             }
             dgv.DataSource = kq;
         }

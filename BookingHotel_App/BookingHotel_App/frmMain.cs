@@ -1,4 +1,5 @@
-﻿using DesignControl;
+﻿using BLL_DAL;
+using DesignControl;
 using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace BookingHotel_App
         {
             InitializeComponent();
         }
-
+        TaiKhoan_BLL_DAL tkblldal = new TaiKhoan_BLL_DAL();
         UC_DanhSachNV ucDSNV;
         UC_DanhSachKH ucDSKH;
         UC_DichVu ucdv;
@@ -27,6 +28,7 @@ namespace BookingHotel_App
         UC_NhaCC ucncc;
         UC_TaiKhoan uctk;
         UC_DanhSachPhong ucDSP;
+        UC_DatPhongOnline ucDPOnl;
         public void LoadData(string tentk)
         {
             barStaticItem_TenTK.Caption = tentk;
@@ -95,6 +97,7 @@ namespace BookingHotel_App
             if (ucDSTK == null)
             {
                 ucDSTK = new UC_DanhSachTK();
+                ucDSTK.setTenTK(barStaticItem_TenTK.Caption);
                 ucDSTK.Dock = DockStyle.Fill;
                 MainContainer.Controls.Add(ucDSTK);
                 ucDSTK.BringToFront();
@@ -148,6 +151,7 @@ namespace BookingHotel_App
             if (ucDSP == null)
             {
                 ucDSP = new UC_DanhSachPhong();
+                ucDSP.setTenTK(barStaticItem_TenTK.Caption);
                 ucDSP.Dock = DockStyle.Fill;
                 MainContainer.Controls.Add(ucDSP);
                 ucDSP.BringToFront();
@@ -158,15 +162,41 @@ namespace BookingHotel_App
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            string quyen = tkblldal.getTK(barStaticItem_TenTK.Caption).MaQuyen;
+            if(quyen == "User")
+            {
+                ace_NhanVien.Enabled = false;
+                ace_DanhSachTK.Enabled = false;
+                ace_NhaCC.Enabled = false;
+                ace_DichVu.Enabled = false;
+                ace_VatTu.Enabled = false;
+
+            }
+            
             if (ucDSP == null)
             {
                 ucDSP = new UC_DanhSachPhong();
+                ucDSP.setTenTK(barStaticItem_TenTK.Caption);
                 ucDSP.Dock = DockStyle.Fill;
                 MainContainer.Controls.Add(ucDSP);
                 ucDSP.BringToFront();
             }
             else
                 ucDSP.BringToFront();
+        }
+
+        private void ace_DatPHOnl_Click(object sender, EventArgs e)
+        {
+            if (ucDPOnl == null)
+            {
+                ucDPOnl = new UC_DatPhongOnline();
+                ucDPOnl.setTenTK(barStaticItem_TenTK.Caption);
+                ucDPOnl.Dock = DockStyle.Fill;
+                MainContainer.Controls.Add(ucDPOnl);
+                ucDPOnl.BringToFront();
+            }
+            else
+                ucDPOnl.BringToFront();
         }
     }
 }

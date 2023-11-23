@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>BookingHotel_App</RootNamespace>
     <AssemblyName>BookingHotel_App</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,6 +60,18 @@
     <Reference Include="Emgu.CV.World, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <HintPath>..\packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.7.0.3\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.7.0.3\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.7.0.3\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
     </Reference>
@@ -66,7 +79,32 @@
       <HintPath>..\packages\OpenTK.GLControl.1.1.2225.0\lib\net20\OpenTK.GLControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,17 +137,23 @@
     <Compile Include="frm_ChucVu.Designer.cs">
       <DependentUpon>frm_ChucVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_ChupAnh.cs">
+    <Compile Include="frm_DatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ChupAnh.Designer.cs">
-      <DependentUpon>frm_ChupAnh.cs</DependentUpon>
+    <Compile Include="frm_DatPhong.Designer.cs">
+      <DependentUpon>frm_DatPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_QLLoaiPh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_QLLoaiPh.Designer.cs">
       <DependentUpon>frm_QLLoaiPh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SavePicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SavePicture.Designer.cs">
+      <DependentUpon>frm_SavePicture.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_SuaKH.cs">
       <SubType>Form</SubType>
@@ -179,6 +223,12 @@
     <Compile Include="UC_DanhSachTK.Designer.cs">
       <DependentUpon>UC_DanhSachTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_DatPhongOnline.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_DatPhongOnline.Designer.cs">
+      <DependentUpon>UC_DatPhongOnline.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_DichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,11 +268,14 @@
     <EmbeddedResource Include="frm_ChucVu.resx">
       <DependentUpon>frm_ChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_ChupAnh.resx">
-      <DependentUpon>frm_ChupAnh.cs</DependentUpon>
+    <EmbeddedResource Include="frm_DatPhong.resx">
+      <DependentUpon>frm_DatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_QLLoaiPh.resx">
       <DependentUpon>frm_QLLoaiPh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SavePicture.resx">
+      <DependentUpon>frm_SavePicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SuaKH.resx">
       <DependentUpon>frm_SuaKH.cs</DependentUpon>
@@ -267,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DanhSachTK.resx">
       <DependentUpon>UC_DanhSachTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_DatPhongOnline.resx">
+      <DependentUpon>UC_DatPhongOnline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DichVu.resx">
       <DependentUpon>UC_DichVu.cs</DependentUpon>
@@ -375,8 +431,13 @@
     <None Include="Images\Forms\icons8-success-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="haarcascade_frontalface_alt_tree.xml" />
     <None Include="Images\Forms\icons8-supplier-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Forms\icons8-online-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Forms\icons8-decentralization-64 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

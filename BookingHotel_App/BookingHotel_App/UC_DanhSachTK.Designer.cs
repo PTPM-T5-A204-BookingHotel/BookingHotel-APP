@@ -76,7 +76,7 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
             this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
@@ -114,7 +114,7 @@
             this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenTK,
-            this.HoTenNV,
+            this.MaNV,
             this.MatKhau,
             this.MaQuyen});
             this.dgv_TaiKhoan.Cursor = System.Windows.Forms.Cursors.Default;
@@ -566,30 +566,28 @@
             this.TenTK.Name = "TenTK";
             this.TenTK.ReadOnly = true;
             // 
-            // HoTenNV
+            // MaNV
             // 
-            this.HoTenNV.DataPropertyName = "HoTenNV";
-            this.HoTenNV.HeaderText = "Nhân viên";
-            this.HoTenNV.Name = "HoTenNV";
-            this.HoTenNV.ReadOnly = true;
+            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã nhân viên";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 118;
             // 
             // MatKhau
             // 
-            this.MatKhau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.MatKhau.DataPropertyName = "MatKhau";
             this.MatKhau.HeaderText = "Mật khẩu";
             this.MatKhau.Name = "MatKhau";
             this.MatKhau.ReadOnly = true;
-            this.MatKhau.Width = 91;
             // 
             // MaQuyen
             // 
-            this.MaQuyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.MaQuyen.DataPropertyName = "MaQuyen";
             this.MaQuyen.HeaderText = "Mã quyền";
             this.MaQuyen.Name = "MaQuyen";
             this.MaQuyen.ReadOnly = true;
-            this.MaQuyen.Width = 94;
             // 
             // UC_DanhSachTK
             // 
@@ -659,7 +657,7 @@
         private DesignControl.TextForNumber txt_CCCD;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaQuyen;
     }

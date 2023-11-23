@@ -214,11 +214,11 @@ namespace BookingHotel_App
         private void dgv_NhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            if (e.RowIndex > 0)
+            if (e.RowIndex >=0)
             {
                 row = dgv_NhaCC.Rows[e.RowIndex];
-                txt_MaNCC.Text = row.Cells[0].Value.ToString();
-                txt_TenNCC.Text = row.Cells[1].Value.ToString();
+                txt_MaNCC.Text = row.Cells["MaNCC"].Value.ToString();
+                txt_TenNCC.Text = row.Cells["TenNCC"].Value.ToString();
                 txt_SDT.Text = row.Cells["SDTNCC"].Value.ToString();
                 txt_DiaChi.Text = row.Cells["DiaChiNCC"].Value.ToString();
             }

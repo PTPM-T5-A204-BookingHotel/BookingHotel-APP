@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL_DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,12 @@ namespace BookingHotel_App
         {
             InitializeComponent();
         }
+        TaiKhoan_BLL_DAL tkblldal = new TaiKhoan_BLL_DAL();
+        string taikhoan;
+        public void setTenTK(string tentk)
+        {
+            taikhoan = tentk;
+        }
         public void LoadData(int tang,string phong,string loaiphong,string tinhtrang)
         {
             lbl_Tang.Text = tang.ToString();
@@ -25,7 +32,20 @@ namespace BookingHotel_App
         }
         private void UC_Phong_Load(object sender, EventArgs e)
         {
+            string quyen = tkblldal.getTK(taikhoan).MaQuyen;
+            if (quyen == "Admin")
+            {
+                btn_Mo.Enabled = false;
 
+
+            }
+        }
+
+        private void btn_Mo_Click(object sender, EventArgs e)
+        {
+            frm_DatPhong frm = new frm_DatPhong();
+            frm.LoadData(lbl_Phong.Text, taikhoan);
+            frm.ShowDialog();
         }
     }
 }

@@ -17,16 +17,22 @@ namespace BLL_DAL
             for (int i = 0; i < 1000000; i++)
             {
                 mahd += (i + 1);
-                var kq = qlks.HoaDons.Where(o => o.Equals(mahd)).Count();
+                var kq = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).Count();
                 if (kq == 0)
                     break;
             }
             return mahd;
         }
+        
         public List<HoaDon> getListHD(int maph)
         {
             var kq = qlks.HoaDons.Where(o => o.MaPH.Equals(maph) && o.TinhTrangHD.Equals("Chưa thanh toán"));
             return kq.ToList();
+        }
+        public HoaDon getHD(string mahd)
+        {
+            var kq = from hd in qlks.HoaDons where hd.MaHD.Equals(mahd) select hd;
+            return kq.FirstOrDefault();
         }
         public void getHDs(DataGridView dgv)
         {
@@ -36,14 +42,91 @@ namespace BLL_DAL
                      select new
                      {
                          hd.MaHD,
-                         hd.GiamGia,
                          hd.TongTien,
-                         hd.ThanhTienHD,
                          hd.TinhTrangHD,
                          ph.TenPH,
-                         kh.HoTenKH
+                         kh.HoTenKH,
+                         hd.TenTK
                      };
             dgv.DataSource = kq;
+        }
+        public void getHD_DatPhong(DataGridView dgv,string tenph)
+        {
+            var kq = from hd in qlks.HoaDons
+                     join ph in qlks.Phongs on hd.MaPH equals ph.MaPH
+                     join kh in qlks.KhachHangs on hd.MaKH equals kh.MaKH
+                     where hd.TinhTrangHD.Equals("Chưa thanh toán") && ph.TenPH.Equals(tenph)
+                     orderby hd.TGDatPhong descending
+                     select new
+                     {
+                         hd.MaHD,
+                         hd.TongTien,
+                         kh.HoTenKH,
+                         kh.CCCDKH,
+                         kh.SDTKH,
+                         hd.TGNhanPhong
+                     };
+            dgv.DataSource = kq;
+        }
+        public int CalTongTien(int giaph, int soNgayLuutru)
+        {
+            return giaph * soNgayLuutru;
+        }
+        public void DatPhong(string mahd,int makh,int maph,string tentk,DateTime tgdp,int soNgayLuuTru,int SoLuongNg,int TongTien)
+        {
+            HoaDon hd = new HoaDon();
+            hd.MaHD = mahd;
+            hd.MaKH = makh;
+            hd.MaPH = maph;
+            hd.TenTK = tentk;
+            hd.TGDatPhong = tgdp;
+            hd.SoNgayLuuTru = soNgayLuuTru;
+            hd.SoLuongNguoi = SoLuongNg;
+            hd.TongTien = TongTien;
+            hd.TinhTrangHD = "Chưa thanh toán";
+            qlks.HoaDons.InsertOnSubmit(hd);
+            qlks.SubmitChanges();
+        }
+        public void delete(string mahd)
+        {
+            HoaDon hd = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).FirstOrDefault();
+            if (hd != null)
+            {
+                qlks.HoaDons.DeleteOnSubmit(hd);
+                qlks.SubmitChanges();
+            }
+        }
+        public void update(string mahd,DateTime tgdp, int soNgayLuuTru, int SoLuongNg,int TongTien)
+        {
+            HoaDon hd = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).FirstOrDefault();
+            if (hd != null)
+            {
+                hd.TGDatPhong = tgdp;
+                hd.SoNgayLuuTru = soNgayLuuTru;
+                hd.SoLuongNguoi = SoLuongNg;
+                hd.TongTien = TongTien;
+                qlks.SubmitChanges();
+            }
+        }
+        public void NhanPhong(string mahd,DateTime tgnp)
+        {
+            HoaDon hd = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).FirstOrDefault();
+            if(hd != null)
+            {
+                hd.TGNhanPhong = tgnp;
+                qlks.SubmitChanges();
+            }
+        }
+        public void TraPhong(string mahd,DateTime tgtp)
+        {
+            HoaDon hd = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).FirstOrDefault();
+            if (hd != null)
+            {
+                hd.TGTraPhong = tgtp;
+                hd.TinhTrangHD = "Đã thanh toán";
+                qlks.SubmitChanges();
+            }
+
         }
     }
 }

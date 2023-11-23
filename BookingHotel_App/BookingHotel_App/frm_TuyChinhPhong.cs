@@ -232,7 +232,7 @@ namespace BookingHotel_App
             else
             {
                 DataGridViewRow row = new DataGridViewRow();
-                if (e.RowIndex > 0)
+                if (e.RowIndex >= 0)
                 {
                     row = dgv_Phong.Rows[e.RowIndex];
                     txt_Phong.Text = row.Cells["TenPH"].Value.ToString();

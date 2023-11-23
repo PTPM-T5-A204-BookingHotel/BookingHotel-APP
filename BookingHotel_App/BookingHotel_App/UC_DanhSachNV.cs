@@ -146,6 +146,8 @@ namespace BookingHotel_App
                         string cccd = dgv_NhanVien.Rows[index].Cells[0].Value.ToString();
                         int manv = nvblldal.getMaNV(cccd);
                         nvblldal.delete(manv);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
                     }
                 }
             }

@@ -17,6 +17,18 @@ namespace BLL_DAL
             var VTs = from VT in qlks.VatTus select new { VT.MaVT, VT.TenVT, VT.DonGia, VT.SoLuong, VT.DonViTinh, VT.ThuongHieu,VT.GiaNhap };
             dgv.DataSource = VTs;
         }
+        public void getVT_DatPhong(DataGridView dgv)
+        {
+            var VTs = from VT in qlks.VatTus select new { VT.MaVT, VT.TenVT, VT.DonGia, VT.SoLuong, VT.DonViTinh };
+            dgv.DataSource = VTs;
+        }
+        public void search(string value, DataGridView dgv)
+        {
+            var kq = from VT in qlks.VatTus
+                     where VT.TenVT.Contains(value)
+                     select new { VT.MaVT, VT.TenVT, VT.DonGia, VT.SoLuong, VT.DonViTinh };
+            dgv.DataSource = kq;
+        }
         public int isMaVT(string maVT)
         {
             var kq = qlks.VatTus.Where(o => o.MaVT.Equals(maVT)).Count();

@@ -39,8 +39,8 @@
             this.ace_HoaDon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_VatTu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_KhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_Kho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_NhaCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace_DatPHOnl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_TaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_ThongTinTK = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_DanhSachTK = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -74,7 +74,7 @@
             this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainContainer.Location = new System.Drawing.Point(211, 31);
             this.MainContainer.Name = "MainContainer";
-            this.MainContainer.Size = new System.Drawing.Size(935, 529);
+            this.MainContainer.Size = new System.Drawing.Size(935, 566);
             this.MainContainer.TabIndex = 0;
             // 
             // accordionControl1
@@ -90,7 +90,7 @@
             this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(211, 529);
+            this.accordionControl1.Size = new System.Drawing.Size(211, 566);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -103,8 +103,8 @@
             this.ace_HoaDon,
             this.ace_VatTu,
             this.ace_KhachHang,
-            this.ace_Kho,
             this.ace_NhaCC,
+            this.ace_DatPHOnl,
             this.ace_TaiKhoan});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
@@ -158,13 +158,6 @@
             this.ace_KhachHang.Text = "Khách hàng";
             this.ace_KhachHang.Click += new System.EventHandler(this.ace_KhachHang_Click);
             // 
-            // ace_Kho
-            // 
-            this.ace_Kho.ImageOptions.Image = global::BookingHotel_App.Properties.Resources.icons8_warehouse_64__1_;
-            this.ace_Kho.Name = "ace_Kho";
-            this.ace_Kho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_Kho.Text = "Kho";
-            // 
             // ace_NhaCC
             // 
             this.ace_NhaCC.ImageOptions.Image = global::BookingHotel_App.Properties.Resources.icons8_supplier_64__1_;
@@ -172,6 +165,14 @@
             this.ace_NhaCC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_NhaCC.Text = "Nhà cung cấp";
             this.ace_NhaCC.Click += new System.EventHandler(this.ace_NhaCC_Click);
+            // 
+            // ace_DatPHOnl
+            // 
+            this.ace_DatPHOnl.ImageOptions.Image = global::BookingHotel_App.Properties.Resources.icons8_online_50__1_;
+            this.ace_DatPHOnl.Name = "ace_DatPHOnl";
+            this.ace_DatPHOnl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ace_DatPHOnl.Text = "Đặt phòng online";
+            this.ace_DatPHOnl.Click += new System.EventHandler(this.ace_DatPHOnl_Click);
             // 
             // ace_TaiKhoan
             // 
@@ -349,7 +350,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 560);
+            this.ClientSize = new System.Drawing.Size(1146, 597);
             this.ControlContainer = this.MainContainer;
             this.Controls.Add(this.MainContainer);
             this.Controls.Add(this.accordionControl1);
@@ -384,7 +385,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_HoaDon;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_VatTu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_KhachHang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_Kho;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
@@ -401,5 +401,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem_TenTK;
         private DevExpress.XtraBars.BarStaticItem barStaticItem;
         private DevExpress.XtraBars.BarStaticItem barStaticItem_TenTK;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_DatPHOnl;
     }
 }

@@ -68,6 +68,7 @@
             this.btn_Them.TabIndex = 39;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // txt_Email
             // 
@@ -312,6 +313,7 @@
             this.Controls.Add(this.pic_Image);
             this.Controls.Add(this.btn_UpImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frm_ThemKH.IconOptions.Image")));
             this.Name = "frm_ThemKH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm khách hàng";

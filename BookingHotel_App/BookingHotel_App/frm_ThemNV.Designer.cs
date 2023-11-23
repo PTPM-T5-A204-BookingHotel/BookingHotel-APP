@@ -50,7 +50,10 @@
             this.btn_Them = new DesignControl.ButtonHover();
             this.btn_EditChucVu = new DesignControl.ButtonHover();
             this.pic_Image = new System.Windows.Forms.PictureBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_UpImage
@@ -58,7 +61,7 @@
             this.btn_UpImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_UpImage.FlatAppearance.BorderSize = 2;
             this.btn_UpImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_UpImage.Location = new System.Drawing.Point(12, 12);
+            this.btn_UpImage.Location = new System.Drawing.Point(13, 40);
             this.btn_UpImage.Name = "btn_UpImage";
             this.btn_UpImage.Size = new System.Drawing.Size(96, 109);
             this.btn_UpImage.TabIndex = 0;
@@ -70,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(127, 12);
+            this.label1.Location = new System.Drawing.Point(128, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 2;
@@ -81,7 +84,7 @@
             this.txt_CCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txt_CCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CCCD.ForeColor = System.Drawing.Color.White;
-            this.txt_CCCD.Location = new System.Drawing.Point(130, 38);
+            this.txt_CCCD.Location = new System.Drawing.Point(131, 66);
             this.txt_CCCD.Name = "txt_CCCD";
             this.txt_CCCD.Size = new System.Drawing.Size(156, 22);
             this.txt_CCCD.TabIndex = 3;
@@ -91,7 +94,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(127, 74);
+            this.label2.Location = new System.Drawing.Point(128, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 4;
@@ -102,7 +105,7 @@
             this.txt_Hoten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txt_Hoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Hoten.ForeColor = System.Drawing.Color.White;
-            this.txt_Hoten.Location = new System.Drawing.Point(130, 93);
+            this.txt_Hoten.Location = new System.Drawing.Point(131, 121);
             this.txt_Hoten.Name = "txt_Hoten";
             this.txt_Hoten.Size = new System.Drawing.Size(156, 22);
             this.txt_Hoten.TabIndex = 5;
@@ -112,7 +115,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(307, 12);
+            this.label3.Location = new System.Drawing.Point(308, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 6;
@@ -123,7 +126,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(306, 76);
+            this.label4.Location = new System.Drawing.Point(307, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 16);
             this.label4.TabIndex = 7;
@@ -134,7 +137,7 @@
             this.rdo_Nu.AutoSize = true;
             this.rdo_Nu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdo_Nu.ForeColor = System.Drawing.Color.White;
-            this.rdo_Nu.Location = new System.Drawing.Point(416, 95);
+            this.rdo_Nu.Location = new System.Drawing.Point(417, 123);
             this.rdo_Nu.Name = "rdo_Nu";
             this.rdo_Nu.Size = new System.Drawing.Size(44, 20);
             this.rdo_Nu.TabIndex = 10;
@@ -147,7 +150,7 @@
             this.rdo_Nam.AutoSize = true;
             this.rdo_Nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdo_Nam.ForeColor = System.Drawing.Color.White;
-            this.rdo_Nam.Location = new System.Drawing.Point(306, 96);
+            this.rdo_Nam.Location = new System.Drawing.Point(307, 124);
             this.rdo_Nam.Name = "rdo_Nam";
             this.rdo_Nam.Size = new System.Drawing.Size(57, 20);
             this.rdo_Nam.TabIndex = 9;
@@ -162,7 +165,7 @@
             this.cbo_ChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_ChucVu.ForeColor = System.Drawing.Color.White;
             this.cbo_ChucVu.FormattingEnabled = true;
-            this.cbo_ChucVu.Location = new System.Drawing.Point(309, 38);
+            this.cbo_ChucVu.Location = new System.Drawing.Point(310, 66);
             this.cbo_ChucVu.Name = "cbo_ChucVu";
             this.cbo_ChucVu.Size = new System.Drawing.Size(167, 24);
             this.cbo_ChucVu.TabIndex = 8;
@@ -172,7 +175,7 @@
             this.txt_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txt_SDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SDT.ForeColor = System.Drawing.Color.White;
-            this.txt_SDT.Location = new System.Drawing.Point(257, 219);
+            this.txt_SDT.Location = new System.Drawing.Point(258, 247);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(156, 22);
             this.txt_SDT.TabIndex = 12;
@@ -182,7 +185,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(254, 193);
+            this.label5.Location = new System.Drawing.Point(255, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 16);
             this.label5.TabIndex = 11;
@@ -193,7 +196,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(254, 127);
+            this.label6.Location = new System.Drawing.Point(255, 155);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
             this.label6.TabIndex = 13;
@@ -204,7 +207,7 @@
             this.dt_NgaySinh.CalendarFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dt_NgaySinh.CalendarMonthBackground = System.Drawing.Color.White;
             this.dt_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_NgaySinh.Location = new System.Drawing.Point(257, 157);
+            this.dt_NgaySinh.Location = new System.Drawing.Point(258, 185);
             this.dt_NgaySinh.Name = "dt_NgaySinh";
             this.dt_NgaySinh.Size = new System.Drawing.Size(116, 23);
             this.dt_NgaySinh.TabIndex = 14;
@@ -214,7 +217,7 @@
             this.txt_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txt_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
-            this.txt_DiaChi.Location = new System.Drawing.Point(12, 159);
+            this.txt_DiaChi.Location = new System.Drawing.Point(13, 187);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(208, 22);
             this.txt_DiaChi.TabIndex = 16;
@@ -224,7 +227,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(9, 129);
+            this.label7.Location = new System.Drawing.Point(10, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 16);
             this.label7.TabIndex = 5;
@@ -235,7 +238,7 @@
             this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.Color.White;
-            this.txt_Email.Location = new System.Drawing.Point(12, 219);
+            this.txt_Email.Location = new System.Drawing.Point(13, 247);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(208, 22);
             this.txt_Email.TabIndex = 18;
@@ -245,7 +248,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(9, 200);
+            this.label11.Location = new System.Drawing.Point(10, 228);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 16);
             this.label11.TabIndex = 17;
@@ -261,7 +264,7 @@
             this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_Them.ForeColor = System.Drawing.Color.Lime;
-            this.btn_Them.Location = new System.Drawing.Point(432, 146);
+            this.btn_Them.Location = new System.Drawing.Point(433, 174);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(124, 95);
             this.btn_Them.TabIndex = 19;
@@ -279,7 +282,7 @@
             this.btn_EditChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_EditChucVu.ForeColor = System.Drawing.Color.Lime;
             this.btn_EditChucVu.Image = ((System.Drawing.Image)(resources.GetObject("btn_EditChucVu.Image")));
-            this.btn_EditChucVu.Location = new System.Drawing.Point(482, 38);
+            this.btn_EditChucVu.Location = new System.Drawing.Point(483, 66);
             this.btn_EditChucVu.Name = "btn_EditChucVu";
             this.btn_EditChucVu.Size = new System.Drawing.Size(27, 25);
             this.btn_EditChucVu.TabIndex = 20;
@@ -290,12 +293,33 @@
             // 
             this.pic_Image.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pic_Image.ErrorImage")));
             this.pic_Image.Image = ((System.Drawing.Image)(resources.GetObject("pic_Image.Image")));
-            this.pic_Image.Location = new System.Drawing.Point(24, 26);
+            this.pic_Image.Location = new System.Drawing.Point(25, 54);
             this.pic_Image.Name = "pic_Image";
             this.pic_Image.Size = new System.Drawing.Size(70, 78);
             this.pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_Image.TabIndex = 1;
             this.pic_Image.TabStop = false;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.White;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtn_Reset});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(574, 27);
+            this.toolStrip1.TabIndex = 42;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsBtn_Reset
+            // 
+            this.tsBtn_Reset.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Reset.Image")));
+            this.tsBtn_Reset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtn_Reset.Name = "tsBtn_Reset";
+            this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
+            this.tsBtn_Reset.Text = "Reset";
+            this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
             // frm_ThemNV
             // 
@@ -304,7 +328,8 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 256);
+            this.ClientSize = new System.Drawing.Size(574, 282);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btn_EditChucVu);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.txt_Email);
@@ -335,6 +360,8 @@
             this.Text = "Thêm nhân viên";
             this.Load += new System.EventHandler(this.frm_ThemNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +390,7 @@
         private System.Windows.Forms.Label label11;
         private DesignControl.ButtonHover btn_Them;
         private DesignControl.ButtonHover btn_EditChucVu;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsBtn_Reset;
     }
 }

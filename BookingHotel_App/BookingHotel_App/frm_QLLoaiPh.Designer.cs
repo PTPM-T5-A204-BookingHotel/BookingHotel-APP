@@ -364,6 +364,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frm_QLLoaiPh.IconOptions.Image")));
             this.Name = "frm_QLLoaiPh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý loại phòng";

@@ -21,7 +21,12 @@ namespace BookingHotel_App
         }
         Phong_BLL_DAL phblldal = new Phong_BLL_DAL();
         LoaiPhong_BLL_DAL lpblldal = new LoaiPhong_BLL_DAL();
-        
+        TaiKhoan_BLL_DAL tkblldal = new TaiKhoan_BLL_DAL();
+        string taikhoan;
+        public void setTenTK(string tentk)
+        {
+            taikhoan = tentk;
+        }
         public void creatCbo_Tang()
         {
             foreach(int t in phblldal.getTang())
@@ -38,8 +43,9 @@ namespace BookingHotel_App
         {
             this.pnl_Phong.Controls.Clear();
             
-            //cardPhong = null;
+            
         }
+        
         public void LoadData(int tang)
         {
             int x = 10, y = 10;
@@ -50,6 +56,7 @@ namespace BookingHotel_App
                 string ttph = phblldal.GetPhongs(tang)[i].TinhTrangPH;
                 string tenlp = lpblldal.getTenlp(phblldal.GetPhongs(tang)[i].MaLP);
                 ph.LoadData(tang, tenph, tenlp, ttph);
+                ph.setTenTK(taikhoan);
                 
                 this.pnl_Phong.Controls.Add(ph);
                 if (i%2 == 0 && i != 0)
@@ -80,6 +87,13 @@ namespace BookingHotel_App
         private void UC_DanhSachPhong_Load(object sender, EventArgs e)
         {
             creatCbo_Tang();
+            string quyen = tkblldal.getTK(taikhoan).MaQuyen;
+            if (quyen == "User")
+            {
+                tsBtn_TuyChinh.Enabled = false;
+                
+
+            }
         }
     }
 }

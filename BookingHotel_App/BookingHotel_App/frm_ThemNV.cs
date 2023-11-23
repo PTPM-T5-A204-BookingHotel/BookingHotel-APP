@@ -181,5 +181,13 @@ namespace BookingHotel_App
             }
             
         }
+
+        private void tsBtn_Reset_Click(object sender, EventArgs e)
+        {
+            dt_NgaySinh.Value = DateTime.Now;
+            ba.clearTextBoxs(this.Controls);
+            LoadCbo_ChucVu();
+            rdo_Nam.Checked = true;
+        }
     }
 }

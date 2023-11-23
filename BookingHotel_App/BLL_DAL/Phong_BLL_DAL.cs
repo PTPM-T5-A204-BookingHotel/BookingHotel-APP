@@ -22,6 +22,11 @@ namespace BLL_DAL
             var kq = from ph in qlks.Phongs where ph.TenPH.Equals(tenph) select ph.MaPH;
             return kq.FirstOrDefault();
         }
+        public Phong getPH(int maph)
+        {
+            var kq = from ph in qlks.Phongs where ph.MaPH.Equals(maph) select ph;
+            return kq.FirstOrDefault();
+        }
         public List<Phong> GetPhongs(int tang)
         {
             var kq = from ph in qlks.Phongs where ph.Tang.Equals(tang) select ph;

@@ -16,11 +16,22 @@ namespace BLL_DAL
             var kq = qlks.TaiKhoans.Where(o=>o.TenTK.Equals(tentk)).Count();
             return kq;
         }
-        public void getTKs(DataGridView dgv)
+        public void getTKs(DataGridView dgv,string quyen)
         {
             var kq = from tk in qlks.TaiKhoans 
-                     join nv in qlks.NhanViens on tk.MaNV equals nv.MaNV
-                     select new {tk.TenTK,tk.MatKhau,nv.HoTenNV, tk.MaQuyen };
+                     select new {tk.TenTK,tk.MatKhau,tk.MaNV, tk.MaQuyen };
+            switch (quyen)
+            {
+                case "Admin":
+                    kq = from tk in qlks.TaiKhoans where tk.MaQuyen.Equals("User")
+                         select new { tk.TenTK, tk.MatKhau, tk.MaNV, tk.MaQuyen };
+                    break;
+                case "Owner":
+                    kq = from tk in qlks.TaiKhoans
+                         where !tk.MaQuyen.Equals("Owner")
+                         select new { tk.TenTK, tk.MatKhau, tk.MaNV, tk.MaQuyen };
+                    break;
+            }
             dgv.DataSource = kq;
         }
         public TaiKhoan getTK(string tentk)
@@ -78,7 +89,7 @@ namespace BLL_DAL
         }
         public string getAnh(string tentk)
         {
-            var kq = from tk in qlks.TaiKhoans select tk.AnhTK.ToString();
+            var kq = from tk in qlks.TaiKhoans where tk.TenTK.Equals(tentk) select tk.AnhTK.ToString();
             return kq.FirstOrDefault();
         }
         public void search(int searchType,string value,DataGridView dgv)

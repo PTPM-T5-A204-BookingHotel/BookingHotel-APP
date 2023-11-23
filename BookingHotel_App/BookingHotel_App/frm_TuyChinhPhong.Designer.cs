@@ -35,7 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TuyChinhPhong));
             this.dgv_Phong = new System.Windows.Forms.DataGridView();
+            this.MaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_EditLoaiPh = new DesignControl.ButtonHover();
             this.cbo_LoaiPhong = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_TinhTrang = new System.Windows.Forms.ComboBox();
@@ -50,7 +56,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssLbl_TongCong = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_EditLoaiPh = new DesignControl.ButtonHover();
             this.tsBtn_Them = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Sua = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Xoa = new System.Windows.Forms.ToolStripButton();
@@ -58,11 +63,6 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
-            this.MaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrangPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Phong)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -128,6 +128,49 @@
             this.dgv_Phong.TabIndex = 15;
             this.dgv_Phong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Phong_CellClick);
             // 
+            // MaPH
+            // 
+            this.MaPH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaPH.DataPropertyName = "MaPH";
+            this.MaPH.HeaderText = "Mã phòng";
+            this.MaPH.Name = "MaPH";
+            this.MaPH.ReadOnly = true;
+            this.MaPH.Width = 79;
+            // 
+            // TenPH
+            // 
+            this.TenPH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TenPH.DataPropertyName = "TenPH";
+            this.TenPH.HeaderText = "Phòng";
+            this.TenPH.Name = "TenPH";
+            this.TenPH.ReadOnly = true;
+            this.TenPH.Width = 62;
+            // 
+            // MaLP
+            // 
+            this.MaLP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaLP.DataPropertyName = "MaLP";
+            this.MaLP.HeaderText = "Mã loại phòng";
+            this.MaLP.Name = "MaLP";
+            this.MaLP.ReadOnly = true;
+            this.MaLP.Width = 98;
+            // 
+            // Tang
+            // 
+            this.Tang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Tang.DataPropertyName = "Tang";
+            this.Tang.HeaderText = "Tầng";
+            this.Tang.Name = "Tang";
+            this.Tang.ReadOnly = true;
+            this.Tang.Width = 56;
+            // 
+            // TinhTrangPH
+            // 
+            this.TinhTrangPH.DataPropertyName = "TinhTrangPH";
+            this.TinhTrangPH.HeaderText = "Tình trạng";
+            this.TinhTrangPH.Name = "TinhTrangPH";
+            this.TinhTrangPH.ReadOnly = true;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_EditLoaiPh);
@@ -146,6 +189,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(717, 176);
             this.panel1.TabIndex = 14;
+            // 
+            // btn_EditLoaiPh
+            // 
+            this.btn_EditLoaiPh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btn_EditLoaiPh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EditLoaiPh.FlatAppearance.BorderSize = 0;
+            this.btn_EditLoaiPh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
+            this.btn_EditLoaiPh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EditLoaiPh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_EditLoaiPh.ForeColor = System.Drawing.Color.Lime;
+            this.btn_EditLoaiPh.Image = ((System.Drawing.Image)(resources.GetObject("btn_EditLoaiPh.Image")));
+            this.btn_EditLoaiPh.Location = new System.Drawing.Point(614, 27);
+            this.btn_EditLoaiPh.Name = "btn_EditLoaiPh";
+            this.btn_EditLoaiPh.Size = new System.Drawing.Size(27, 25);
+            this.btn_EditLoaiPh.TabIndex = 41;
+            this.btn_EditLoaiPh.UseVisualStyleBackColor = false;
+            this.btn_EditLoaiPh.Click += new System.EventHandler(this.btn_EditLoaiPh_Click);
             // 
             // cbo_LoaiPhong
             // 
@@ -298,23 +358,6 @@
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btn_EditLoaiPh
-            // 
-            this.btn_EditLoaiPh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btn_EditLoaiPh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EditLoaiPh.FlatAppearance.BorderSize = 0;
-            this.btn_EditLoaiPh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.btn_EditLoaiPh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EditLoaiPh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_EditLoaiPh.ForeColor = System.Drawing.Color.Lime;
-            this.btn_EditLoaiPh.Image = ((System.Drawing.Image)(resources.GetObject("btn_EditLoaiPh.Image")));
-            this.btn_EditLoaiPh.Location = new System.Drawing.Point(614, 27);
-            this.btn_EditLoaiPh.Name = "btn_EditLoaiPh";
-            this.btn_EditLoaiPh.Size = new System.Drawing.Size(27, 25);
-            this.btn_EditLoaiPh.TabIndex = 41;
-            this.btn_EditLoaiPh.UseVisualStyleBackColor = false;
-            this.btn_EditLoaiPh.Click += new System.EventHandler(this.btn_EditLoaiPh_Click);
-            // 
             // tsBtn_Them
             // 
             this.tsBtn_Them.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Them.Image")));
@@ -376,49 +419,6 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
-            // 
-            // MaPH
-            // 
-            this.MaPH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MaPH.DataPropertyName = "MaPH";
-            this.MaPH.HeaderText = "Mã phòng";
-            this.MaPH.Name = "MaPH";
-            this.MaPH.ReadOnly = true;
-            this.MaPH.Width = 79;
-            // 
-            // TenPH
-            // 
-            this.TenPH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TenPH.DataPropertyName = "TenPH";
-            this.TenPH.HeaderText = "Phòng";
-            this.TenPH.Name = "TenPH";
-            this.TenPH.ReadOnly = true;
-            this.TenPH.Width = 62;
-            // 
-            // MaLP
-            // 
-            this.MaLP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MaLP.DataPropertyName = "MaLP";
-            this.MaLP.HeaderText = "Mã loại phòng";
-            this.MaLP.Name = "MaLP";
-            this.MaLP.ReadOnly = true;
-            this.MaLP.Width = 98;
-            // 
-            // Tang
-            // 
-            this.Tang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Tang.DataPropertyName = "Tang";
-            this.Tang.HeaderText = "Tầng";
-            this.Tang.Name = "Tang";
-            this.Tang.ReadOnly = true;
-            this.Tang.Width = 56;
-            // 
-            // TinhTrangPH
-            // 
-            this.TinhTrangPH.DataPropertyName = "TinhTrangPH";
-            this.TinhTrangPH.HeaderText = "Tình trạng";
-            this.TinhTrangPH.Name = "TinhTrangPH";
-            this.TinhTrangPH.ReadOnly = true;
             // 
             // frm_TuyChinhPhong
             // 

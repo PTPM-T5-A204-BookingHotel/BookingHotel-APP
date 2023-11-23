@@ -34,13 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachHD));
             this.dgv_HoaDon = new System.Windows.Forms.DataGridView();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTienHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbo_Phong = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,6 +53,12 @@
             this.tsBtn_ThongKe = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InHD = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -91,9 +90,8 @@
             this.HoTenKH,
             this.HoTenNV,
             this.TenPH,
-            this.TongTien,
-            this.GiamGia,
-            this.ThanhTienHD});
+            this.TinhTrangHD,
+            this.TongTien});
             this.dgv_HoaDon.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -120,66 +118,6 @@
             this.dgv_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_HoaDon.Size = new System.Drawing.Size(817, 401);
             this.dgv_HoaDon.TabIndex = 15;
-            // 
-            // MaHD
-            // 
-            this.MaHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MaHD.DataPropertyName = "MaHD";
-            this.MaHD.HeaderText = "Mã";
-            this.MaHD.Name = "MaHD";
-            this.MaHD.ReadOnly = true;
-            this.MaHD.Width = 52;
-            // 
-            // HoTenKH
-            // 
-            this.HoTenKH.DataPropertyName = "HoTenKH";
-            this.HoTenKH.HeaderText = "Khách hàng";
-            this.HoTenKH.Name = "HoTenKH";
-            this.HoTenKH.ReadOnly = true;
-            // 
-            // HoTenNV
-            // 
-            this.HoTenNV.DataPropertyName = "HoTenNV";
-            this.HoTenNV.HeaderText = "Nhân viên";
-            this.HoTenNV.Name = "HoTenNV";
-            this.HoTenNV.ReadOnly = true;
-            // 
-            // TenPH
-            // 
-            this.TenPH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TenPH.DataPropertyName = "TenPH";
-            this.TenPH.HeaderText = "Phòng";
-            this.TenPH.Name = "TenPH";
-            this.TenPH.ReadOnly = true;
-            this.TenPH.Width = 73;
-            // 
-            // TongTien
-            // 
-            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TongTien.DataPropertyName = "TongTien";
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.Name = "TongTien";
-            this.TongTien.ReadOnly = true;
-            this.TongTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TongTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.TongTien.Width = 73;
-            // 
-            // GiamGia
-            // 
-            this.GiamGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.GiamGia.DataPropertyName = "GiamGia";
-            this.GiamGia.HeaderText = "Giảm giá";
-            this.GiamGia.Name = "GiamGia";
-            this.GiamGia.ReadOnly = true;
-            this.GiamGia.Width = 90;
-            // 
-            // ThanhTienHD
-            // 
-            this.ThanhTienHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ThanhTienHD.DataPropertyName = "ThanhTienHD";
-            this.ThanhTienHD.HeaderText = "Thành tiền";
-            this.ThanhTienHD.Name = "ThanhTienHD";
-            this.ThanhTienHD.ReadOnly = true;
             // 
             // panel1
             // 
@@ -368,6 +306,54 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             // 
+            // MaHD
+            // 
+            this.MaHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaHD.DataPropertyName = "MaHD";
+            this.MaHD.HeaderText = "Mã";
+            this.MaHD.Name = "MaHD";
+            this.MaHD.ReadOnly = true;
+            this.MaHD.Width = 52;
+            // 
+            // HoTenKH
+            // 
+            this.HoTenKH.DataPropertyName = "HoTenKH";
+            this.HoTenKH.HeaderText = "Khách hàng";
+            this.HoTenKH.Name = "HoTenKH";
+            this.HoTenKH.ReadOnly = true;
+            // 
+            // HoTenNV
+            // 
+            this.HoTenNV.DataPropertyName = "HoTenNV";
+            this.HoTenNV.HeaderText = "Nhân viên";
+            this.HoTenNV.Name = "HoTenNV";
+            this.HoTenNV.ReadOnly = true;
+            // 
+            // TenPH
+            // 
+            this.TenPH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TenPH.DataPropertyName = "TenPH";
+            this.TenPH.HeaderText = "Phòng";
+            this.TenPH.Name = "TenPH";
+            this.TenPH.ReadOnly = true;
+            this.TenPH.Width = 73;
+            // 
+            // TinhTrangHD
+            // 
+            this.TinhTrangHD.DataPropertyName = "TinhTrangHD";
+            this.TinhTrangHD.HeaderText = "Tình trạng";
+            this.TinhTrangHD.Name = "TinhTrangHD";
+            this.TinhTrangHD.ReadOnly = true;
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "TongTien";
+            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
+            this.TongTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TongTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // UC_DanhSachHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,13 +380,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_HoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTienHD;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbo_Phong;
         private System.Windows.Forms.Label label1;
@@ -420,5 +399,11 @@
         private System.Windows.Forms.ToolStripButton tsBtn_ThongKe;
         private System.Windows.Forms.ToolStripButton tsBtn_InHD;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
     }
 }

@@ -37,8 +37,7 @@
             this.lbl_TinhTrangPH = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_LoaiPH = new System.Windows.Forms.Label();
-            this.btn_HuyDatPhong = new DesignControl.ButtonHover();
-            this.btn_DatPhong = new DesignControl.ButtonHover();
+            this.btn_Mo = new DesignControl.ButtonHover();
             this.lbl_Phong = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -118,8 +117,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.lbl_LoaiPH);
-            this.panel3.Controls.Add(this.btn_HuyDatPhong);
-            this.panel3.Controls.Add(this.btn_DatPhong);
+            this.panel3.Controls.Add(this.btn_Mo);
             this.panel3.Controls.Add(this.lbl_Phong);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(143, 24);
@@ -138,39 +136,23 @@
             this.lbl_LoaiPH.TabIndex = 28;
             this.lbl_LoaiPH.Text = "Loại phòng:";
             // 
-            // btn_HuyDatPhong
+            // btn_Mo
             // 
-            this.btn_HuyDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btn_HuyDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_HuyDatPhong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_HuyDatPhong.FlatAppearance.BorderSize = 2;
-            this.btn_HuyDatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btn_HuyDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_HuyDatPhong.ForeColor = System.Drawing.Color.Lime;
-            this.btn_HuyDatPhong.Location = new System.Drawing.Point(158, 73);
-            this.btn_HuyDatPhong.Name = "btn_HuyDatPhong";
-            this.btn_HuyDatPhong.Size = new System.Drawing.Size(120, 32);
-            this.btn_HuyDatPhong.TabIndex = 26;
-            this.btn_HuyDatPhong.Text = "Hủy đặt";
-            this.btn_HuyDatPhong.UseVisualStyleBackColor = false;
-            // 
-            // btn_DatPhong
-            // 
-            this.btn_DatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btn_DatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DatPhong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_DatPhong.FlatAppearance.BorderSize = 2;
-            this.btn_DatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btn_DatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_DatPhong.ForeColor = System.Drawing.Color.Lime;
-            this.btn_DatPhong.Location = new System.Drawing.Point(23, 73);
-            this.btn_DatPhong.Name = "btn_DatPhong";
-            this.btn_DatPhong.Size = new System.Drawing.Size(120, 32);
-            this.btn_DatPhong.TabIndex = 25;
-            this.btn_DatPhong.Text = "Đặt phòng";
-            this.btn_DatPhong.UseVisualStyleBackColor = false;
+            this.btn_Mo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btn_Mo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Mo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Mo.FlatAppearance.BorderSize = 2;
+            this.btn_Mo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btn_Mo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Mo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Mo.ForeColor = System.Drawing.Color.Lime;
+            this.btn_Mo.Location = new System.Drawing.Point(45, 76);
+            this.btn_Mo.Name = "btn_Mo";
+            this.btn_Mo.Size = new System.Drawing.Size(190, 32);
+            this.btn_Mo.TabIndex = 26;
+            this.btn_Mo.Text = "Mở";
+            this.btn_Mo.UseVisualStyleBackColor = false;
+            this.btn_Mo.Click += new System.EventHandler(this.btn_Mo_Click);
             // 
             // lbl_Phong
             // 
@@ -228,8 +210,7 @@
         private System.Windows.Forms.Label lbl_TinhTrangPH;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_Phong;
-        private DesignControl.ButtonHover btn_HuyDatPhong;
-        private DesignControl.ButtonHover btn_DatPhong;
+        private DesignControl.ButtonHover btn_Mo;
         private System.Windows.Forms.Label lbl_LoaiPH;
     }
 }

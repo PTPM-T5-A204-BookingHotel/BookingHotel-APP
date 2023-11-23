@@ -22,10 +22,9 @@ namespace BookingHotel_App
         TaiKhoan_BLL_DAL tkblldal = new TaiKhoan_BLL_DAL();
         public void Loaddata(string tentk)
         {
-            TaiKhoan tk = tkblldal.getTK(tentk);
             lbl_TenTK.Text = tentk;
-            txt_Password.Text = tk.MatKhau;
-            pic_Image.ImageLocation = tk.AnhTK;
+            txt_Password.Text = tkblldal.getTK(tentk).MatKhau;
+            pic_Image.ImageLocation = tkblldal.getTK(tentk).AnhTK;
         }
         private void btn_UpImage_Click(object sender, EventArgs e)
         {

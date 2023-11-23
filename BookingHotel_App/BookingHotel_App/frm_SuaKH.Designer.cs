@@ -68,6 +68,7 @@
             this.btn_Sua.TabIndex = 58;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // txt_Email
             // 
@@ -243,6 +244,7 @@
             this.btn_UpImage.Size = new System.Drawing.Size(96, 109);
             this.btn_UpImage.TabIndex = 42;
             this.btn_UpImage.UseVisualStyleBackColor = true;
+            this.btn_UpImage.Click += new System.EventHandler(this.btn_UpImage_Click);
             // 
             // pic_Image
             // 
@@ -311,6 +313,7 @@
             this.Controls.Add(this.pic_Image);
             this.Controls.Add(this.btn_UpImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frm_SuaKH.IconOptions.Image")));
             this.Name = "frm_SuaKH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa khách hàng";

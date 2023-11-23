@@ -47,7 +47,7 @@ create table KhachHang
 (
 	MaKH		int identity,
 	CCCDKH		varchar(12)		not null check (CCCDKH<>'') unique,
-	HoTenKH		nvarchar(30)	not null check (HoTenKH<>''),
+	HoTenKH		nvarchar(50)	not null check (HoTenKH<>''),
 	GioiTinhKH	nvarchar(5)		not null check (GioiTinhKH = N'Nam' or GioiTinhKH = N'Nữ'),
 	DiaChiKH	nvarchar(max)	not null check (DiaChiKH<>''),
 	SDTKH		varchar(10)		not null check (SDTKH<>''),
@@ -84,6 +84,8 @@ insert into VatTu(MaVT,TenVT,DonViTinh,SoLuong,DonGia,GiaNhap) values
 ('VT004',N'Nước có ga 7 Up','Lon',112,20000,5000),
 ('VT005',N'Bia SaiGon','Lon',112,30000,10000)
 
+--select * from VatTu
+
 create table LoaiPhong
 (
 	MaLP	int identity,
@@ -96,8 +98,8 @@ create table LoaiPhong
 insert into LoaiPhong(TenLP,GiaPH) values
 (N'Phòng Standard (STD)',	400000),
 (N'Phòng Superior (SUP)',	800000),
-(N'Phòng Deluxe (DLX)',		1500000),
-(N'Phòng Suite (Ký hiệu SUT)',	3000000)
+(N'Phòng Deluxe (DLX)',		1600000),
+(N'Phòng Suite (SUT)',		3200000)
 
 --select * from LoaiPhong
 
@@ -139,24 +141,56 @@ insert into DichVu values
 ('DV006',N'Massage chân',			150000,	N'Lưu ý: Áp dụng cho 1 người/1 giờ'),
 ('DV007',N'Đặt suất ăn Buffet',		150000,	N'Lưu ý: Áp dụng cho 1 người/1 lượt (Thời gian 6:00 - 9:00 sáng)')
 
+create table Quyen
+(
+	MaQuyen varchar(50),
+	TenQuyen nvarchar(max) not null check(TenQuyen<>''),
+	constraint pk_MaQuyen_Quyen primary key(MaQuyen)
+)
+
+insert into Quyen values
+('Admin',N'Admin'),
+('User',N'User'),
+('Owner',N'Owner')
+
+create table TaiKhoan 
+(
+	TenTK	varchar(50),
+	MaNV	int,
+	MatKhau varchar(30) not null,
+	MaQuyen varchar(50),
+	AnhTK	nvarchar(max),
+	constraint pk_TenTK_TaiKhoan primary key (TenTK),
+	constraint fk_MaNV_TaiKhoan foreign key (MaNV) references NhanVien(MaNV),
+	constraint fk_MaQuyen_TaiKhoan foreign key (MaQuyen) references Quyen(MaQuyen)
+)
+
+insert into TaiKhoan(TenTK,MaNV,MatKhau,MaQuyen) values
+('Admin',1,'123','Admin'),
+('User',2,'123','User')
+
+insert into TaiKhoan(TenTK,MatKhau,MaQuyen) values
+('Owner','123','Owner')
+
+--select * from TaiKhoan
 
 create table HoaDon 
 (
 	MaHD			varchar(10),
 	MaKH			int	not null,
 	MaPH			int	not null,
-	MaNV			int not null,
-	TGNhanPhong		datetime not null,
-	TGTraPhong		datetime not null,
+	TenTK			varchar(50),
+	TGDatPhong		date,
+	TGNhanPhong		datetime,
+	TGTraPhong		datetime,
 	SoNgayLuuTru	int default 0,
+	SoLuongNguoi	int default 0,
 	TongTien		int	default 0,
-	GiamGia			int default 0,
-	ThanhTienHD		int	default 0,
 	TinhTrangHD		nvarchar(max) default N'Chưa thanh toán' check(TinhTrangHD = N'Chưa thanh toán' or TinhTrangHD = N'Đã thanh toán'),
 	constraint pk_MaHD_HoaDon primary key (MaHD),
 	constraint fk_MaKH_HoaDon foreign key (MaKH) references KhachHang(MaKH),
 	constraint fk_MaPH_HoaDon foreign key (MaPH) references Phong(MaPH),
-	constraint fk_MaNV_HoaDon foreign key (MaNV) references NhanVien(MaNV)
+	constraint fk_TenTK_TaiKhoan foreign key (TenTK) references TaiKhoan(TenTK)
 )
 
 create table HoaDon_DichVu
@@ -194,52 +228,6 @@ insert into NhaCC values
 ('NCC001',N'Cty Cocacola','TP.HCM','0972727211'),
 ('NCC002',N'Cty Pepsi','TP.HCM','0982828288')
 
-create table NhapKho 
-(
-	MaNK			varchar(10),
-	MaNV			int,
-	MaNCC			varchar(50),
-	MaVT			varchar(50),
-	ThoiGianNK		datetime not null,
-	SoLuong			int	default 0,
-	constraint pk_MaNK_NhapKho primary key (MaNK),   
-	constraint fk_MaNV_NhapKho foreign key (MaNV) references NhanVien(MaNV),
-	constraint fk_MaNCC_NhapKho foreign key (MaNCC) references NhaCC(MaNCC),
-	constraint fk_MaVT_NhapKho foreign key (MaVT) references VatTu(MaVT)
-)
-
-
-create table Quyen
-(
-	MaQuyen varchar(50),
-	TenQuyen nvarchar(max) not null check(TenQuyen<>''),
-	constraint pk_MaQuyen_Quyen primary key(MaQuyen)
-)
-
-insert into Quyen(MaQuyen,TenQuyen) values
-('Admin',N'Admin'),
-('User',N'User'),
-('Owner',N'Owner')
-
-create table TaiKhoan 
-(
-	TenTK	varchar(50),
-	MaNV	int,
-	MatKhau varchar(30) not null,
-	MaQuyen varchar(50),
-	AnhTK	nvarchar(max),
-	constraint pk_TenTK_TaiKhoan primary key (TenTK),
-	constraint fk_MaNV_TaiKhoan foreign key (MaNV) references NhanVien(MaNV),
-	constraint fk_MaQuyen_TaiKhoan foreign key (MaQuyen) references Quyen(MaQuyen)
-)
-
-insert into TaiKhoan(TenTK,MaNV,MatKhau,MaQuyen) values
-('Admin',1,'123','Admin'),
-('User',2,'123','User')
-
-insert into TaiKhoan(TenTK,MatKhau,MaQuyen) values
-('Owner','123','Owner')
-
 create table DatPhong
 (
 	MaDP int identity,
@@ -250,6 +238,8 @@ create table DatPhong
 	SoLuongNg int,
 	ThoiGianNhanPhong date,
 	HinhAnh nvarchar(max),
+	TinhtrangDP nvarchar(50) default N'Chưa Check' check(TinhtrangDP=N'Chưa Check' or TinhtrangDP=N'Đã Check'),
 	constraint pk_MaDP_DatPhong primary key(MaDP)
 )
+
 

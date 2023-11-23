@@ -193,5 +193,10 @@ namespace BookingHotel_App
         {
             
         }
+
+        private void tsBtn_Reset_Click(object sender, EventArgs e)
+        {
+            LoadCbo_ChucVu();
+        }
     }
 }

@@ -5,3 +5,10 @@ C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.c
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.dll
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.pdb
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.dll
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\bin\Debug\BLL_DAL.pdb
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.csproj.AssemblyReference.cache
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.dll
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BLL_DAL\obj\Debug\BLL_DAL.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL_DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,9 +17,9 @@ namespace BookingHotel_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());
-            Application.Run(new frmMain());
-            //Application.Run(new frm_ChucVu());
+            Application.Run(new frmLogin());
+            //Application.Run(new frmMain());
+            
         }
     }
 }

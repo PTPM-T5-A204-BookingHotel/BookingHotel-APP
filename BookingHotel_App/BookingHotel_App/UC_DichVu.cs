@@ -155,7 +155,7 @@ namespace BookingHotel_App
         private void dgv_DichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 row = dgv_DichVu.Rows[e.RowIndex];
                 txt_Ma.Text = row.Cells[0].Value.ToString();

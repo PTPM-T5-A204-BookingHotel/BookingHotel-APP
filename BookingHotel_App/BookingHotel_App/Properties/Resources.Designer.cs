@@ -123,6 +123,16 @@ namespace BookingHotel_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_decentralization_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-decentralization-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_employee_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-employee-24", resourceCulture);
@@ -216,6 +226,16 @@ namespace BookingHotel_App.Properties {
         internal static System.Drawing.Bitmap icons8_log_out_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-log-out-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_online_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-online-50 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

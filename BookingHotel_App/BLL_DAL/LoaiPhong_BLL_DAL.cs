@@ -44,6 +44,11 @@ namespace BLL_DAL
             var kq = from lp in qlks.LoaiPhongs where lp.MaLP.Equals(mlp) select lp.TenLP;
             return kq.FirstOrDefault();
         }
+        public string getGialp(int mlp)
+        {
+            var kq = from lp in qlks.LoaiPhongs where lp.MaLP.Equals(mlp) select lp.GiaPH;
+            return kq.FirstOrDefault().ToString();
+        }
         public void insert(string tenlp,int gia,string hinh)
         {
             LoaiPhong lp = new LoaiPhong();

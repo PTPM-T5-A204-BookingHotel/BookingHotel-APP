@@ -85,6 +85,13 @@ namespace BookingHotel_App
             }
             else
                 ep.Clear();
+            if (int.Parse(gianhap) >= int.Parse(giavt))
+            {
+                ep.SetError(txt_GiaNhap, "Giá nhập không lớn hoặc bằng giá bán");
+                return false;
+            }
+            else
+                ep.Clear();
             if (soluong.Equals(""))
             {
                 ep.SetError(txt_SL, "Số lượng không để trống");
@@ -269,7 +276,7 @@ namespace BookingHotel_App
         private void dgv_VatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 row = dgv_VatTu.Rows[e.RowIndex];
                 txt_Ma.Text = row.Cells[0].Value.ToString();
@@ -285,6 +292,7 @@ namespace BookingHotel_App
 
         private void btn_UpImage_Click(object sender, EventArgs e)
         {
+            pic_Image.ImageLocation = null;
             ba.UpLoadImage(pic_Image);
         }
     }
