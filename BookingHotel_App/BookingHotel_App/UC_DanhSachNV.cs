@@ -18,6 +18,7 @@ namespace BookingHotel_App
             InitializeComponent();
         }
         NhanVien_BLL_DAL nvblldal = new NhanVien_BLL_DAL();
+        Basis ba = new Basis();
         private void tsBtn_Them_Click(object sender, EventArgs e)
         {
             frm_ThemNV frm = new frm_ThemNV();
@@ -155,6 +156,11 @@ namespace BookingHotel_App
             {
                 this.Message("Nhân viên này đang được sử dụng", MyMessageBox.enmType.Error);
             }
+        }
+
+        private void tsBtn_InExcel_Click(object sender, EventArgs e)
+        {
+            ba.XuatExcel(dgv_NhanVien);
         }
     }
 }

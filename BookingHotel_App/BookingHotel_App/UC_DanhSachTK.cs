@@ -126,39 +126,31 @@ namespace BookingHotel_App
         {
             string quyen = tkblldal.getTK(taikhoan).MaQuyen;
             string chonquyen = cbo_Quyen.SelectedValue.ToString();
-            if (quyen == "Admin" && (chonquyen == "Admin" || chonquyen == "Owner"))
+            if (quyen == "Admin" && chonquyen == "Admin")
             {
-                this.Message("Tài khoản này không tạo quyền Admin/Owner", MyMessageBox.enmType.Error);
+                this.Message("Tài khoản này không tạo quyền Admin", MyMessageBox.enmType.Error);
                 
             }
             else
             {
-                if (quyen == "Owner" && chonquyen == "Owner")
+                string tentk = txt_TenTK.Text.Trim();
+                string mk = txt_MatKhau.Text.Trim();
+                string cccd = txt_CCCD.Text.Trim();
+                string anh = pic_Image.ImageLocation;
+                if (isThongTinTK(tentk, mk, cccd, anh))
                 {
-                    this.Message("Tài khoản này không tạo quyền Owner", MyMessageBox.enmType.Error);
-
-                }
-                else
-                {
-                    string tentk = txt_TenTK.Text.Trim();
-                    string mk = txt_MatKhau.Text.Trim();
-                    string cccd = txt_CCCD.Text.Trim();
-                    string anh = pic_Image.ImageLocation;
-                    if (isThongTinTK(tentk, mk, cccd, anh))
+                    if (tkblldal.isTK(tentk) == 0)
                     {
-                        if (tkblldal.isTK(tentk) == 0)
-                        {
-                            int manv = nvblldal.getMaNV(cccd);
-                            tkblldal.insert(tentk, mk, manv, cbo_Quyen.SelectedValue.ToString(), anh);
-                            this.Message("Success", MyMessageBox.enmType.Success);
-                            LoadData();
-                        }
-                        else
-                        {
-                            this.Message("Tài khoản này đã có", MyMessageBox.enmType.Error);
-                        }
-
+                        int manv = nvblldal.getMaNV(cccd);
+                        tkblldal.insert(tentk, mk, manv, cbo_Quyen.SelectedValue.ToString(), anh);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
                     }
+                    else
+                    {
+                        this.Message("Tài khoản này đã có", MyMessageBox.enmType.Error);
+                    }
+
                 }
             }
         }
@@ -170,31 +162,23 @@ namespace BookingHotel_App
             {
                 string quyen = tkblldal.getTK(taikhoan).MaQuyen;
                 string chonquyen = cbo_Quyen.SelectedValue.ToString();
-                if (quyen == "Admin" && (chonquyen == "Admin" || chonquyen == "Owner"))
+                if (quyen == "Admin" && chonquyen == "Admin")
                 {
-                    this.Message("Tài khoản này không sửa quyền Admin/Owner", MyMessageBox.enmType.Error);
+                    this.Message("Tài khoản này không sửa quyền Admin", MyMessageBox.enmType.Error);
                     
                 }
                 else
                 {
-                    if (quyen == "Owner" && chonquyen == "Owner")
+                    string tentk = txt_TenTK.Text.Trim();
+                    string mk = txt_MatKhau.Text.Trim();
+                    string cccd = txt_CCCD.Text.Trim();
+                    string anh = pic_Image.ImageLocation;
+                    if (isThongTinTK(tentk, mk, cccd, anh))
                     {
-                        this.Message("Tài khoản này không sửa quyền Owner", MyMessageBox.enmType.Error);
-
-                    }
-                    else
-                    {
-                        string tentk = txt_TenTK.Text.Trim();
-                        string mk = txt_MatKhau.Text.Trim();
-                        string cccd = txt_CCCD.Text.Trim();
-                        string anh = pic_Image.ImageLocation;
-                        if (isThongTinTK(tentk, mk, cccd, anh))
-                        {
-                            int manv = nvblldal.getMaNV(cccd);
-                            tkblldal.update(tentk, mk, manv, cbo_Quyen.SelectedValue.ToString(), anh);
-                            this.Message("Success", MyMessageBox.enmType.Success);
-                            LoadData();
-                        }
+                        int manv = nvblldal.getMaNV(cccd);
+                        tkblldal.update(tentk, mk, manv, cbo_Quyen.SelectedValue.ToString(), anh);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
                     }
                 }
             }

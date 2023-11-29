@@ -18,6 +18,7 @@ namespace BookingHotel_App
             InitializeComponent();
         }
         KhachHang_BLL_DAL khblldal = new KhachHang_BLL_DAL();
+        Basis ba = new Basis();
         public void Message(string message, MyMessageBox.enmType type)
         {
             MyMessageBox frm = new MyMessageBox();
@@ -153,6 +154,11 @@ namespace BookingHotel_App
             {
                 this.Message("Nhân viên này đang được sử dụng", MyMessageBox.enmType.Error);
             }
+        }
+
+        private void tsBtn_InExcel_Click(object sender, EventArgs e)
+        {
+            ba.XuatExcel(dgv_KhachHang);
         }
     }
 }

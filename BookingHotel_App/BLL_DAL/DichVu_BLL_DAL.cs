@@ -16,6 +16,11 @@ namespace BLL_DAL
             var Dvs = from dv in qlks.DichVus select dv;
             return Dvs.ToList();
         }
+        public DichVu getDV(string madv)
+        {
+            var Dv = from dv in qlks.DichVus where dv.MaDV.Equals(madv) select dv;
+            return Dv.FirstOrDefault();
+        }
         public int isMaDV(string madv)
         {
             var kq = qlks.DichVus.Where(o => o.MaDV.Equals(madv)).Count();

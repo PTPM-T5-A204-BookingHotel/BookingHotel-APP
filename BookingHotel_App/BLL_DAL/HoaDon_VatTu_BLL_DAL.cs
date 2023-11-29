@@ -29,6 +29,11 @@ namespace BLL_DAL
             var kq = from hdvt in qlks.HoaDon_VatTus where hdvt.MaHD.Equals(mahd) select hdvt.ThanhTienVT;
             return kq.Sum().Value;
         }
+        public int isHDVT(string mahd, string mavt)
+        {
+            var kq = qlks.HoaDon_VatTus.Where(o => o.MaHD.Equals(mahd) && o.MaVT.Equals(mavt)).Count();
+            return kq;
+        }
         public void insert(string mahd, string mavt, int soluongvt, int thanhtien)
         {
             HoaDon_VatTu hdvt = new HoaDon_VatTu();
@@ -39,12 +44,13 @@ namespace BLL_DAL
             qlks.HoaDon_VatTus.InsertOnSubmit(hdvt);
             qlks.SubmitChanges();
         }
-        public void update(string mahd, string mavt, int soluongvt)
+        public void update(string mahd, string mavt, int soluongvt,int thanhtien)
         {
             HoaDon_VatTu hdvt = qlks.HoaDon_VatTus.Where(o => o.MaHD.Equals(mahd) && o.MaVT.Equals(mavt)).FirstOrDefault();
             if (hdvt != null)
             {
                 hdvt.SoLuongVT = soluongvt;
+                hdvt.ThanhTienVT = thanhtien;
                 qlks.SubmitChanges();
             }
         }

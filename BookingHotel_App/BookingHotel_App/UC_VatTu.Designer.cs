@@ -35,7 +35,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_VatTu));
             this.dgv_VatTu = new System.Windows.Forms.DataGridView();
+            this.MaVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThuongHieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_GiaNhap = new DesignControl.TextForNumber();
+            this.label10 = new System.Windows.Forms.Label();
             this.cbo_LoaiSapXep = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pic_Image = new System.Windows.Forms.PictureBox();
@@ -69,15 +78,6 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
-            this.txt_GiaNhap = new DesignControl.TextForNumber();
-            this.label10 = new System.Windows.Forms.Label();
-            this.MaVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThuongHieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VatTu)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).BeginInit();
@@ -143,6 +143,62 @@
             this.dgv_VatTu.TabIndex = 19;
             this.dgv_VatTu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_VatTu_CellClick);
             // 
+            // MaVT
+            // 
+            this.MaVT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaVT.DataPropertyName = "MaVT";
+            this.MaVT.HeaderText = "Mã";
+            this.MaVT.Name = "MaVT";
+            this.MaVT.ReadOnly = true;
+            this.MaVT.Width = 52;
+            // 
+            // TenVT
+            // 
+            this.TenVT.DataPropertyName = "TenVT";
+            this.TenVT.HeaderText = "Tên";
+            this.TenVT.Name = "TenVT";
+            this.TenVT.ReadOnly = true;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Giá bán";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            // 
+            // GiaNhap
+            // 
+            this.GiaNhap.DataPropertyName = "GiaNhap";
+            this.GiaNhap.HeaderText = "Giá nhập";
+            this.GiaNhap.Name = "GiaNhap";
+            this.GiaNhap.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 89;
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn vị tính";
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.ReadOnly = true;
+            // 
+            // ThuongHieu
+            // 
+            this.ThuongHieu.DataPropertyName = "ThuongHieu";
+            this.ThuongHieu.HeaderText = "Thương hiệu";
+            this.ThuongHieu.Name = "ThuongHieu";
+            this.ThuongHieu.ReadOnly = true;
+            this.ThuongHieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ThuongHieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txt_GiaNhap);
@@ -174,6 +230,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(772, 238);
             this.panel1.TabIndex = 18;
+            // 
+            // txt_GiaNhap
+            // 
+            this.txt_GiaNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_GiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GiaNhap.ForeColor = System.Drawing.Color.White;
+            this.txt_GiaNhap.Location = new System.Drawing.Point(605, 203);
+            this.txt_GiaNhap.Name = "txt_GiaNhap";
+            this.txt_GiaNhap.Size = new System.Drawing.Size(162, 22);
+            this.txt_GiaNhap.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(602, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 16);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Giá nhập";
             // 
             // cbo_LoaiSapXep
             // 
@@ -503,8 +580,9 @@
             this.tsBtn_InExcel.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_InExcel.Image")));
             this.tsBtn_InExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtn_InExcel.Name = "tsBtn_InExcel";
-            this.tsBtn_InExcel.Size = new System.Drawing.Size(82, 24);
-            this.tsBtn_InExcel.Text = "In Excel";
+            this.tsBtn_InExcel.Size = new System.Drawing.Size(94, 24);
+            this.tsBtn_InExcel.Text = "Thống kê";
+            this.tsBtn_InExcel.Click += new System.EventHandler(this.tsBtn_InExcel_Click);
             // 
             // tsBtn_Reset
             // 
@@ -514,83 +592,6 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
-            // 
-            // txt_GiaNhap
-            // 
-            this.txt_GiaNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_GiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GiaNhap.ForeColor = System.Drawing.Color.White;
-            this.txt_GiaNhap.Location = new System.Drawing.Point(605, 203);
-            this.txt_GiaNhap.Name = "txt_GiaNhap";
-            this.txt_GiaNhap.Size = new System.Drawing.Size(162, 22);
-            this.txt_GiaNhap.TabIndex = 29;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(602, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 16);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Giá nhập";
-            // 
-            // MaVT
-            // 
-            this.MaVT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MaVT.DataPropertyName = "MaVT";
-            this.MaVT.HeaderText = "Mã";
-            this.MaVT.Name = "MaVT";
-            this.MaVT.ReadOnly = true;
-            this.MaVT.Width = 52;
-            // 
-            // TenVT
-            // 
-            this.TenVT.DataPropertyName = "TenVT";
-            this.TenVT.HeaderText = "Tên";
-            this.TenVT.Name = "TenVT";
-            this.TenVT.ReadOnly = true;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Giá bán";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            // 
-            // GiaNhap
-            // 
-            this.GiaNhap.DataPropertyName = "GiaNhap";
-            this.GiaNhap.HeaderText = "Giá nhập";
-            this.GiaNhap.Name = "GiaNhap";
-            this.GiaNhap.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            this.SoLuong.Width = 89;
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn vị tính";
-            this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.ReadOnly = true;
-            // 
-            // ThuongHieu
-            // 
-            this.ThuongHieu.DataPropertyName = "ThuongHieu";
-            this.ThuongHieu.HeaderText = "Thương hiệu";
-            this.ThuongHieu.Name = "ThuongHieu";
-            this.ThuongHieu.ReadOnly = true;
-            this.ThuongHieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ThuongHieu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // UC_VatTu
             // 

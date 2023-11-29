@@ -176,5 +176,10 @@ namespace BookingHotel_App
                 this.Message("Error Data", MyMessageBox.enmType.DataFail);
             }
         }
+
+        private void frm_SuaKH_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

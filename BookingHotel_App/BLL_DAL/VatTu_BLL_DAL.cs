@@ -17,6 +17,11 @@ namespace BLL_DAL
             var VTs = from VT in qlks.VatTus select new { VT.MaVT, VT.TenVT, VT.DonGia, VT.SoLuong, VT.DonViTinh, VT.ThuongHieu,VT.GiaNhap };
             dgv.DataSource = VTs;
         }
+        public VatTu getVT(string mavt)
+        {
+            var kq = from vt in qlks.VatTus where vt.MaVT.Equals(mavt) select vt;
+            return kq.FirstOrDefault();
+        }
         public void getVT_DatPhong(DataGridView dgv)
         {
             var VTs = from VT in qlks.VatTus select new { VT.MaVT, VT.TenVT, VT.DonGia, VT.SoLuong, VT.DonViTinh };
@@ -54,6 +59,19 @@ namespace BLL_DAL
             if (VT != null)
             {
                 qlks.VatTus.DeleteOnSubmit(VT);
+                qlks.SubmitChanges();
+            }
+        }
+        public int TinhSL(int slmoi,int slcu)
+        {
+            return slcu - slmoi;
+        }
+        public void update(string mavt, int soluong)
+        {
+            VatTu VT = qlks.VatTus.Where(o => o.MaVT.Equals(mavt)).FirstOrDefault();
+            if (VT != null)
+            {
+                VT.SoLuong = soluong;
                 qlks.SubmitChanges();
             }
         }

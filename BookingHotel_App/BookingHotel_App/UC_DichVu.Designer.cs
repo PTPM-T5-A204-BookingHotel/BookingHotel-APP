@@ -451,8 +451,9 @@
             this.tsBtn_InExcel.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_InExcel.Image")));
             this.tsBtn_InExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtn_InExcel.Name = "tsBtn_InExcel";
-            this.tsBtn_InExcel.Size = new System.Drawing.Size(82, 24);
-            this.tsBtn_InExcel.Text = "In Excel";
+            this.tsBtn_InExcel.Size = new System.Drawing.Size(94, 24);
+            this.tsBtn_InExcel.Text = "Thống kê";
+            this.tsBtn_InExcel.Click += new System.EventHandler(this.tsBtn_InExcel_Click);
             // 
             // tsBtn_Reset
             // 

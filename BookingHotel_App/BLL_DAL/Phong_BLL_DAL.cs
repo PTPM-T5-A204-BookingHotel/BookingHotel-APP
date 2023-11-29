@@ -27,6 +27,11 @@ namespace BLL_DAL
             var kq = from ph in qlks.Phongs where ph.MaPH.Equals(maph) select ph;
             return kq.FirstOrDefault();
         }
+        public List<Phong> GetPHs()
+        {
+            var kq = from ph in qlks.Phongs select ph;
+            return kq.ToList();
+        }
         public List<Phong> GetPhongs(int tang)
         {
             var kq = from ph in qlks.Phongs where ph.Tang.Equals(tang) select ph;
@@ -55,6 +60,15 @@ namespace BLL_DAL
                 ph.TenPH = tenph;
                 ph.MaLP=malp;
                 ph.Tang=tang;
+                qlks.SubmitChanges();
+            }
+        }
+        public void update(int maph,string tinhtrang)
+        {
+            Phong ph = qlks.Phongs.Where(o => o.TenPH.Equals(maph)).FirstOrDefault();
+            if (ph != null)
+            {
+                ph.TinhTrangPH = tinhtrang;
                 qlks.SubmitChanges();
             }
         }

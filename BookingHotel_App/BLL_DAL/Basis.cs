@@ -79,7 +79,28 @@ namespace BLL_DAL
             return true;
 
         }
-        
+        public void XuatExcel(DataGridView dgv)
+        {
+            if (dgv.RowCount > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application AppExcel = new Microsoft.Office.Interop.Excel.Application();
+                AppExcel.Application.Workbooks.Add(Type.Missing);
+                for(int i=0;i<dgv.Columns.Count;i++)
+                {
+                    AppExcel.Cells[1, i+1] = dgv.Columns[i].HeaderText;
+
+                }
+                for(int i = 0; i < dgv.Rows.Count; i++)
+                {
+                    for(int j = 0; j < dgv.Columns.Count; j++)
+                    {
+                        AppExcel.Cells[i+2, j + 1] = dgv.Rows[i].Cells[j].Value;
+                    }
+                }
+                AppExcel.Columns.AutoFit();
+                AppExcel.Visible = true;
+            }
+        }
 
 
     }

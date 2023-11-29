@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachHD));
             this.dgv_HoaDon = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,17 +45,14 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssLbl_TongCong = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsBtn_Them = new System.Windows.Forms.ToolStripButton();
-            this.tsBtn_Sua = new System.Windows.Forms.ToolStripButton();
-            this.tsBtn_Xoa = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_SapXep = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_ThongKe = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InHD = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCDKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,49 +68,49 @@
             this.dgv_HoaDon.AllowUserToDeleteRows = false;
             this.dgv_HoaDon.AllowUserToResizeColumns = false;
             this.dgv_HoaDon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_HoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_HoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.dgv_HoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_HoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
-            this.HoTenKH,
-            this.HoTenNV,
+            this.CCCDKH,
+            this.TenTK,
             this.TenPH,
             this.TinhTrangHD,
             this.TongTien});
             this.dgv_HoaDon.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_HoaDon.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_HoaDon.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_HoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_HoaDon.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_HoaDon.Location = new System.Drawing.Point(0, 123);
             this.dgv_HoaDon.Name = "dgv_HoaDon";
             this.dgv_HoaDon.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_HoaDon.RowHeadersVisible = false;
             this.dgv_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_HoaDon.Size = new System.Drawing.Size(817, 401);
@@ -228,9 +225,6 @@
             this.toolStrip1.BackColor = System.Drawing.Color.White;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsBtn_Them,
-            this.tsBtn_Sua,
-            this.tsBtn_Xoa,
             this.tsBtn_SapXep,
             this.tsBtn_TimKiem,
             this.tsBtn_ThongKe,
@@ -242,30 +236,6 @@
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tsBtn_Them
-            // 
-            this.tsBtn_Them.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Them.Image")));
-            this.tsBtn_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtn_Them.Name = "tsBtn_Them";
-            this.tsBtn_Them.Size = new System.Drawing.Size(69, 24);
-            this.tsBtn_Them.Text = "Thêm";
-            // 
-            // tsBtn_Sua
-            // 
-            this.tsBtn_Sua.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Sua.Image")));
-            this.tsBtn_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtn_Sua.Name = "tsBtn_Sua";
-            this.tsBtn_Sua.Size = new System.Drawing.Size(55, 24);
-            this.tsBtn_Sua.Text = "Sửa";
-            // 
-            // tsBtn_Xoa
-            // 
-            this.tsBtn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Xoa.Image")));
-            this.tsBtn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtn_Xoa.Name = "tsBtn_Xoa";
-            this.tsBtn_Xoa.Size = new System.Drawing.Size(56, 24);
-            this.tsBtn_Xoa.Text = "Xóa";
-            // 
             // tsBtn_SapXep
             // 
             this.tsBtn_SapXep.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_SapXep.Image")));
@@ -273,6 +243,7 @@
             this.tsBtn_SapXep.Name = "tsBtn_SapXep";
             this.tsBtn_SapXep.Size = new System.Drawing.Size(83, 24);
             this.tsBtn_SapXep.Text = "Sắp xếp";
+            this.tsBtn_SapXep.Click += new System.EventHandler(this.tsBtn_SapXep_Click);
             // 
             // tsBtn_TimKiem
             // 
@@ -281,6 +252,7 @@
             this.tsBtn_TimKiem.Name = "tsBtn_TimKiem";
             this.tsBtn_TimKiem.Size = new System.Drawing.Size(94, 24);
             this.tsBtn_TimKiem.Text = "Tìm kiếm";
+            this.tsBtn_TimKiem.Click += new System.EventHandler(this.tsBtn_TimKiem_Click);
             // 
             // tsBtn_ThongKe
             // 
@@ -305,6 +277,7 @@
             this.tsBtn_Reset.Name = "tsBtn_Reset";
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
+            this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
             // MaHD
             // 
@@ -315,19 +288,19 @@
             this.MaHD.ReadOnly = true;
             this.MaHD.Width = 52;
             // 
-            // HoTenKH
+            // CCCDKH
             // 
-            this.HoTenKH.DataPropertyName = "HoTenKH";
-            this.HoTenKH.HeaderText = "Khách hàng";
-            this.HoTenKH.Name = "HoTenKH";
-            this.HoTenKH.ReadOnly = true;
+            this.CCCDKH.DataPropertyName = "CCCDKH";
+            this.CCCDKH.HeaderText = "CCCD Khách";
+            this.CCCDKH.Name = "CCCDKH";
+            this.CCCDKH.ReadOnly = true;
             // 
-            // HoTenNV
+            // TenTK
             // 
-            this.HoTenNV.DataPropertyName = "HoTenNV";
-            this.HoTenNV.HeaderText = "Nhân viên";
-            this.HoTenNV.Name = "HoTenNV";
-            this.HoTenNV.ReadOnly = true;
+            this.TenTK.DataPropertyName = "TenTK";
+            this.TenTK.HeaderText = "Tài khoản";
+            this.TenTK.Name = "TenTK";
+            this.TenTK.ReadOnly = true;
             // 
             // TenPH
             // 
@@ -365,6 +338,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "UC_DanhSachHD";
             this.Size = new System.Drawing.Size(817, 546);
+            this.Load += new System.EventHandler(this.UC_DanhSachHD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -391,17 +365,14 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tssLbl_TongCong;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsBtn_Them;
-        private System.Windows.Forms.ToolStripButton tsBtn_Sua;
-        private System.Windows.Forms.ToolStripButton tsBtn_Xoa;
         private System.Windows.Forms.ToolStripButton tsBtn_SapXep;
         private System.Windows.Forms.ToolStripButton tsBtn_TimKiem;
         private System.Windows.Forms.ToolStripButton tsBtn_ThongKe;
         private System.Windows.Forms.ToolStripButton tsBtn_InHD;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCCDKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;

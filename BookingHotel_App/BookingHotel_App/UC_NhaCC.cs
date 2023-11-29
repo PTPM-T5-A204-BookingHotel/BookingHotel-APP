@@ -223,5 +223,10 @@ namespace BookingHotel_App
                 txt_DiaChi.Text = row.Cells["DiaChiNCC"].Value.ToString();
             }
         }
+
+        private void tsBtn_InExcel_Click(object sender, EventArgs e)
+        {
+            ba.XuatExcel(dgv_NhaCC);
+        }
     }
 }

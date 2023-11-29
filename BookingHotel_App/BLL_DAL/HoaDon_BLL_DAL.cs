@@ -45,7 +45,7 @@ namespace BLL_DAL
                          hd.TongTien,
                          hd.TinhTrangHD,
                          ph.TenPH,
-                         kh.HoTenKH,
+                         kh.CCCDKH,
                          hd.TenTK
                      };
             dgv.DataSource = kq;
@@ -93,6 +93,15 @@ namespace BLL_DAL
             if (hd != null)
             {
                 qlks.HoaDons.DeleteOnSubmit(hd);
+                qlks.SubmitChanges();
+            }
+        }
+        public void update(string mahd,int TongTien)
+        {
+            HoaDon hd = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).FirstOrDefault();
+            if (hd != null)
+            {
+                hd.TongTien = TongTien;
                 qlks.SubmitChanges();
             }
         }

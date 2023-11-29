@@ -135,7 +135,7 @@
             this.btn_Stream.Name = "btn_Stream";
             this.btn_Stream.Size = new System.Drawing.Size(174, 42);
             this.btn_Stream.TabIndex = 0;
-            this.btn_Stream.Text = "Stream On/off";
+            this.btn_Stream.Text = "Stream Off";
             this.btn_Stream.UseVisualStyleBackColor = false;
             this.btn_Stream.Click += new System.EventHandler(this.btn_Stream_Click);
             // 

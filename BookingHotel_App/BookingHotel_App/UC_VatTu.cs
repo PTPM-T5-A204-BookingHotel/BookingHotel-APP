@@ -295,5 +295,10 @@ namespace BookingHotel_App
             pic_Image.ImageLocation = null;
             ba.UpLoadImage(pic_Image);
         }
+
+        private void tsBtn_InExcel_Click(object sender, EventArgs e)
+        {
+            ba.XuatExcel(dgv_VatTu);
+        }
     }
 }

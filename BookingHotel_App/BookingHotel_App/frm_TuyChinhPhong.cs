@@ -242,5 +242,10 @@ namespace BookingHotel_App
                 }
             }
         }
+
+        private void tsBtn_InExcel_Click(object sender, EventArgs e)
+        {
+            ba.XuatExcel(dgv_Phong);
+        }
     }
 }

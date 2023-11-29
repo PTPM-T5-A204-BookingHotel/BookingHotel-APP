@@ -12,6 +12,11 @@ namespace BLL_DAL
         public HoaDon_DichVu_BLL_DAL() { }
         QLKhachSanDataContext qlks = new QLKhachSanDataContext();
 
+        public int isHDDV(string mahd,string madv)
+        {
+            var kq = qlks.HoaDon_DichVus.Where(o => o.MaHD.Equals(mahd) && o.MaDV.Equals(madv)).Count();
+            return kq;
+        }
         public void getHDDVs(DataGridView dgv,string mahd)
         {
 
@@ -39,12 +44,13 @@ namespace BLL_DAL
             qlks.HoaDon_DichVus.InsertOnSubmit(hddv);
             qlks.SubmitChanges();
         }
-        public void update(string mahd,string madv,int soluongdv)
+        public void update(string mahd,string madv,int soluongdv, int thanhtien)
         {
             HoaDon_DichVu hddv = qlks.HoaDon_DichVus.Where(o => o.MaHD.Equals(mahd) && o.MaDV.Equals(madv)).FirstOrDefault();
             if(hddv != null)
             {
                 hddv.SoLuongDV = soluongdv;
+                hddv.ThanhTienDV = thanhtien;
                 qlks.SubmitChanges();
             }
         }

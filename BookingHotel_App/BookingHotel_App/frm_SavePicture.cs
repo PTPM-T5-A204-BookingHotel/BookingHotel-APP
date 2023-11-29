@@ -21,6 +21,9 @@ namespace BookingHotel_App
         }
         bool streaming = false;
         Capture capture = new Capture();
+        
+        bool flag;
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
         public void Message(string message, MyMessageBox.enmType type)
         {
             MyMessageBox frm = new MyMessageBox();
@@ -49,19 +52,49 @@ namespace BookingHotel_App
         }
         private void btn_Capture_Click(object sender, EventArgs e)
         {
-            pic_Image.Image = pic_stream.Image;
+            
+            Bitmap bitmap = new Bitmap(pic_stream.Image);
+            Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
+            Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.4, 0);
+            flag = false;
+            foreach (Rectangle rectangle in rectangles)
+            {
+                using (Graphics graphics = Graphics.FromImage(bitmap))
+                {
+                    using (Pen pen = new Pen(Color.Red, 1))
+                    {
+                        graphics.DrawRectangle(pen, rectangle);
+                        flag = true;
+                    }
+                }
+            }
+            
+            pic_Image.Image = bitmap;
+            if (flag == false)
+            {
+                this.Message("Đây không là ảnh chân dung", MyMessageBox.enmType.Error);
+            }
+
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            var saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = @"Please save your photo";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (flag == false)
             {
-                pic_Image.Image.Save(saveFileDialog.FileName + ".jpg",
-                    System.Drawing.Imaging.ImageFormat.Jpeg);
-                this.Message("Save image success", MyMessageBox.enmType.Success);
+                this.Message("Đây không là ảnh chân dung", MyMessageBox.enmType.Error);
             }
+            else
+            {
+                var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = @"Please save your photo";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pic_Image.Image.Save(saveFileDialog.FileName + ".jpg",
+                        System.Drawing.Imaging.ImageFormat.Jpeg);
+                    this.Message("Save image success", MyMessageBox.enmType.Success);
+                }
+            }
+            
         }
     }
 }

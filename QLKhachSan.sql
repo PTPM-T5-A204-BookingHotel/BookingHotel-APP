@@ -193,6 +193,15 @@ create table HoaDon
 	constraint fk_TenTK_TaiKhoan foreign key (TenTK) references TaiKhoan(TenTK)
 )
 
+select * from HoaDon
+
+delete from HoaDon_DichVu where MaHD = 'HD1'
+
+delete from HoaDon_VatTu where MaHD = 'HD1'
+
+delete from HoaDon where MaHD = 'HD1'
+
+
 create table HoaDon_DichVu
 (
 	MaHD		varchar(10),
@@ -204,6 +213,8 @@ create table HoaDon_DichVu
 	constraint fk_MaDV_HoaDon_DichVu foreign key (MaDV) references DichVu(MaDV)
 )
 
+select * from HoaDon_DichVu
+
 create table HoaDon_VatTu
 (
 	MaHD		varchar(10),
@@ -214,6 +225,8 @@ create table HoaDon_VatTu
 	constraint fk_MaHD_HoaDon_VatTu foreign key (MaHD) references HoaDon(MaHD),
 	constraint fk_MaVT_HoaDon_VatTu foreign key (MaVT) references VatTu(MaVT)
 )
+
+select * from HoaDon_VatTu
 
 create table NhaCC
 (

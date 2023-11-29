@@ -317,6 +317,7 @@
             this.Name = "frm_SuaKH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa khách hàng";
+            this.Load += new System.EventHandler(this.frm_SuaKH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

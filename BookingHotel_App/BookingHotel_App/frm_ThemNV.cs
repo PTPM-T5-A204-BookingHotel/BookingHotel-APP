@@ -140,6 +140,7 @@ namespace BookingHotel_App
         private void frm_ThemNV_Load(object sender, EventArgs e)
         {
             rdo_Nam.Checked = true;
+            dt_NgaySinh.Value = DateTime.Now.Date;
             LoadCbo_ChucVu();
         }
 

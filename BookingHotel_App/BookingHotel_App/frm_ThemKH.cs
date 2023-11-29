@@ -1,10 +1,13 @@
 ﻿using BLL_DAL;
 using DevExpress.XtraEditors;
+using Emgu.CV.Structure;
+using Emgu.CV;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +24,7 @@ namespace BookingHotel_App
         KhachHang_BLL_DAL khblldal = new KhachHang_BLL_DAL();
         Basis ba = new Basis();
         ErrorProvider ep = new ErrorProvider();
+        bool flag;
         public void Message(string message, MyMessageBox.enmType type)
         {
             MyMessageBox frm = new MyMessageBox();
@@ -35,11 +39,32 @@ namespace BookingHotel_App
         private void frm_ThemKH_Load(object sender, EventArgs e)
         {
             rdo_Nam.Checked = true;
+            dt_NgaySinh.Value = DateTime.Now.Date;
         }
-
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
         private void btn_UpImage_Click(object sender, EventArgs e)
         {
+            
             ba.UpLoadImage(pic_Image);
+            Bitmap bitmap = new Bitmap(pic_Image.Image);
+            Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
+            Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.4, 0);
+            flag = false;
+            foreach (Rectangle rectangle in rectangles)
+            {
+                using (Graphics graphics = Graphics.FromImage(bitmap))
+                {
+                    using (Pen pen = new Pen(Color.Red, 1))
+                    {
+                        graphics.DrawRectangle(pen, rectangle);
+                        flag = true;
+                    }
+                }
+            }
+            if (flag == false)
+            {
+                this.Message("Đây không là ảnh chân dung", MyMessageBox.enmType.Error);
+            }
         }
         public bool isThongTinkh(string cccd, string hoten, string sodienthoai, DateTime ngaysinh, string diachi, string anhnv, string email)
         {

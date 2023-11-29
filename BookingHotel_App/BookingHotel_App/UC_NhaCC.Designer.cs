@@ -42,11 +42,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
             this.txt_MaNCC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_SDT = new DesignControl.TextForNumber();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txt_TenNCC = new DesignControl.TextForLetter();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_LoaiTK = new System.Windows.Forms.ComboBox();
             this.lbl_LoaiTK = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
-            this.txt_DiaChi = new System.Windows.Forms.TextBox();
-            this.txt_TenNCC = new DesignControl.TextForLetter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCC)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -199,6 +199,16 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Tìm kiếm";
             // 
+            // txt_DiaChi
+            // 
+            this.txt_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
+            this.txt_DiaChi.Location = new System.Drawing.Point(236, 32);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.Size = new System.Drawing.Size(282, 22);
+            this.txt_DiaChi.TabIndex = 19;
+            // 
             // txt_MaNCC
             // 
             this.txt_MaNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -251,6 +261,16 @@
             this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Địa chỉ";
+            // 
+            // txt_TenNCC
+            // 
+            this.txt_TenNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_TenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenNCC.ForeColor = System.Drawing.Color.White;
+            this.txt_TenNCC.Location = new System.Drawing.Point(18, 76);
+            this.txt_TenNCC.Name = "txt_TenNCC";
+            this.txt_TenNCC.Size = new System.Drawing.Size(177, 22);
+            this.txt_TenNCC.TabIndex = 7;
             // 
             // label1
             // 
@@ -378,8 +398,9 @@
             this.tsBtn_InExcel.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_InExcel.Image")));
             this.tsBtn_InExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtn_InExcel.Name = "tsBtn_InExcel";
-            this.tsBtn_InExcel.Size = new System.Drawing.Size(82, 24);
-            this.tsBtn_InExcel.Text = "In Excel";
+            this.tsBtn_InExcel.Size = new System.Drawing.Size(94, 24);
+            this.tsBtn_InExcel.Text = "Thống kê";
+            this.tsBtn_InExcel.Click += new System.EventHandler(this.tsBtn_InExcel_Click);
             // 
             // tsBtn_Reset
             // 
@@ -389,26 +410,6 @@
             this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
-            // 
-            // txt_DiaChi
-            // 
-            this.txt_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
-            this.txt_DiaChi.Location = new System.Drawing.Point(236, 32);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(282, 22);
-            this.txt_DiaChi.TabIndex = 19;
-            // 
-            // txt_TenNCC
-            // 
-            this.txt_TenNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.txt_TenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenNCC.ForeColor = System.Drawing.Color.White;
-            this.txt_TenNCC.Location = new System.Drawing.Point(18, 76);
-            this.txt_TenNCC.Name = "txt_TenNCC";
-            this.txt_TenNCC.Size = new System.Drawing.Size(177, 22);
-            this.txt_TenNCC.TabIndex = 7;
             // 
             // UC_NhaCC
             // 

@@ -13,7 +13,7 @@ namespace BLL_DAL
        
         public List<Quyen> GetQuyens()
         {
-            var kq = from q in qlks.Quyens select q;
+            var kq = from q in qlks.Quyens where !q.MaQuyen.Equals("Owner") select q;
             return kq.ToList();
         }
     }
