@@ -63,6 +63,7 @@
             this.tsBtn_TimKiem = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_InExcel = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
+            this.btn_SuaTinhTrangPH = new DesignControl.ButtonHover();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Phong)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -173,6 +174,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_SuaTinhTrangPH);
             this.panel1.Controls.Add(this.btn_EditLoaiPh);
             this.panel1.Controls.Add(this.cbo_LoaiPhong);
             this.panel1.Controls.Add(this.label5);
@@ -421,6 +423,24 @@
             this.tsBtn_Reset.Text = "Reset";
             this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
+            // btn_SuaTinhTrangPH
+            // 
+            this.btn_SuaTinhTrangPH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btn_SuaTinhTrangPH.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SuaTinhTrangPH.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_SuaTinhTrangPH.FlatAppearance.BorderSize = 2;
+            this.btn_SuaTinhTrangPH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btn_SuaTinhTrangPH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SuaTinhTrangPH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SuaTinhTrangPH.ForeColor = System.Drawing.Color.Lime;
+            this.btn_SuaTinhTrangPH.Location = new System.Drawing.Point(298, 109);
+            this.btn_SuaTinhTrangPH.Name = "btn_SuaTinhTrangPH";
+            this.btn_SuaTinhTrangPH.Size = new System.Drawing.Size(186, 45);
+            this.btn_SuaTinhTrangPH.TabIndex = 59;
+            this.btn_SuaTinhTrangPH.Text = "Sửa tình trạng phòng";
+            this.btn_SuaTinhTrangPH.UseVisualStyleBackColor = false;
+            this.btn_SuaTinhTrangPH.Click += new System.EventHandler(this.btn_SuaTinhTrangPH_Click);
+            // 
             // frm_TuyChinhPhong
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -481,5 +501,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangPH;
+        private DesignControl.ButtonHover btn_SuaTinhTrangPH;
     }
 }

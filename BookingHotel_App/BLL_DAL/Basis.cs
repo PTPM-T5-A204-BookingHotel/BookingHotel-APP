@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace BLL_DAL
 {
@@ -84,7 +84,7 @@ namespace BLL_DAL
         {
             if (dgv.RowCount > 0)
             {
-                Microsoft.Office.Interop.Excel.Application AppExcel = new Microsoft.Office.Interop.Excel.Application();
+                Excel.Application AppExcel = new Excel.Application();
                 AppExcel.Application.Workbooks.Add(Type.Missing);
                 for(int i=0;i<dgv.Columns.Count;i++)
                 {
@@ -115,6 +115,7 @@ namespace BLL_DAL
 
                     }
                 }
+                
             }
         }
 

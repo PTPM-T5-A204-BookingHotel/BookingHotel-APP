@@ -100,6 +100,17 @@
       <Column Name="SDTNCC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.Phong" Member="Phongs">
+    <Type Name="Phong">
+      <Column Name="MaPH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangPH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Phong_HoaDon" Member="HoaDons" ThisKey="MaPH" OtherKey="MaPH" Type="HoaDon" />
+      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="MaLP" OtherKey="MaLP" Type="LoaiPhong" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
     <Type Name="NhanVien">
       <Column Name="MaNV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -114,17 +125,6 @@
       <Column Name="EmailNV" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Association Name="NhanVien_TaiKhoan" Member="TaiKhoans" ThisKey="MaNV" OtherKey="MaNV" Type="TaiKhoan" />
       <Association Name="ChucVu_NhanVien" Member="ChucVu" ThisKey="MaCV" OtherKey="MaCV" Type="ChucVu" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Phong" Member="Phongs">
-    <Type Name="Phong">
-      <Column Name="MaPH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenPH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MaLP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TinhTrangPH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Phong_HoaDon" Member="HoaDons" ThisKey="MaPH" OtherKey="MaPH" Type="HoaDon" />
-      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="MaLP" OtherKey="MaLP" Type="LoaiPhong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Quyen" Member="Quyens">

@@ -279,13 +279,20 @@ namespace BookingHotel_App
             if (e.RowIndex >= 0)
             {
                 row = dgv_VatTu.Rows[e.RowIndex];
-                txt_Ma.Text = row.Cells[0].Value.ToString();
-                txt_TenVT.Text = row.Cells[1].Value.ToString();
-                txt_GiaBan.Text = row.Cells[2].Value.ToString();
-                txt_GiaNhap.Text = row.Cells[3].Value.ToString();
-                txt_SL.Text = row.Cells[4].Value.ToString();
+                txt_Ma.Text = row.Cells["MaVT"].Value.ToString();
+                txt_TenVT.Text = row.Cells["TenVT"].Value.ToString();
+                txt_GiaBan.Text = row.Cells["DonGia"].Value.ToString();
+                txt_GiaNhap.Text = row.Cells["GiaNhap"].Value.ToString();
+                txt_SL.Text = row.Cells["SoLuong"].Value.ToString();
                 txt_DVT.Text = row.Cells["DonViTinh"].Value.ToString();
-                txt_ThgHieu.Text = row.Cells[6].Value.ToString();
+                if (row.Cells["ThuongHieu"].Value == null)
+                {
+                    txt_ThgHieu.Text = "";
+                }
+                else
+                {
+                    txt_ThgHieu.Text = row.Cells["ThuongHieu"].Value.ToString();
+                }
                 pic_Image.ImageLocation = vt_blldal.getAnh(txt_Ma.Text);
             }
         }

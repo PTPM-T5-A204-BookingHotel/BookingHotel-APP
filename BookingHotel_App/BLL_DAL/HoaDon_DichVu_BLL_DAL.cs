@@ -17,6 +17,11 @@ namespace BLL_DAL
             var kq = qlks.HoaDon_DichVus.Where(o => o.MaHD.Equals(mahd) && o.MaDV.Equals(madv)).Count();
             return kq;
         }
+        public List<HoaDon_DichVu> getHDDVs(string mahd)
+        {
+            var kq = from hddv in qlks.HoaDon_DichVus where hddv.MaHD.Equals(mahd) select hddv;
+            return kq.ToList();
+        }
         public void getHDDVs(DataGridView dgv,string mahd)
         {
 

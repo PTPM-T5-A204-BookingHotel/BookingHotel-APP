@@ -53,6 +53,7 @@
     <Compile Include="ChucVu_BLL_DAL.cs" />
     <Compile Include="DatPhongOnl_BLL_DAL.cs" />
     <Compile Include="DichVu_BLL_DAL.cs" />
+    <Compile Include="DichVu_VatTu_InHD.cs" />
     <Compile Include="HoaDon_BLL_DAL.cs" />
     <Compile Include="HoaDon_DichVu_BLL_DAL.cs" />
     <Compile Include="HoaDon_VatTu_BLL_DAL.cs" />
@@ -67,9 +68,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="QLKhachSan.cs">
-      <DependentUpon>QLKhachSan.dbml</DependentUpon>
     </Compile>
     <Compile Include="QLKhachSan.designer.cs">
       <AutoGen>True</AutoGen>

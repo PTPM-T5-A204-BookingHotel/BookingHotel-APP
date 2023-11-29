@@ -1,4 +1,5 @@
 ﻿using BLL_DAL;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,11 @@ namespace BookingHotel_App
         HoaDon_BLL_DAL hdblldal = new HoaDon_BLL_DAL();
         Basis ba = new Basis();
         Phong_BLL_DAL phblldal = new Phong_BLL_DAL();
+        public void Message(string message, MyMessageBox.enmType type)
+        {
+            MyMessageBox frm = new MyMessageBox();
+            frm.showMess(message, type);
+        }
         public void LoadCbo_TimKiem()
         {
             string[] s = { "Phòng", "CCCD Khách" };
@@ -50,6 +56,7 @@ namespace BookingHotel_App
         {
             LoadData();
             LoadCbo_Phong();
+            LoadCbo_TimKiem();
         }
 
         private void tsBtn_Reset_Click(object sender, EventArgs e)
@@ -57,16 +64,65 @@ namespace BookingHotel_App
             cbo_LoaiTK.SelectedIndex = 0;
             ba.clearTextBoxs(this.Controls);
             LoadCbo_Phong();
+            LoadData();
         }
 
         private void tsBtn_SapXep_Click(object sender, EventArgs e)
         {
-
+            hdblldal.sort(dgv_HoaDon);
         }
 
         private void tsBtn_TimKiem_Click(object sender, EventArgs e)
         {
+            if(cbo_LoaiTK.SelectedIndex==1)
+            {
+                string search = txt_TimKiem.Text.Trim();
+                if (!search.Equals("")) 
+                { 
+                    search = txt_TimKiem.Text.Trim();
+                    hdblldal.Search(dgv_HoaDon, 1, search);
+                }
+                else
+                {
+                    this.Message("Tìm kiếm không để trống", MyMessageBox.enmType.Error);
+                }
+            }
+            else
+            {
+                if (cbo_LoaiTK.SelectedIndex == 0)
+                {
+                    hdblldal.Search(dgv_HoaDon, 0, cbo_Phong.SelectedValue.ToString());
+                }
+            }
+            
+        }
 
+        private void tsBtn_InHD_Click(object sender, EventArgs e)
+        {
+            if (dgv_HoaDon.RowCount > 0) {
+                int index = dgv_HoaDon.CurrentRow.Index;
+                if(index>=0)
+                {
+                    if (dgv_HoaDon.Rows[index].Cells["TinhTrangHD"].Value.ToString().Equals("Đã thanh toán")){
+                        frmInHD frm = new frmInHD();
+                        frm.XuatHD(dgv_HoaDon.Rows[index].Cells["MaHD"].Value.ToString());
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        this.Message("Hóa đơn chưa thanh toán", MyMessageBox.enmType.Error);
+                    }
+                }
+                else
+                {
+                    this.Message("Chưa chọn hóa đơn", MyMessageBox.enmType.Error);
+                }
+
+            }
+            else
+            {
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
         }
     }
 }

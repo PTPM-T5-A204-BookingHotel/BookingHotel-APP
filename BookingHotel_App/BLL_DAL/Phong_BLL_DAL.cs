@@ -65,7 +65,7 @@ namespace BLL_DAL
         }
         public void update(int maph,string tinhtrang)
         {
-            Phong ph = qlks.Phongs.Where(o => o.TenPH.Equals(maph)).FirstOrDefault();
+            Phong ph = qlks.Phongs.Where(o => o.MaPH.Equals(maph)).FirstOrDefault();
             if (ph != null)
             {
                 ph.TinhTrangPH = tinhtrang;

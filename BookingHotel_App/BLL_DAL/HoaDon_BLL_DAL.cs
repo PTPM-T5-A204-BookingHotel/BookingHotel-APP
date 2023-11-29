@@ -57,7 +57,8 @@ namespace BLL_DAL
                          hd.TinhTrangHD,
                          ph.TenPH,
                          kh.CCCDKH,
-                         hd.TenTK
+                         hd.TenTK,
+                         hd.TGTraPhong
                      };
             dgv.DataSource = kq;
         }
@@ -147,6 +148,87 @@ namespace BLL_DAL
                 qlks.SubmitChanges();
             }
 
+        }
+        public void update(string mahd, string tt)
+        {
+            HoaDon hd = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).FirstOrDefault();
+            if (hd != null)
+            {
+                hd.TinhTrangHD = tt;
+                qlks.SubmitChanges();
+            }
+
+        }
+        public void Search(DataGridView dgv, int chon,string value)
+        {
+            var kq = from hd in qlks.HoaDons
+                     join ph in qlks.Phongs on hd.MaPH equals ph.MaPH
+                     join kh in qlks.KhachHangs on hd.MaKH equals kh.MaKH
+                     where hd.MaPH.Equals(value)
+                     select new
+                     {
+                         hd.MaHD,
+                         hd.TongTien,
+                         hd.TinhTrangHD,
+                         ph.TenPH,
+                         kh.CCCDKH,
+                         hd.TenTK,
+                         hd.TGTraPhong
+                     };
+            switch (chon)
+            {
+                case 0:
+                    kq = from hd in qlks.HoaDons
+                         join ph in qlks.Phongs on hd.MaPH equals ph.MaPH
+                         join kh in qlks.KhachHangs on hd.MaKH equals kh.MaKH
+                         where hd.MaPH.Equals(value)
+                         select new
+                         {
+                             hd.MaHD,
+                             hd.TongTien,
+                             hd.TinhTrangHD,
+                             ph.TenPH,
+                             kh.CCCDKH,
+                             hd.TenTK,
+                             hd.TGTraPhong
+                         };
+                    break;
+                case 1:
+                    kq = from hd in qlks.HoaDons
+                         join ph in qlks.Phongs on hd.MaPH equals ph.MaPH
+                         join kh in qlks.KhachHangs on hd.MaKH equals kh.MaKH
+                         where kh.CCCDKH.Contains(value)
+                         select new
+                         {
+                             hd.MaHD,
+                             hd.TongTien,
+                             hd.TinhTrangHD,
+                             ph.TenPH,
+                             kh.CCCDKH,
+                             hd.TenTK,
+                             hd.TGTraPhong
+                         };
+                    break;
+            }
+            dgv.DataSource = kq;
+        }
+        public void sort(DataGridView dgv)
+        {
+            var kq = from hd in qlks.HoaDons
+                     join ph in qlks.Phongs on hd.MaPH equals ph.MaPH
+                     join kh in qlks.KhachHangs on hd.MaKH equals kh.MaKH
+                     orderby hd.TGTraPhong descending
+                     select new
+                     {
+                         hd.MaHD,
+                         hd.TongTien,
+                         hd.TinhTrangHD,
+                         ph.TenPH,
+                         kh.CCCDKH,
+                         hd.TenTK,
+                         hd.TGTraPhong
+                     };
+            dgv.DataSource = kq;
         }
     }
 }

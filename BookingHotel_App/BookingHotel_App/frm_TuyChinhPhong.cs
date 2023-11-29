@@ -141,21 +141,29 @@ namespace BookingHotel_App
 
         private void tsBtn_Xoa_Click(object sender, EventArgs e)
         {
-            int index = dgv_Phong.CurrentRow.Index;
+            
             if (dgv_Phong.RowCount < 1)
             {
                 this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
             }
             else
             {
+                int index = dgv_Phong.CurrentRow.Index;
                 if (index < 0)
                     this.Message("Chưa chọn phòng", MyMessageBox.enmType.Error);
                 else
                 {
-                    int maph = int.Parse(dgv_Phong.Rows[index].Cells[0].Value.ToString());
-                    phblldal.delete(maph);
-                    this.Message("Success", MyMessageBox.enmType.Success);
-                    LoadData();
+                    try
+                    {
+                        int maph = int.Parse(dgv_Phong.Rows[index].Cells[0].Value.ToString());
+                        phblldal.delete(maph);
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
+                    }
+                    catch
+                    {
+                        this.Message("Phòng đang được sử dụng", MyMessageBox.enmType.Error);
+                    }
                 }
             }
         }
@@ -246,6 +254,59 @@ namespace BookingHotel_App
         private void tsBtn_InExcel_Click(object sender, EventArgs e)
         {
             ba.XuatExcel(dgv_Phong);
+        }
+
+        private void btn_SuaTinhTrangPH_Click(object sender, EventArgs e)
+        {
+            if (dgv_Phong.RowCount > 0)
+            {
+                int index = dgv_Phong.CurrentRow.Index;
+                if (index >= 0)
+                {
+                    
+                    string maph = dgv_Phong.Rows[index].Cells["MaPH"].Value.ToString();
+                    string tinhtrangph = dgv_Phong.Rows[index].Cells["TinhTrangPH"].Value.ToString();
+                    if (cbo_TinhTrang.SelectedIndex == 1)
+                    {
+                        if (!tinhtrangph.Equals("Đang thuê"))
+                        {
+                            phblldal.update(int.Parse(maph), "Đang sửa/dọn dẹp");
+                            LoadData();
+                            this.Message("Success", MyMessageBox.enmType.Success);
+                            
+                        }
+                        else
+                        {
+                            this.Message("Phòng đang thuê", MyMessageBox.enmType.Error);
+                        }
+                    }
+                    else
+                    {
+                        if(cbo_TinhTrang.SelectedIndex == 0)
+                        {
+                            if (!tinhtrangph.Equals("Đang thuê"))
+                            {
+                                phblldal.update(int.Parse(maph), "Trống");
+                                LoadData();
+                                this.Message("Success", MyMessageBox.enmType.Success);
+                            }
+                            else
+                            {
+                                this.Message("Phòng đang thuê", MyMessageBox.enmType.Error);
+                            }
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    this.Message("Chưa chọn phòng", MyMessageBox.enmType.Error);
+                }
+            }
+            else
+            {
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
+            }
         }
     }
 }

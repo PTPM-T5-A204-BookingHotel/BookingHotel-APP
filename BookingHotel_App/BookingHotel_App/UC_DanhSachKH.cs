@@ -152,7 +152,7 @@ namespace BookingHotel_App
             }
             catch
             {
-                this.Message("Nhân viên này đang được sử dụng", MyMessageBox.enmType.Error);
+                this.Message("Khách hàng này đang được sử dụng", MyMessageBox.enmType.Error);
             }
         }
 

@@ -35,14 +35,25 @@ namespace BookingHotel_App
                     tsBtn_DatVT.Enabled = true;
                     tsBtn_SuaVT.Enabled = true;
                     tsBtn_XoaVT.Enabled = true;
-                    tsBtn_SuaHD.Enabled = true;
+                    tsBtn_SuaHD.Enabled = false;
+                    tsBtn_NhanPH.Enabled = false;
+                    tsBtn_TraPH.Enabled = true;
                 }
                 else
                 {
                     tsBtn_DatVT.Enabled = false;
                     tsBtn_SuaVT.Enabled = false;
                     tsBtn_XoaVT.Enabled = false;
-                    tsBtn_SuaHD.Enabled = false;
+                    tsBtn_SuaHD.Enabled = true;
+                    if (lbl_TinhTrangPH.Text == "Đang thuê")
+                    {
+                        tsBtn_NhanPH.Enabled = false;
+                    }
+                    else
+                    {
+                        tsBtn_NhanPH.Enabled = true;
+                    }
+                    tsBtn_TraPH.Enabled = false;
                 }
             }
             else
@@ -681,6 +692,9 @@ namespace BookingHotel_App
         {
             if (lbl_MaHD.Text != "")
             {
+                tsBtn_DatVT.Enabled = true;
+                tsBtn_SuaVT.Enabled = true;
+                tsBtn_XoaVT.Enabled = true;
                 hdblldal.NhanPhong(lbl_MaHD.Text, DateTime.Now);
                 int maph = phblldal.getMaPh(lbl_Phong.Text);
                 string tt = "Đang thuê";
@@ -688,6 +702,7 @@ namespace BookingHotel_App
                 lbl_TinhTrangPH.Text = phblldal.getPH(maph).TinhTrangPH.ToString();
                 tsBtn_NhanPH.Enabled = false;
                 tsBtn_SuaHD.Enabled = false;
+                tsBtn_TraPH.Enabled = true;
                 hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
                 tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
             }
@@ -706,6 +721,14 @@ namespace BookingHotel_App
             dt_NgayDat.Value = DateTime.Now.Date;
             hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
             tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
+            tsBtn_NhanPH.Enabled = true;
+            tsBtn_SuaHD.Enabled = true;
+            tsBtn_TraPH.Enabled = false;
+            tsBtn_DatVT.Enabled = false;
+            tsBtn_SuaVT.Enabled = false;
+            tsBtn_XoaVT.Enabled = false;
+            dgv_DatVT.DataSource = null;
+            dgv_DatDV.DataSource = null;
         }
         private void tsBtn_TraPH_Click(object sender, EventArgs e)
         {
@@ -724,13 +747,33 @@ namespace BookingHotel_App
                     int tinhsl = vt_blldal.TinhSL(slmoi,slcu);
                     vt_blldal.update(mavt, tinhsl);
                 }
-                tsBtn_NhanPH.Enabled = true;
-                tsBtn_SuaHD.Enabled = true;
+                
                 Reset();
             }
             else
             {
                 this.Message("Chưa chọn hóa đơn cần trả phòng", MyMessageBox.enmType.Error);
+            }
+        }
+
+        private void tsBtn_HuyHD_Click(object sender, EventArgs e)
+        {
+            if(dgv_DonDat.RowCount>0)
+            {
+                int index = dgv_DonDat.CurrentRow.Index;
+                if (index >= 0)
+                {
+                    hdblldal.update(lbl_MaHD.Text, "Hủy");
+                    Reset();
+                }
+                else
+                {
+                    this.Message("Chưa chọn hóa đơn cần hủy", MyMessageBox.enmType.Error);
+                }
+            }
+            else
+            {
+                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
             }
         }
     }

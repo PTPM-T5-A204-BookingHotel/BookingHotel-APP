@@ -113,7 +113,7 @@ namespace BookingHotel_App
                 {
                     if (isThongTinLP(ten, gia, anh))
                     {
-                        string ma = dgv_LoaiPH.Rows[index].Cells[0].ToString();
+                        string ma = dgv_LoaiPH.Rows[index].Cells["MaLP"].Value.ToString();
                         lpblldal.update(int.Parse(ma), ten, int.Parse(gia), anh);
                         this.Message("Success", MyMessageBox.enmType.Success);
                         LoadData();
@@ -126,24 +126,31 @@ namespace BookingHotel_App
 
         private void tsBtn_Xoa_Click(object sender, EventArgs e)
         {
-            if (dgv_LoaiPH.RowCount < 1)
+            try
             {
-                this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
-            }
-            else
-            {
-                int index = dgv_LoaiPH.CurrentRow.Index;
-                if (index < 0)
+                if (dgv_LoaiPH.RowCount < 1)
                 {
-                    this.Message("Chưa chọn loại phòng", MyMessageBox.enmType.Error);
+                    this.Message("Chưa có dữ liệu", MyMessageBox.enmType.Error);
                 }
                 else
                 {
-                    string ma = dgv_LoaiPH.Rows[index].Cells["MaLP"].ToString();
-                    lpblldal.delete(int.Parse(ma));
-                    this.Message("Success", MyMessageBox.enmType.Success);
-                    LoadData();
+                    int index = dgv_LoaiPH.CurrentRow.Index;
+                    if (index < 0)
+                    {
+                        this.Message("Chưa chọn loại phòng", MyMessageBox.enmType.Error);
+                    }
+                    else
+                    {
+                        string ma = dgv_LoaiPH.Rows[index].Cells["MaLP"].ToString();
+                        lpblldal.delete(int.Parse(ma));
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                        LoadData();
+                    }
                 }
+            }
+            catch
+            {
+                this.Message("Loại phòng đang được sử dụng", MyMessageBox.enmType.Error);
             }
         }
 
@@ -195,11 +202,8 @@ namespace BookingHotel_App
                 row = dgv_LoaiPH.Rows[e.RowIndex];
                 txt_TenLP.Text = row.Cells["TenLP"].Value.ToString();
                 txt_GiaLP.Text = row.Cells["GiaPH"].Value.ToString();
-                if(lpblldal.getAnh(row.Cells["MaLP"].ToString()) !=null)
-                {
-                    pic_Image.ImageLocation = lpblldal.getAnh(row.Cells["MaLP"].ToString());
-                }
-                
+                pic_Image.ImageLocation = lpblldal.getAnh(row.Cells["MaLP"].Value.ToString());
+
             }
         }
 
