@@ -58,6 +58,7 @@
     <Compile Include="HoaDon_VatTu_BLL_DAL.cs" />
     <Compile Include="KhachHang_BLL_DAL.cs" />
     <Compile Include="LoaiPhong_BLL_DAL.cs" />
+    <Compile Include="MyMessageBox.cs" />
     <Compile Include="NhaCC_BLL_DAL.cs" />
     <Compile Include="NhanVien_BLL_DAL.cs" />
     <Compile Include="Phong_BLL_DAL.cs" />

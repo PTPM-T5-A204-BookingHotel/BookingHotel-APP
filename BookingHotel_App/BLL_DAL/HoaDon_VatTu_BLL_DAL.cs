@@ -20,6 +20,16 @@ namespace BLL_DAL
                      select new { hdvt.MaVT,vt.TenVT, vt.DonGia, hdvt.SoLuongVT, hdvt.ThanhTienVT };
             dgv.DataSource = kq;
         }
+        public HoaDon_VatTu getHDVT(string mahd,string mavt)
+        {
+            var kq = qlks.HoaDon_VatTus.Where(o => o.MaHD.Equals(mahd) && o.MaVT.Equals(mavt)).FirstOrDefault();
+            return kq;
+        }
+        public List<HoaDon_VatTu> getHDVTs(string mahd)
+        {
+            var kq = from hdvt in qlks.HoaDon_VatTus where hdvt.MaHD.Equals(mahd) select hdvt;
+            return kq.ToList();
+        }
         public int TinhThanhTien(int giavt, int soluongvt)
         {
             return giavt * soluongvt;

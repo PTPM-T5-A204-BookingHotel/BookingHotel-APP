@@ -439,3 +439,4 @@ D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debu
 D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.exe
 D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.pdb
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\bin\Debug\haarcascade_frontalface_alt_tree.xml
+D:\Subjects\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\bin\Debug\haarcascade_frontalface_alt_tree.xml

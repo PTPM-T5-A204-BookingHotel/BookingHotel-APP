@@ -79,6 +79,7 @@ namespace BLL_DAL
             return true;
 
         }
+        
         public void XuatExcel(DataGridView dgv)
         {
             if (dgv.RowCount > 0)
@@ -98,7 +99,22 @@ namespace BLL_DAL
                     }
                 }
                 AppExcel.Columns.AutoFit();
-                AppExcel.Visible = true;
+                SaveFileDialog savefile  = new SaveFileDialog();
+                savefile.Title = "Export Excel";
+                savefile.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+                if (savefile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        AppExcel.ActiveWorkbook.SaveCopyAs(savefile.FileName);
+                        AppExcel.ActiveWorkbook.Saved = true;
+                        
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
             }
         }
 

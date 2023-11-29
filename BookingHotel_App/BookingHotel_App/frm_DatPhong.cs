@@ -1,6 +1,7 @@
 ﻿using BLL_DAL;
 using DevExpress.XtraEditors;
 using Emgu.CV.Flann;
+using Emgu.CV.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,7 +94,6 @@ namespace BookingHotel_App
             ba.clearTextBoxs(this.Controls);
             lbl_MaHD.Text = "";
             dt_NgayDat.Value = DateTime.Now.Date;
-
 
         }
         private void frm_DatPhong_Load(object sender, EventArgs e)
@@ -562,16 +562,23 @@ namespace BookingHotel_App
                 DateTime ngaydat = dt_NgayDat.Value;
                 if (index >= 0)
                 {
-                    string cccd = dgv_KhachHang.Rows[index].Cells["CCCDKH_1"].Value.ToString();
-                    int makh = khblldal.getMaKH(cccd);
-                    if (isThongTinDP(songayluutru, soluongng))
+                    if (hdblldal.KTTGDatPhong(ngaydat, phblldal.getMaPh(lbl_Phong.Text)))
                     {
-                        int maph = phblldal.getMaPh(lbl_Phong.Text);
-                        int tongtien = hdblldal.CalTongTien(int.Parse(lbl_GiaPH.Text), int.Parse(songayluutru));
-                        hdblldal.DatPhong(mahd, makh, maph, tssLbl_TenTK.Text, ngaydat, int.Parse(songayluutru), int.Parse(soluongng), tongtien);
-                        hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
-                        tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
-                        this.Message("Success", MyMessageBox.enmType.Success);
+                        string cccd = dgv_KhachHang.Rows[index].Cells["CCCDKH_1"].Value.ToString();
+                        int makh = khblldal.getMaKH(cccd);
+                        if (isThongTinDP(songayluutru, soluongng))
+                        {
+                            int maph = phblldal.getMaPh(lbl_Phong.Text);
+                            int tongtien = hdblldal.CalTongTien(int.Parse(lbl_GiaPH.Text), int.Parse(songayluutru));
+                            hdblldal.DatPhong(mahd, makh, maph, tssLbl_TenTK.Text, ngaydat, int.Parse(songayluutru), int.Parse(soluongng), tongtien);
+                            hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
+                            tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
+                            this.Message("Success", MyMessageBox.enmType.Success);
+                        }
+                    }
+                    else
+                    {
+                        this.Message("Ngày dự kiến nhận phòng đã có khách đặt", MyMessageBox.enmType.Error);
                     }
 
                 }
@@ -661,6 +668,7 @@ namespace BookingHotel_App
                     hdblldal.update(lbl_MaHD.Text, ngaydat, int.Parse(songayluutru), int.Parse(soluongng), int.Parse(lbl_TongTien.Text));
                     hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
                     tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
+                    this.Message("Success", MyMessageBox.enmType.Success);
                 }
             }
             else
@@ -688,7 +696,17 @@ namespace BookingHotel_App
                 this.Message("Chưa chọn hóa đơn cần nhận phòng", MyMessageBox.enmType.Error);
             }
         }
-
+        public void Reset()
+        {
+            lbl_TongTien.Text = 0.ToString();
+            tssLbl_TongTT_DV.Text = 0.ToString();
+            tssLbl_TongTT_VT.Text = 0.ToString();
+            ba.clearTextBoxs(this.Controls);
+            lbl_MaHD.Text = "";
+            dt_NgayDat.Value = DateTime.Now.Date;
+            hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
+            tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
+        }
         private void tsBtn_TraPH_Click(object sender, EventArgs e)
         {
             if (lbl_MaHD.Text != "")
@@ -698,10 +716,17 @@ namespace BookingHotel_App
                 string tt = "Trống";
                 phblldal.update(maph,tt);
                 lbl_TinhTrangPH.Text = phblldal.getPH(maph).TinhTrangPH.ToString();
+                for(int i = 0; i < hdvtblldal.getHDVTs(lbl_MaHD.Text).Count; i++)
+                {
+                    string mavt = hdvtblldal.getHDVTs(lbl_MaHD.Text)[i].MaVT.ToString();
+                    int slcu = int.Parse(vt_blldal.getVT(mavt).SoLuong.ToString());
+                    int slmoi = int.Parse(hdvtblldal.getHDVT(lbl_MaHD.Text,mavt).SoLuongVT.ToString());
+                    int tinhsl = vt_blldal.TinhSL(slmoi,slcu);
+                    vt_blldal.update(mavt, tinhsl);
+                }
                 tsBtn_NhanPH.Enabled = true;
                 tsBtn_SuaHD.Enabled = true;
-                hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
-                tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
+                Reset();
             }
             else
             {

@@ -13,17 +13,28 @@ namespace BLL_DAL
         QLKhachSanDataContext qlks = new QLKhachSanDataContext();
         public string CreateMaHD()
         {
-            string mahd = "HD";
+            string mahd = "";
             for (int i = 0; i < 1000000; i++)
             {
-                mahd += (i + 1);
+                mahd = "HD"+ (i + 1);
                 var kq = qlks.HoaDons.Where(o => o.MaHD.Equals(mahd)).Count();
                 if (kq == 0)
                     break;
             }
             return mahd;
         }
-        
+        public bool KTTGDatPhong(DateTime dt,int maph)
+        {
+            foreach(HoaDon hd in getListHD(maph))
+            {
+                if (hd.TGDatPhong == dt)
+                {
+                    return false;
+                    break;
+                }
+            }
+            return true;
+        }
         public List<HoaDon> getListHD(int maph)
         {
             var kq = qlks.HoaDons.Where(o => o.MaPH.Equals(maph) && o.TinhTrangHD.Equals("Chưa thanh toán"));
