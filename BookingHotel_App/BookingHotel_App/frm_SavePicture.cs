@@ -19,8 +19,8 @@ namespace BookingHotel_App
         {
             InitializeComponent();
         }
-        bool streaming = false;
-        Capture capture = new Capture();
+        bool streaming;
+        Capture capture;
         
         public void Message(string message, MyMessageBox.enmType type)
         {
@@ -72,7 +72,15 @@ namespace BookingHotel_App
 
         private void frm_SavePicture_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                capture = new Capture();
+                streaming = false;
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -186,20 +186,19 @@ create table HoaDon
 	SoNgayLuuTru	int default 0,
 	SoLuongNguoi	int default 0,
 	TongTien		int	default 0,
-	TinhTrangHD		nvarchar(max) default N'Chưa thanh toán' check(TinhTrangHD = N'Chưa thanh toán' or TinhTrangHD = N'Đã thanh toán'),
+	TinhTrangHD		nvarchar(max) default N'Chưa thanh toán' check(TinhTrangHD = N'Chưa thanh toán' or TinhTrangHD = N'Đã thanh toán' or TinhTrangHD = N'Hủy'),
 	constraint pk_MaHD_HoaDon primary key (MaHD),
 	constraint fk_MaKH_HoaDon foreign key (MaKH) references KhachHang(MaKH),
 	constraint fk_MaPH_HoaDon foreign key (MaPH) references Phong(MaPH),
 	constraint fk_TenTK_TaiKhoan foreign key (TenTK) references TaiKhoan(TenTK)
 )
-
 --select * from HoaDon
 
 --delete from HoaDon_DichVu where MaHD = 'HD1'
 
 --delete from HoaDon_VatTu where MaHD = 'HD1'
 
---delete from HoaDon where MaHD = 'HD12'
+--delete from HoaDon where MaHD = 'HD1'
 
 
 create table HoaDon_DichVu

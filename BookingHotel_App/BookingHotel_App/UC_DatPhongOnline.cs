@@ -61,5 +61,10 @@ namespace BookingHotel_App
                 this.Message("Success", MyMessageBox.enmType.Success);
             }
         }
+
+        private void tsBtn_Reset_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

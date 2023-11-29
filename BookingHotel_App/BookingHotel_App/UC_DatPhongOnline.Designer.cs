@@ -37,9 +37,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsBtn_Check = new System.Windows.Forms.ToolStripButton();
             this.dgv_DatPhongOnl = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tssLbl_TongCong = new System.Windows.Forms.ToolStripStatusLabel();
             this.MaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,10 @@
             this.SoLuongNg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhtrangDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssLbl_TongCong = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DatPhongOnl)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -57,7 +58,8 @@
             this.toolStrip1.BackColor = System.Drawing.Color.White;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsBtn_Check});
+            this.tsBtn_Check,
+            this.tsBtn_Reset});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(763, 27);
@@ -132,31 +134,6 @@
             this.dgv_DatPhongOnl.Size = new System.Drawing.Size(763, 462);
             this.dgv_DatPhongOnl.TabIndex = 17;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.White;
-            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.tssLbl_TongCong});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 489);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(763, 22);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(82, 17);
-            this.toolStripStatusLabel1.Text = "Tổng cộng :";
-            // 
-            // tssLbl_TongCong
-            // 
-            this.tssLbl_TongCong.Name = "tssLbl_TongCong";
-            this.tssLbl_TongCong.Size = new System.Drawing.Size(16, 17);
-            this.tssLbl_TongCong.Text = "0";
-            // 
             // MaDP
             // 
             this.MaDP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -189,7 +166,7 @@
             this.SoLuongTGoLai.ReadOnly = true;
             this.SoLuongTGoLai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.SoLuongTGoLai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SoLuongTGoLai.Width = 109;
+            this.SoLuongTGoLai.Width = 83;
             // 
             // SoLuongNg
             // 
@@ -213,6 +190,40 @@
             this.TinhtrangDP.HeaderText = "Tình trạng";
             this.TinhtrangDP.Name = "TinhtrangDP";
             this.TinhtrangDP.ReadOnly = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.White;
+            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tssLbl_TongCong});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 489);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(763, 22);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(82, 17);
+            this.toolStripStatusLabel1.Text = "Tổng cộng :";
+            // 
+            // tssLbl_TongCong
+            // 
+            this.tssLbl_TongCong.Name = "tssLbl_TongCong";
+            this.tssLbl_TongCong.Size = new System.Drawing.Size(16, 17);
+            this.tssLbl_TongCong.Text = "0";
+            // 
+            // tsBtn_Reset
+            // 
+            this.tsBtn_Reset.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Reset.Image")));
+            this.tsBtn_Reset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtn_Reset.Name = "tsBtn_Reset";
+            this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
+            this.tsBtn_Reset.Text = "Reset";
+            this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
             // UC_DatPhongOnline
             // 
@@ -250,5 +261,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tssLbl_TongCong;
+        private System.Windows.Forms.ToolStripButton tsBtn_Reset;
     }
 }

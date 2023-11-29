@@ -763,7 +763,8 @@ namespace BookingHotel_App
                 int index = dgv_DonDat.CurrentRow.Index;
                 if (index >= 0)
                 {
-                    hdblldal.update(lbl_MaHD.Text, "Hủy");
+                    string mahd = dgv_DonDat.Rows[index].Cells["MaHD"].Value.ToString();
+                    hdblldal.update(mahd, "Hủy");
                     Reset();
                 }
                 else
