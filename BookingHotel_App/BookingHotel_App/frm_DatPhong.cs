@@ -178,7 +178,7 @@ namespace BookingHotel_App
                 }
                 else
                 {
-                    string cccd = dgv_KhachHang.Rows[index].Cells["CCCDKH"].Value.ToString();
+                    string cccd = dgv_KhachHang.Rows[index].Cells["CCCDKH_1"].Value.ToString();
                     frm_SuaKH frm = new frm_SuaKH();
                     frm.LoadData(khblldal.getMaKH(cccd));
                     frm.ShowDialog();
