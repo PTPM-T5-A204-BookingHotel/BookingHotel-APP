@@ -164,6 +164,12 @@
     <Compile Include="frm_ChucVu.Designer.cs">
       <DependentUpon>frm_ChucVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DatDV_VT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DatDV_VT.Designer.cs">
+      <DependentUpon>frm_DatDV_VT.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_DatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ChucVu.resx">
       <DependentUpon>frm_ChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DatDV_VT.resx">
+      <DependentUpon>frm_DatDV_VT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DatPhong.resx">
       <DependentUpon>frm_DatPhong.cs</DependentUpon>

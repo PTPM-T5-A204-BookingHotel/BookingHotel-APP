@@ -114,6 +114,7 @@ create table Phong
 	constraint fk_MaLP_Phong foreign key (MaLP) references LoaiPhong(MaLP)
 )
 
+
 insert into Phong(TenPH,MaLP,Tang) values 
 (N'101', 1, 1), (N'102', 1, 1), (N'103', 1, 1), (N'104', 1, 1), (N'105', 1, 1), (N'106', 1, 1), (N'107', 2, 1), (N'108', 1, 1), (N'109', 1, 1), (N'110', 1, 1),
 (N'201', 2, 2), (N'202', 1, 2), (N'203', 1, 2), (N'204', 2, 2), (N'205', 1, 2), (N'206', 1, 2), (N'207', 1, 2), (N'208', 2, 2), (N'209', 1, 2), (N'210', 1, 2),

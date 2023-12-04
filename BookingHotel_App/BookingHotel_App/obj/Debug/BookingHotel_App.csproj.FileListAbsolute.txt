@@ -536,3 +536,4 @@ C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\bin\Debug\
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\bin\Debug\ru\DevExpress.Diagram.v21.2.Core.resources.dll
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.frmInHD.resources
 C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.Report.HoaDonReport.resources
+C:\MonHoc\PTPMUDTM\BookingHotel-APP\BookingHotel_App\BookingHotel_App\obj\Debug\BookingHotel_App.frm_DatDV_VT.resources

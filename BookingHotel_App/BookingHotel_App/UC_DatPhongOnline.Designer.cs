@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsBtn_Check = new System.Windows.Forms.ToolStripButton();
+            this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
             this.dgv_DatPhongOnl = new System.Windows.Forms.DataGridView();
             this.MaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssLbl_TongCong = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsBtn_Reset = new System.Windows.Forms.ToolStripButton();
+            this.tsBtn_Xoa = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DatPhongOnl)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -59,7 +60,8 @@
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtn_Check,
-            this.tsBtn_Reset});
+            this.tsBtn_Reset,
+            this.tsBtn_Xoa});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(763, 27);
@@ -74,6 +76,15 @@
             this.tsBtn_Check.Size = new System.Drawing.Size(70, 24);
             this.tsBtn_Check.Text = "Check";
             this.tsBtn_Check.Click += new System.EventHandler(this.tsBtn_Check_Click);
+            // 
+            // tsBtn_Reset
+            // 
+            this.tsBtn_Reset.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Reset.Image")));
+            this.tsBtn_Reset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtn_Reset.Name = "tsBtn_Reset";
+            this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
+            this.tsBtn_Reset.Text = "Reset";
+            this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
             // 
             // dgv_DatPhongOnl
             // 
@@ -216,14 +227,14 @@
             this.tssLbl_TongCong.Size = new System.Drawing.Size(16, 17);
             this.tssLbl_TongCong.Text = "0";
             // 
-            // tsBtn_Reset
+            // tsBtn_Xoa
             // 
-            this.tsBtn_Reset.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Reset.Image")));
-            this.tsBtn_Reset.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtn_Reset.Name = "tsBtn_Reset";
-            this.tsBtn_Reset.Size = new System.Drawing.Size(68, 24);
-            this.tsBtn_Reset.Text = "Reset";
-            this.tsBtn_Reset.Click += new System.EventHandler(this.tsBtn_Reset_Click);
+            this.tsBtn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Xoa.Image")));
+            this.tsBtn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtn_Xoa.Name = "tsBtn_Xoa";
+            this.tsBtn_Xoa.Size = new System.Drawing.Size(56, 24);
+            this.tsBtn_Xoa.Text = "Xóa";
+            this.tsBtn_Xoa.Click += new System.EventHandler(this.tsBtn_Xoa_Click);
             // 
             // UC_DatPhongOnline
             // 
@@ -262,5 +273,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tssLbl_TongCong;
         private System.Windows.Forms.ToolStripButton tsBtn_Reset;
+        private System.Windows.Forms.ToolStripButton tsBtn_Xoa;
     }
 }

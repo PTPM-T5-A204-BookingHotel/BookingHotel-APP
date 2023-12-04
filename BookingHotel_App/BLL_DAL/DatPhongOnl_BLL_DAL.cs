@@ -28,5 +28,14 @@ namespace BLL_DAL
                 qlks.SubmitChanges();
             }
         }
+        public void Delete(int madp)
+        {
+            DatPhong dp = qlks.DatPhongs.Where(o => o.MaDP.Equals(madp)).FirstOrDefault();
+            if (dp != null)
+            {
+                qlks.DatPhongs.DeleteOnSubmit(dp);
+                qlks.SubmitChanges();
+            }
+        }
     }
 }

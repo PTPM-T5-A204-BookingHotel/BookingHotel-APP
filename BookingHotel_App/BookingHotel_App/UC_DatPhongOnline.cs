@@ -65,6 +65,24 @@ namespace BookingHotel_App
         private void tsBtn_Reset_Click(object sender, EventArgs e)
         {
             LoadData();
+            this.Message("Success", MyMessageBox.enmType.Success);
+        }
+
+        private void tsBtn_Xoa_Click(object sender, EventArgs e)
+        {
+            int index = dgv_DatPhongOnl.CurrentRow.Index;
+            if (index < 0)
+            {
+                this.Message("Chưa chọn dòng cần check", MyMessageBox.enmType.Error);
+            }
+            else
+            {
+                
+                int madp = int.Parse(dgv_DatPhongOnl.Rows[index].Cells["MaDP"].Value.ToString());
+                dponlblldal.Delete(madp);
+                LoadData();
+                this.Message("Success", MyMessageBox.enmType.Success);
+            }
         }
     }
 }
