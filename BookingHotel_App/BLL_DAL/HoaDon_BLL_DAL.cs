@@ -27,10 +27,13 @@ namespace BLL_DAL
         {
             foreach(HoaDon hd in getListHD(maph))
             {
-                if (hd.TGDatPhong == dt)
+                for (int i = 0; i < hd.SoNgayLuuTru.Value; i++)
                 {
-                    return false;
-                    break;
+                    if (hd.TGDatPhong.Value.AddDays(i) == dt)
+                    {
+                        return false;
+                        break;
+                    }
                 }
             }
             return true;

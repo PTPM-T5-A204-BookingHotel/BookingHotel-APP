@@ -346,14 +346,21 @@ namespace BookingHotel_App
                 string songayluutru = txt_SoNgayLuuTru.Text.Trim();
                 string soluongng = txt_SoLuongNguoi.Text.Trim();
                 DateTime ngaydat = dt_NgayDat.Value;
-                if (isThongTinDP(songayluutru, soluongng))
+                if (hdblldal.KTTGDatPhong(ngaydat, phblldal.getMaPh(lbl_Phong.Text)))
                 {
-                    int tt = hdblldal.CalTongTien(int.Parse(lbl_GiaPH.Text), int.Parse(songayluutru));
-                    lbl_TongTien.Text = (int.Parse(tssLbl_TongTT_DV.Text) + int.Parse(tssLbl_TongTT_VT.Text) + tt).ToString();
-                    hdblldal.update(lbl_MaHD.Text, ngaydat, int.Parse(songayluutru), int.Parse(soluongng), int.Parse(lbl_TongTien.Text));
-                    hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
-                    tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
-                    this.Message("Success", MyMessageBox.enmType.Success);
+                    if (isThongTinDP(songayluutru, soluongng))
+                    {
+                        int tt = hdblldal.CalTongTien(int.Parse(lbl_GiaPH.Text), int.Parse(songayluutru));
+                        lbl_TongTien.Text = (int.Parse(tssLbl_TongTT_DV.Text) + int.Parse(tssLbl_TongTT_VT.Text) + tt).ToString();
+                        hdblldal.update(lbl_MaHD.Text, ngaydat, int.Parse(songayluutru), int.Parse(soluongng), int.Parse(lbl_TongTien.Text));
+                        hdblldal.getHD_DatPhong(dgv_DonDat, lbl_Phong.Text);
+                        tssLbl_TongCong_HD.Text = dgv_DonDat.RowCount.ToString();
+                        this.Message("Success", MyMessageBox.enmType.Success);
+                    }
+                }
+                else
+                {
+                    this.Message("Ngày dự kiến nhận phòng đã có khách đặt", MyMessageBox.enmType.Error);
                 }
             }
             else
