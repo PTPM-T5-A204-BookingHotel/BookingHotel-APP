@@ -51,10 +51,6 @@ namespace BookingHotel_App
         private void btn_Capture_Click(object sender, EventArgs e)
         {
             pic_Image.Image = pic_stream.Image;
-            
-            
-            
-
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -82,5 +78,15 @@ namespace BookingHotel_App
 
             }
         }
+
+        private void frm_SavePicture_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Idle -= Streaming;
+            btn_Stream.Text = "Start streaming";
+            capture.Dispose();
+
+        }
+
+        
     }
 }

@@ -187,6 +187,7 @@
             this.Name = "frm_SavePicture";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chụp ảnh";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_SavePicture_FormClosed);
             this.Load += new System.EventHandler(this.frm_SavePicture_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Image)).EndInit();
